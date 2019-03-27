@@ -1,0 +1,83 @@
+body{
+    margin: 0%;
+    padding: 0%;
+}
+
+a{
+    text-decoration: none; 
+ } 
+   
+.main{
+    min-width: 1360px;
+    height: 100%;
+    /* border: red solid 1px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header{
+    width: 100%;
+    min-height: 60px;
+    /* border: green solid 1px; */
+    background: #000000bd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.h_content{
+    width: 90%;
+    min-height: 60px;
+    /* border: blue solid 1px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.h_first_content{
+    width: 70%;
+    height: 60px;
+    /* border: blue solid 1px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.h_second_content{
+    width: 20%;
+    height: 60px;
+    /* border: blue solid 1px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.h_link{
+    height: 100%;
+    /* border:red solid 1px; */
+    font-size: 1.3em;
+    font-family: "Roboto";
+    color: #faeaea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.h_link:hover{
+    background: #ffffff27;
+}
+
+.btn_login{
+    font-size: 1em;
+    font-family: "Roboto";
+    width: 30%;
+    height: 80%;
+    background:  #faaad0;
+    border: solid 0px;
+    border-radius: 3px;
+}
+
+
