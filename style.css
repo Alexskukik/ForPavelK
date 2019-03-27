@@ -8,7 +8,7 @@ a{
  } 
    
 .main{
-    min-width: 1360px;
+    min-width: 1280px;
     height: 100%;
     /* border: red solid 1px; */
     display: flex;
@@ -53,13 +53,15 @@ a{
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
+    
+    padding: 0 20px;
 }
 .h_link{
     height: 100%;
     /* border:red solid 1px; */
     font-size: 1.3em;
     font-family: "Roboto";
-    color: #faeaea;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,10 +76,14 @@ a{
     font-size: 1em;
     font-family: "Roboto";
     width: 30%;
-    height: 80%;
-    background:  #faaad0;
+    height: 40px;
+    background:  white;
     border: solid 0px;
     border-radius: 3px;
 }
 
-
+.content{
+    width: 100%;
+    height: 400px;
+    background: #f7b0c542;
+}
