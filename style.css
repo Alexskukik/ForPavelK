@@ -14,7 +14,7 @@ img{
 }
    
 .main{
-    min-width: 1280px;
+    min-width: 1300px;
     height: 100%;
     /* border: red solid 1px; */
     display: flex;
@@ -109,6 +109,7 @@ img{
     display: flex;
     justify-content: center; 
     align-items: flex-end;
+    border-bottom: rgba(0, 0, 0, 0.089) solid 1px;
 
 }
 
@@ -159,24 +160,68 @@ img{
     text-align: center;
 }
 
+.slogan{
+    /* padding-top: 60px; */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* border:green 1px solid; */
+}
+
+.slogan_box{
+    width: 25%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* border:green 1px solid; */
+}
+
+.fit{
+    background: rgb(226, 237, 247);
+
+}
+
+.fit_ico{
+    height: 30px;
+    width: 30px;
+    padding: 0 0 0 10px;
+
+
+}
+
+.food{
+    
+    background: rgb(245, 247, 209);
+
+}
+
+.posit{
+    background: rgb(224, 245, 224);
+}
 .trainer{
-    width: 90%;
-    height: 400px;   
+    width: 80%;
 }
 
 .h1_trainer{
-    padding-top: 20px;
+    padding-top: 60px;
     font-size: 1.6em;
     color: #747171;
     text-align: center;
+    /* border: 1px solid blue; */
     
 }
 
 .about_trainer{
     width: 100%;
-    height: 300px;
-    background: #f0f0f0;
+    /* height: 300px; */
+    /* background: #f0f0f0; */
+    border-top: 2px  #747171c0 solid;
+    /* border-bottom: 1px  #747171 solid; */
     font-size: 1.2em;
+    
 }
 
 .row{
@@ -187,14 +232,18 @@ img{
 }
 .box{
     width: 20%;
-    height: 100px;
-    
+    height: 100px; 
     border: green solid 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px 5px 0;
 }
 
 
 .footer{
+    margin-top: 10px;
     width: 100%;
-    height: 100px;
+    height: 80px;
     background: #9e9d9d;
 }
