@@ -6,13 +6,17 @@ body{
 
 a{
     text-decoration: none; 
+    color: rgb(53, 52, 52);
  } 
 
 img{
     height: 100%;
     width: 100%;
 }
-   
+
+p{
+   margin: 0 0 0 0;
+}   
 .main{
     min-width: 1300px;
     height: 100%;
@@ -246,4 +250,31 @@ img{
     width: 100%;
     height: 80px;
     background: #9e9d9d;
+    display: flex;
+    justify-content: center;
 }
+
+.f_content{
+    width: 90%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.f_block{
+    width: 40%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    font-size: 0.9em;
+    color: black;
+}
+ 
+.dev:hover{
+    text-decoration: underline;
+}
+
+
