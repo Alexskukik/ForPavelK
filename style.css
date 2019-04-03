@@ -6,8 +6,11 @@ body{
 
 a{
     text-decoration: none; 
-    color: rgb(53, 52, 52);
  } 
+
+ a:hover{
+    text-decoration: underline;
+}
 
 img{
     height: 100%;
@@ -207,6 +210,7 @@ p{
 .posit{
     color: rgb(160, 253, 160);
 }
+
 .trainer{
     width: 80%;
 }
@@ -222,36 +226,110 @@ p{
 
 .about_trainer{
     width: 100%;
-    /* height: 300px; */
-    /* background: #f0f0f0; */
     border-top: 2px  #747171c0 solid;
-    
-    /* border-bottom: 1px  #747171 solid; */
     font-size: 1.2em;
     
 }
 
-.row{
+.about_training{
+    width: 100%;
+    border-top: 2px  #747171c0 solid;
+}
+
+.about_trainig_text{
+    margin: 15px 0 15px 0;
+    width: 100%;
+    font-size: 1.2em;
+}
+
+.training_row{
     width: 100%;
     display: flex;
     flex-direction: row;
-
+    align-items: center;
+    justify-content: center;
+    /* border-top: black solid 1px; */
+    font-size: 1.5em;
 }
-.box{
-    width: 20%;
+
+.training_box{
+    width: 33%;
     height: 100px; 
-    border: green solid 1px;
+   
     display: flex;
+    text-align:center;
     align-items: center;
     justify-content: center;
     padding: 0 5px 5px 0;
+    font-size: 2em;
+    color: #000000bd;
 }
 
+.tb1{
+    
+    background: rgb(255, 199, 216);
+
+}
+
+.tb1:hover{
+    background: rgb(250, 216, 230);
+
+} 
+.tb2{
+    
+    background: rgb(255, 251, 202);
+
+}
+
+.tb2:hover{
+    background: rgb(255, 253, 222);
+
+}
+
+.tb3{
+    background: rgb(244, 202, 255);
+
+}
+
+.tb3:hover{
+    background: rgb(249, 226, 255);
+
+}
+
+.tb4{
+    
+    background: rgb(201, 255, 241);
+}
+
+.tb4:hover{
+    background: rgb(222, 255, 247);
+
+}
+
+.tb5{
+    
+    background: rgb(255, 206, 206);
+}
+
+.tb5:hover{
+  
+    background: rgb(255, 224, 224);
+}
+
+.tb6{
+    background: rgb(204, 200, 255);
+
+}
+
+.tb6:hover{
+    background: rgb(227, 225, 255);
+
+}
 
 .footer{
-    margin-top: 10px;
+    margin-top: 100px;
     width: 100%;
-    height: 80px;
+    height: 70px;
     background: #9e9d9d;
     display: flex;
     justify-content: center;
@@ -259,7 +337,7 @@ p{
 
 .f_content{
     width: 90%;
-    height: 80px;
+    height: 70px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -267,7 +345,7 @@ p{
 
 .f_block{
     width: 40%;
-    height: 80px;
+    height: 70px;
     display: flex;
     justify-content: center;
     /* align-items: center; */
@@ -276,8 +354,6 @@ p{
     color: black;
 }
  
-.dev:hover{
-    text-decoration: underline;
-}
+
 
 
