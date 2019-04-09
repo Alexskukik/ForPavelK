@@ -218,7 +218,7 @@ p{
 }
 
 .h1_trainer{
-    padding-top: 60px;
+    padding-top: 150px;
     font-size: 1.6em;
     color: #747171;
     text-align: center;
@@ -245,93 +245,38 @@ p{
 }
 
 .training_banner{
+    margin-top: 50px;
     width: 100%;
+    height: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    justify-content: space-between;
 
 }
 .training_row{
-    width: 60%;
+    width: 80%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     font-size: 1.2em;
 }
 
 .training_box{
-    width: 33%;
-    height: 100px; 
+    width: 260px;
+    height:50px; 
    
-    border: rgba(0, 0, 0, 0.096) solid 1px;
+    background: #f7b0c542; 
+    border: rgba(0, 0, 0, 0.418) solid 1px;
     display: flex;
     text-align:center;
     align-items: center;
     justify-content: center;
     padding: 0 5px 5px 0;
-    font-size: 2em;
-    color: #000000bd;
-}
-
-.tb1{
-    
-    background: rgb(255, 199, 216);
-
-}
-
-.tb1:hover{
-    background: rgb(250, 216, 230);
-
-} 
-.tb2{
-    
-    background: rgb(255, 251, 202);
-
-}
-
-.tb2:hover{
-    background: rgb(255, 253, 222);
-
-}
-
-.tb3{
-    background: rgb(244, 202, 255);
-
-}
-
-.tb3:hover{
-    background: rgb(249, 226, 255);
-
-}
-
-.tb4{
-    
-    background: rgb(201, 255, 241);
-}
-
-.tb4:hover{
-    background: rgb(222, 255, 247);
-
-}
-
-.tb5{
-    
-    background: rgb(255, 206, 206);
-}
-
-.tb5:hover{
-  
-    background: rgb(255, 224, 224);
-}
-
-.tb6{
-    background: rgb(204, 200, 255);
-
-}
-
-.tb6:hover{
-    background: rgb(227, 225, 255);
+    font-size: 1.5em;
+    color: #000000;
 
 }
 
@@ -364,9 +309,18 @@ p{
     justify-content: space-around;
 }
 
-.soc{
+.soc1{
     height: 50px;
-    width:40%;
+    width: 35%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.soc2{
+    height: 50px;
+    width:20%;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -374,8 +328,8 @@ p{
 }
 
 .soc_box{
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
 }
 
 .footer{
@@ -406,6 +360,51 @@ p{
     color: black;
 }
  
+.training_main_banner{
+    margin-top: 10px;
+    width: 100%;
+    height:350px;
+    display: flex;
+    flex-direction: row;
+    
+    align-items: center;
+    border: rgba(0, 0, 0, 0.438) 4px solid;
+    
+    background: #f7b0c542; 
+}
+
+.training_main_box{
+    width: 33.3%;
+    height:340px;
+}
+
+.h1_training{
+    padding-top: 50px;
+    font-size: 1.6em;
+    color: #747171;
+    text-align: center;
+}
 
 
 
+
+
+#go-top {
+    position: fixed; 
+    bottom: 25px; 
+    right: 25px;
+    text-align: center;
+    cursor:pointer; 
+    display:none;
+    width: 40px;
+    height: 40px;
+    background: #f7b0c542; 
+    border: solid #747171 2px;
+    line-height: 30px;
+    border-radius: 3px;
+  }
+  
+  #go-top:hover {
+    background: #8d6a7442; 
+    color: #fff;
+  }
