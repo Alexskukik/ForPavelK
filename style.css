@@ -408,3 +408,43 @@ p{
     background: #8d6a7442; 
     color: #fff;
   }
+
+  .modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    bottom: 0; 
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000dc;
+   
+  }
+
+.modal_login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    
+  }
+
+  .modal_content{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* top: 60px; 
+    right: 100px; */
+    width: 40%;
+    height: 50%;
+    background: #ffffff;
+    border-radius: 5px;
+  }
+
+  #close{
+    width: 40%;
+    height: 50%;
+
+  }

@@ -10,19 +10,20 @@
     <title>Document</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <script src="script.js"></script>
+
 </head>
 
 <body>
 
     <div class="main">
 
+
         <div class="header">
             <div class="h_content">
                 <div class="h_first_content">
                     <a href="index.html" class="h_link">Главная</a>
                     <a href="training.html" class="h_link">Тренировки</a>
-                    <a href="" class="h_link">Расписание</a>
+                    <a href="timetable.html" class="h_link">Расписание</a>
                     <a href="" class="h_link">Цены</a>
                     <a href="" class="h_link">Новости</a>
                     <a href="" class="h_link">Фото</a>
@@ -31,7 +32,7 @@
                 </div>
 
                 <div class="h_second_content">
-                    <button class="btn_login"> Войти</button>
+                    <button class="btn_login" id="btnLogin"> Войти</button>
                 </div>
 
             </div>
@@ -208,8 +209,20 @@
 
 
     </div>
-    </div>
+    <div class="modal" id="modal">
 
+
+        <div class="modal_login" >
+
+            <div class="modal_content">
+                <button id="close">Закрыть</button>
+
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>

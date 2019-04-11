@@ -1,3 +1,5 @@
+'use strict';
+
 $(document).ready(function(){
     $('body').append('<a href="#" id="go-top" title="Вверх"> <img src = "up.png"> </a>');
   });
@@ -20,3 +22,16 @@ $(document).ready(function(){
   $(function() {
    $("#go-top").scrollToTop();
   });
+
+var modal = document.getElementById("modal");
+var btnLogin = document.getElementById('btnLogin');
+var close = document.getElementById("close");
+
+btnLogin.onclick = function() {
+    modal.style.display = "block";
+}
+
+close.onclick = function(){
+    
+    modal.style.display = "none";
+}
