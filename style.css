@@ -88,6 +88,8 @@ p{
 
 .h_link:hover{
     background: #ffffff27;
+  
+    text-decoration: none;
 }
 
 .btn_login{
@@ -433,18 +435,82 @@ p{
   .modal_content{
     position: fixed;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+     justify-content: space-between;
     /* top: 60px; 
     right: 100px; */
-    width: 40%;
-    height: 50%;
+    width: 30%;
+    height: 45%;
     background: #ffffff;
-    border-radius: 5px;
+    border-radius: 3px;
+    
+    border: grey solid 1px;
+  }
+
+  .h_modal{
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: right;
+    color: grey;
+
+  }
+
+  .f_modal{
+    width: 95%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    color: grey;
+  }
+
+  .form_modal{
+    width: 98%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: right;
+    color: grey;
+
+    
+  }
+
+  .login_inpt{
+    width: 40%;
+    height: 30px;
+    text-align: center;
+    border: grey solid 1px;
+    border-radius: 3px;
+  }
+
+  .h2_login{
+      color:rgb(65, 64, 64);
   }
 
   #close{
-    width: 40%;
-    height: 50%;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: #ffffff solid 1px;
+    font-size: 1em;
+    background: url(close.png);
+    background-size: cover;
+    opacity: 0.5;
 
+  }
+
+  .btn_form{
+    width: 40%;
+    height: 30px;
+    text-align: center;
+    border: grey solid 1px;
+    background: #f7b0c542; 
+    border-radius: 3px;
   }
