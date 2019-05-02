@@ -13,7 +13,20 @@
 
 </head>
 
+
 <body>
+        <?
+        function check()
+        {
+                    session_register("name","pass");
+        }
+        ?>
+        <?
+        
+        echo $name;
+        session_start();
+        check();
+        ?>
 
     <div class="main">
 
@@ -32,7 +45,7 @@
                 </div>
 
                 <div class="h_second_content">
-                    <button class="btn_login" id="btnLogin"> Войти</button>
+                    <button class="btn_login" id="btnLogin" value = "Войти"> Войти</button>
                 </div>
 
             </div>
@@ -225,11 +238,11 @@
                 <div class="form_modal">
                     <h2 class="h2_login">Вход в личный кабинет</h1>
                     
-                        <input type="text" class="login_inpt" placeholder="Логин">
+                        <input type="text" class="login_inpt"  id="login_inpt" name="name" placeholder="Логин" method="post">
                         
-                        <input type="text" class="login_inpt" placeholder="Пароль">
+                        <input type="text" class="login_inpt" name="pass" placeholder="Пароль">
 
-                        <button class="btn_form" id="btnLogin"> Войти</button> 
+                        <button class="btn_form" id="btnTryLogin"> Войти</button> 
                         
                     
 

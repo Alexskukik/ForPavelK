@@ -13,7 +13,9 @@
 
 </head>
 
+
 <body>
+       
 
     <div class="main">
 
@@ -32,7 +34,7 @@
                 </div>
 
                 <div class="h_second_content">
-                    <button class="btn_login" id="btnLogin"> Войти</button>
+                    <button class="btn_login" id="btnLogin" value = "Войти"> Войти</button>
                 </div>
 
             </div>
@@ -40,10 +42,11 @@
         </div>
 
         <div class="content">
-
+            
         </div>
+    </div>
 
-        <div class="footer">
+    <div class="footer">
             <div class="f_content">
                 <div class="f_block">
                     <p>2019-...</p>
@@ -58,69 +61,39 @@
             </div>
 
 
-        </div>
-        <div class="modal" id="modal">
+    </div>
+    <div class="modal" id="modal">
 
 
-            <div class="modal_login">
+        <div class="modal_login">
 
-                <div class="modal_content">
-                    <div class="h_modal">
-                        <button id="close" class="btn_modal" title="Закрыть"> </button>
-                    </div>
-                    <div class="form_modal">
-                        <h2 class="h2_login">Вход в личный кабинет</h1>
+            <div class="modal_content">
+                <div class="h_modal">
+                    <button id="close" class="btn_modal" title="Закрыть"> </button>
+                </div>
+                <div class="form_modal">
+                    <h2 class="h2_login">Вход в личный кабинет</h1>
+                    
+                        <input type="text" class="login_inpt"  id="login_inpt" name="name" placeholder="Логин" method="post">
+                        
+                        <input type="text" class="login_inpt" name="pass" placeholder="Пароль">
 
-                            <input type="text" class="login_inpt" placeholder="Логин">
+                        <button class="btn_form" id="btnTryLogin"> Войти</button> 
+                        
+                    
 
-                            <input type="text" class="login_inpt" placeholder="Пароль">
+                </div>
 
-                            <button class="btn_form" id="btnLogin"> Войти</button>
-
-
-
-                    </div>
-
-                    <div class="f_modal">
-                        <a id="btnReg">Регистрация</a>
-
-                    </div>
+                <div class="f_modal">
+                        <a id="btnReg" href="reg.html">Регистрация</a>
 
                 </div>
 
             </div>
-        </div>
 
-        <div class="modal" id="modalReg">
-
-
-            <div class="modal_reg">
-
-                <div class="modal_content_reg">
-                    <div class="h_modal">
-                        <button id="close closeReg" class="btn_modal" title="Закрыть"> </button>
-                    </div>
-                    <div class="form_modal">
-                        <h2 class="h2_login">Регистрация</h1>
-
-                            <input type="text" class="login_inpt" placeholder="Логин">
-
-                            <input type="text" class="login_inpt" placeholder="Пароль">
-
-
-
-                    </div>
-
-                    <div class="f_modal">
-                        <a id="btnLogin">Войти</a>
-
-                    </div>
-
-                </div>
-
-            </div>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 

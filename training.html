@@ -13,27 +13,29 @@
 </head>
 
 <body>
-
+       
     <div class="main">
 
-        <div class="header">
-            <div class="h_content">
-                <div class="h_first_content">
-                    <a href="index.html" class="h_link">Главная</a>
-                    <a href="training.html" class="h_link">Тренировки</a>
-                    <a href="timetable.html" class="h_link">Расписание</a>
-                    <a href="" class="h_link">Цены</a>
-                    <a href="" class="h_link">Новости</a>
-                    <a href="" class="h_link">Фото</a>
-                    <a href="" class="h_link">Отзывы</a>
-
+            <div class="header">
+                    <div class="h_content">
+                        <div class="h_first_content">
+                            <a href="index.html" class="h_link">Главная</a>
+                            <a href="training.html" class="h_link">Тренировки</a>
+                            <a href="timetable.html" class="h_link">Расписание</a>
+                            <a href="price.html" class="h_link">Цены</a>
+                            <a href="news.html" class="h_link">Новости</a>
+                            <a href="photo.html" class="h_link">Фото</a>
+                            <a href="reviews.html" class="h_link">Отзывы</a>
+        
+                        </div>
+        
+                        <div class="h_second_content">
+                            <button class="btn_login" id="btnLogin" value = "Войти"> Войти</button>
+                        </div>
+        
+                    </div>
+        
                 </div>
-
-                <div class="h_second_content">
-                    <button class="btn_login" id="btnLogin"> Войти</button>
-                </div>
-
-            </div>
 
         </div>
 
@@ -193,33 +195,36 @@
     <div class="modal" id="modal">
 
 
-        <div class="modal_login">
-
-            <div class="modal_content">
-                <div class="h_modal">
-                    <button id="close" class="btn_modal" title="Закрыть"> </button>
+            <div class="modal_login">
+    
+                <div class="modal_content">
+                    <div class="h_modal">
+                        <button id="close" class="btn_modal" title="Закрыть"> </button>
+                    </div>
+                    <div class="form_modal">
+                        <h2 class="h2_login">Вход в личный кабинет</h1>
+                        
+                            <input type="text" class="login_inpt"  id="login_inpt" name="name" placeholder="Логин" method="post">
+                            
+                            <input type="text" class="login_inpt" name="pass" placeholder="Пароль">
+    
+                            <button class="btn_form" id="btnTryLogin"> Войти</button> 
+                            
+                        
+    
+                    </div>
+    
+                    <div class="f_modal">
+                            <a id="btnReg" href="reg.html">Регистрация</a>
+    
+                    </div>
+    
                 </div>
-                <div class="form_modal">
-                    <h2 class="h2_login">Вход в личный кабинет</h1>
-
-                        <input type="text" class="login_inpt" placeholder="Логин">
-
-                        <input type="text" class="login_inpt" placeholder="Пароль">
-
-                        <button class="btn_form" id="btnLogin"> Войти</button>
-
-
-
-                </div>
-
-                <div class="f_modal">
-                    <a id="btnReg" href="reg.html">Регистрация</a>
-
-                </div>
-
+    
             </div>
-
         </div>
+    
+        <script src="script.js"></script>
     </div>
 
     <script src="script.js"></script>

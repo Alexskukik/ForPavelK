@@ -107,7 +107,7 @@ p{
 .content{
     top: 60px;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -600,13 +600,58 @@ p{
   scroll-behavior: smooth;
 }
 
+.anchor:hover{
+    
+    color: #fdd0de; 
+}
+
 .timetable{
-    margin-top: 100px;
+    margin-top: 10px;
     width: 1200px;
-    height: 500px;
+    height: 700px;
+    
 }
 
 .map{
     width: 100%;
     height: 200px;
   }
+
+  #setTimetable{
+      display: none;
+      height: 40px;
+      width: 150px;
+      padding: 10px 0 10px;
+    border-radius: 4px; 
+    border: solid #747171 1px;
+    background: #d65656;
+    text-align: center;
+    margin: 50px 0 0 1050px;
+    color: white ;
+  }
+
+.h1_tt{
+    width: 80%;
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 50px;
+    color: #747171;
+
+}
+
+.h2_tt{
+    width: 80%;
+    text-align: center;
+    font-size: 1em;
+    top: 50px;
+    color: #d65656;
+    margin-top: 0;
+}
+
+.block_rew{
+    margin: 50px 0 0;
+    width: 80%;
+    height: 100vh;
+    border: green solid 1px;
+}
+

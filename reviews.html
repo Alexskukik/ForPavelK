@@ -13,7 +13,9 @@
 
 </head>
 
+
 <body>
+
 
     <div class="main">
 
@@ -32,7 +34,7 @@
                 </div>
 
                 <div class="h_second_content">
-                    <button class="btn_login" id="btnLogin"> Войти</button>
+                    <button class="btn_login" id="btnLogin" value="Войти"> Войти</button>
                 </div>
 
             </div>
@@ -40,87 +42,74 @@
         </div>
 
         <div class="content">
+            <h1 class="h1_tt">
+                Здесь вы можете оставить свой отзыв, прочитать отзывы других пользователей, а также задать интересующий
+                вас вопрос, ответ на который будет опубликован ниже. </h1>
+            <h2 class="h2_tt">
+                ВНИМАНИЕ! Оставлять отзывы и задавать вопросы могут только авторизованные пользователи!</h2>
 
-        </div>
-
-        <div class="footer">
-            <div class="f_content">
-                <div class="f_block">
-                    <p>2019-...</p>
-                    consectetur adipisicing elit. Recusandae rem
-                    quibusdam cumque saepe
-                </div>
-                <div class="f_block">
-                    <p>Дизайн и front end - <a class="dev" href="https://vk.com/sashaskuki">Скуковская Александра</a>
-                    </p>
-                    <p>Back end - <a class="dev" href="https://vk.com/id352634005">Лагунова Мария</a> </p>
-                </div>
-            </div>
-
-
-        </div>
-        <div class="modal" id="modal">
-
-
-            <div class="modal_login">
-
-                <div class="modal_content">
-                    <div class="h_modal">
-                        <button id="close" class="btn_modal" title="Закрыть"> </button>
-                    </div>
-                    <div class="form_modal">
-                        <h2 class="h2_login">Вход в личный кабинет</h1>
-
-                            <input type="text" class="login_inpt" placeholder="Логин">
-
-                            <input type="text" class="login_inpt" placeholder="Пароль">
-
-                            <button class="btn_form" id="btnLogin"> Войти</button>
-
-
-
-                    </div>
-
-                    <div class="f_modal">
-                        <a id="btnReg">Регистрация</a>
-
-                    </div>
+                
+                <div class="block_rew">
 
                 </div>
-
-            </div>
-        </div>
-
-        <div class="modal" id="modalReg">
-
-
-            <div class="modal_reg">
-
-                <div class="modal_content_reg">
-                    <div class="h_modal">
-                        <button id="close closeReg" class="btn_modal" title="Закрыть"> </button>
-                    </div>
-                    <div class="form_modal">
-                        <h2 class="h2_login">Регистрация</h1>
-
-                            <input type="text" class="login_inpt" placeholder="Логин">
-
-                            <input type="text" class="login_inpt" placeholder="Пароль">
-
-
+               
+                <div class="block_rew">
 
                     </div>
 
-                    <div class="f_modal">
-                        <a id="btnLogin">Войти</a>
 
-                    </div>
 
-                </div>
-
-            </div>
         </div>
     </div>
+
+    <div class="footer">
+        <div class="f_content">
+            <div class="f_block">
+                <p>2019-...</p>
+                consectetur adipisicing elit. Recusandae rem
+                quibusdam cumque saepe
+            </div>
+            <div class="f_block">
+                <p>Дизайн и front end - <a class="dev" href="https://vk.com/sashaskuki">Скуковская Александра</a>
+                </p>
+                <p>Back end - <a class="dev" href="https://vk.com/id352634005">Лагунова Мария</a> </p>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="modal" id="modal">
+
+
+        <div class="modal_login">
+
+            <div class="modal_content">
+                <div class="h_modal">
+                    <button id="close" class="btn_modal" title="Закрыть"> </button>
+                </div>
+                <div class="form_modal">
+                    <h2 class="h2_login">Вход в личный кабинет</h1>
+
+                        <input type="text" class="login_inpt" id="login_inpt" name="name" placeholder="Логин" method="post">
+
+                        <input type="text" class="login_inpt" name="pass" placeholder="Пароль">
+
+                        <button class="btn_form" id="btnTryLogin"> Войти</button>
+
+
+
+                </div>
+
+                <div class="f_modal">
+                    <a id="btnReg" href="reg.html">Регистрация</a>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 
