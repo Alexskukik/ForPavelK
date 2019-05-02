@@ -37,6 +37,7 @@ btnLogin.onclick = function () {
     if(sessionStorage.getItem('user')){
         sessionStorage.clear();
         btnLogin.innerText = 'Вoйти';
+        document.getElementById("setTimetable").style.display = "none";
        console.log( sessionStorage.getItem('user'));
        
     } else {
