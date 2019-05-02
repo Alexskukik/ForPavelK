@@ -25,35 +25,50 @@ $(function () {
 $(function () {
     $("#go-top").scrollToTop();
 });
-
+/////////////
 
 
 ///Модальное окно
 var modal = document.getElementById("modal");
-var btnLogin = document.getElementById('btnLogin');
-var close = document.getElementById("close");
+var btnLogin = document.getElementById('btnLogin'); ///кнопка логин
+var close = document.getElementById("close"); ///кнопка закрыть
 
-btnLogin.onclick = function () {
-    if(sessionStorage.getItem('user')){
-        sessionStorage.clear();
-        btnLogin.innerText = 'Вoйти';
-        document.getElementById("setTimetable").style.display = "none";
-       console.log( sessionStorage.getItem('user'));
+///нажимаем на кнопку войти
+btnLogin.onclick = function () { 
+    if(sessionStorage.getItem('user')){    ///Если пользователь уже вошел то выйти
+        sessionStorage.clear();    ///очищаем память сессии
+        btnLogin.innerText = 'Вoйти';   ///меняем надпись
+        displayNone("setTimetable");  //скрываем элементы управления
+        displayNone("userRewInpt");
        
     } else {
-        document.getElementById("login_inpt").value = "";
-        modal.style.display = "block";
+        document.getElementById("login_inpt").value = "";  ///если еще никто не авторизован
+        modal.style.display = "block";  ///отображаем модалку
     }
 }
 
-close.onclick = function () {
+close.onclick = function () {   ////кнопка закрыть
 
     modal.style.display = "none";
 }
 
-var clearModal = function(){
+var clearModal = function(){  //// очищаем данные в модалке
     modal.style.display = "none";
 
+}
+
+//Функции отображения элементов
+
+var displayNone = function(a){ ////скрыть
+    if(document.getElementById(a))
+    document.getElementById(a).style.display = "none";  
+    
+}
+
+var displayBlock = function(a){  ////показать
+    
+    if(document.getElementById(a))
+    document.getElementById(a).style.display = "block";  
 }
 
 
@@ -64,48 +79,50 @@ var status;
 var tryLogin = document.getElementById("btnTryLogin");
 tryLogin.onclick = function () {
     login = document.getElementById("login_inpt").value;  //тут Машка что-то пришлет
-    if (login === 'admin') {
+    if (login === 'admin') {       //ЕСли админ
         sessionStorage.setItem('user', 'admin');
-        btnLogin.innerText = 'Выйти';   
-        document.getElementById("setTimetable").style.display = "block";
+        btnLogin.innerText = 'Выйти'; 
+        displayBlock("setTimetable");  
         clearModal();
     }
 
-    else if (login === 'user') {
+    else if (login === 'user') { //ЕСли юзер
         sessionStorage.setItem('user', 'user');
         btnLogin.innerText = 'Выйти';
+        displayBlock("userRewInpt");     
+        displayNone("setTimetable");  
         clearModal();
-        
-        document.getElementById("setTimetable").style.display = "none";
     }
-    else 
-    {
-        
-        document.getElementById("setTimetable").style.display = "none";
+    else                            //Если нет такого
+    {          
+        displayNone("setTimetable");     
+        displayNone("userRewInpt");
         alert("Что-то пошло не так");
     }
+
     alert( "Вы зашли как " + sessionStorage.getItem('user'));
-    console.log(sessionStorage.getItem('user'));
 }
 
 
+///Поведение скрываемых при обновлении страницы
 
 window.onload = function(){
     
     console.log(sessionStorage.getItem('user'));
-    if(sessionStorage.getItem('user'))
+    if(sessionStorage.getItem('user'))  //если кто-то авторизован
     {
         btnLogin.innerText = 'Выйти';
-        console.log(btnLogin.textContent);
     }
     else{
         btnLogin.innerText = 'Вoйти';
-        console.log(btnLogin.textContent);
     }
 
-    if(sessionStorage.getItem('user') === "admin")
-    {      
-        document.getElementById("setTimetable").style.display = "block";
+    if(sessionStorage.getItem('user') === "admin")  //авторизован админ
+    {       
+        displayBlock("setTimetable");  
+    } else if(sessionStorage.getItem('user') === "user")  //авторизоавн юзер
+    {   
+        displayBlock("userRewInpt");
     }
 }
 
