@@ -49,6 +49,11 @@
                 ВНИМАНИЕ! Оставлять отзывы и задавать вопросы могут только авторизованные пользователи!</h2>
 
 
+            <div class="anchors r_an">
+                <button class="anchor" onclick="location.href='#rew';"> Оставить отзыв </button>
+                <button class="anchor" onclick="location.href='#tabata';"> Задать вопрос </button>
+            </div>
+
             <div class="block_rew">
                 <div class="rew_list">
                     <div class="rew">
@@ -98,6 +103,7 @@
 
 
                 </div>
+                <a href="" name="rew"></a>
                 <div id="userRewInpt">
                     <div class="user_feature">
                         <input type="text" class="inpt_rew" placeholder="Отзыв..." maxlength="600">
@@ -110,63 +116,126 @@
             </div>
 
             <div class="block_rew">
+                <div class="ask_list">
+                    <div class="ask_block">
+                        
+                        <div class="rew">
+                            <div class="rew_name">Nonename</div>
+                            <div class="rew_text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
+                                inventore neque numquam velit eveniet sit nisi temporibus maiores voluptas sint. </div>
+                            <div class="rew_date">03.04.2019</div>
+                        </div>
+
+                        <div class="ask">
+                                kfkfkfkfkfsld.gd ;ads;gad;g n;gan dfhng ; 
+                            </div>
+
+                    </div>
+
+
+                    <div class="rew">
+                        <div class="rew_name">Nonename</div>
+                        <div class="rew_text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
+                            inventore neque numquam velit eveniet sit nisi temporibus maiores voluptas sint. </div>
+                        <div class="rew_date">02.04.2019</div>
+                    </div>
+                    <div class="rew">
+                        <div class="rew_name">Nonename</div>
+                        <div class="rew_text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
+                            inventore neque numquam velit eveniet sit nisi temporibus maiores voluptas sint. Lorem
+                            ipsum dolor sit amet consectetur adipisicing elit. Molestiae numquam impedit excepturi
+                            voluptatem in perspiciatis totam veniam. Nostrum, maxime modi. </div>
+                        <div class="rew_date">02.04.2019</div>
+                    </div>
+                    <div class="rew">
+                        <div class="rew_name">Nonename</div>
+                        <div class="rew_text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
+                            inventore neque numquam velit eveniet sit nisi temporibus maiores voluptas sint. </div>
+                        <div class="rew_date">02.04.2019</div>
+                    </div>
+                    <div class="rew">
+                        <div class="rew_name">Nonename</div>
+                        <div class="rew_text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
+                            inventore neque numquam velit eveniet sit nisi temporibus maiores voluptas sint. </div>
+                        <div class="rew_date">02.04.2019</div>
+                    </div>
+                    <div class="rew">
+                        <div class="rew_name">Nonename</div>
+                        <div class="rew_text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
+                            inventore neque numquam velit eveniet sit nisi temporibus maiores voluptas sint. Lorem
+                            ipsum dolor sit amet consectetur adipisicing elit. Molestiae numquam impedit excepturi
+                            voluptatem in perspiciatis totam veniam. voluptatem in perspiciatis totam veniam.
+                            voluptatem in perspiciatis totam veniam. voluptatem in perspiciatis totam veniam. totam
+                            veniam. voluptatem in perspiciatis totam veniam. voluptatem in perspiciatis totam veniam.
+                        </div>
+                        <div class="rew_date">02.04.2019</div>
+                    </div>
+
+                </div>
+                <a href="" name="rew"></a>
+                <div id="userRewInpt">
+                    <div class="user_feature">
+                        <input type="text" class="inpt_rew" placeholder="Есть вопросы? Задавайте!" maxlength="600">
+                        <button class="rew_btn">Отправить</button>
+
+                    </div>
+                </div>
+
+
 
             </div>
+        </div>
 
+        <div class="footer">
+            <div class="f_content">
+                <div class="f_block">
+                    <p>2019-...</p>
+                    consectetur adipisicing elit. Recusandae rem
+                    quibusdam cumque saepe
+                </div>
+                <div class="f_block">
+                    <p>Дизайн и front end - <a class="dev" href="https://vk.com/sashaskuki">Скуковская Александра</a>
+                    </p>
+                    <p>Back end - <a class="dev" href="https://vk.com/id352634005">Лагунова Мария</a> </p>
+                </div>
+            </div>
 
 
         </div>
-    </div>
+        <div class="modal" id="modal">
 
-    <div class="footer">
-        <div class="f_content">
-            <div class="f_block">
-                <p>2019-...</p>
-                consectetur adipisicing elit. Recusandae rem
-                quibusdam cumque saepe
-            </div>
-            <div class="f_block">
-                <p>Дизайн и front end - <a class="dev" href="https://vk.com/sashaskuki">Скуковская Александра</a>
-                </p>
-                <p>Back end - <a class="dev" href="https://vk.com/id352634005">Лагунова Мария</a> </p>
+
+            <div class="modal_login">
+
+                <div class="modal_content">
+                    <div class="h_modal">
+                        <button id="close" class="btn_modal" title="Закрыть"> </button>
+                    </div>
+                    <div class="form_modal">
+                        <h2 class="h2_login">Вход в личный кабинет</h1>
+
+                            <input type="text" class="login_inpt" id="login_inpt" name="name" placeholder="Логин"
+                                method="post">
+
+                            <input type="text" class="login_inpt" name="pass" placeholder="Пароль">
+
+                            <button class="btn_form" id="btnTryLogin"> Войти</button>
+
+
+
+                    </div>
+
+                    <div class="f_modal">
+                        <a id="btnReg" href="reg.html">Регистрация</a>
+
+                    </div>
+
+                </div>
+
             </div>
         </div>
 
-
-    </div>
-    <div class="modal" id="modal">
-
-
-        <div class="modal_login">
-
-            <div class="modal_content">
-                <div class="h_modal">
-                    <button id="close" class="btn_modal" title="Закрыть"> </button>
-                </div>
-                <div class="form_modal">
-                    <h2 class="h2_login">Вход в личный кабинет</h1>
-
-                        <input type="text" class="login_inpt" id="login_inpt" name="name" placeholder="Логин" method="post">
-
-                        <input type="text" class="login_inpt" name="pass" placeholder="Пароль">
-
-                        <button class="btn_form" id="btnTryLogin"> Войти</button>
-
-
-
-                </div>
-
-                <div class="f_modal">
-                    <a id="btnReg" href="reg.html">Регистрация</a>
-
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>
