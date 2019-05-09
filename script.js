@@ -22,6 +22,7 @@ $(function () {
     }
 });
 
+
 $(function () {
     $("#go-top").scrollToTop();
 });
@@ -78,6 +79,11 @@ var login;
 var status;
 var tryLogin = document.getElementById("btnTryLogin");
 tryLogin.onclick = function () {
+    var load = function(){
+        fetch('http://diplom-fitness.herokuapp.com/myroles.json')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    }
     login = document.getElementById("login_inpt").value;  //тут Машка что-то пришлет
     if (login === 'admin') {       //ЕСли админ
         sessionStorage.setItem('user', 'admin');
@@ -124,6 +130,13 @@ window.onload = function(){
     {   
         displayBlock("userRewInpt");
     }
+}
+
+var load = function(){
+    fetch('https://jsonplaceholder.typicode.com/todos/1')
+.then(response => response.json())
+.then(data => console.log(data))
+
 }
 
 

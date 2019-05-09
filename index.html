@@ -15,18 +15,7 @@
 
 
 <body>
-        <?
-        function check()
-        {
-                    session_register("name","pass");
-        }
-        ?>
-        <?
-        
-        echo $name;
-        session_start();
-        check();
-        ?>
+      
 
     <div class="main">
 
@@ -37,7 +26,7 @@
                     <a href="index.html" class="h_link">Главная</a>
                     <a href="training.html" class="h_link">Тренировки</a>
                     <a href="timetable.html" class="h_link">Расписание</a>
-                    <a href="price.html" class="h_link">Цены</a>
+                    <a href="price.html" class="h_link" >Цены</a>
                     <a href="news.html" class="h_link">Новости</a>
                     <a href="photo.html" class="h_link">Фото</a>
                     <a href="reviews.html" class="h_link">Отзывы</a>
@@ -55,7 +44,7 @@
         <div class="content">
             <div class="banner">
                 <div class="banner_content">
-                    <div class="banner_photo"> <img src="вн.png" alt=""></div>
+                    <div class="banner_photo"> <img src="вн.png" alt="" onclick="load()"></div>
 
                     <div class="banner_text">
                         <div class="banner_text1">
