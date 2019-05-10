@@ -1,31 +1,121 @@
 'use strict'
 //
-var List = [];
+
+
+
 window.onload = function () {
-    fetch(' https://jsonplaceholder.typicode.com/comments')
-        .then(response => response.json())
-        .then(json => List = json)
-        .then(List => {
-            for (var i = 100; i < 120; i++) {
-                loadNews(List[i]);
+    var a = 0;
+    var List = [];
+    loadElem();
+    getNews(a, a+10);
+
+    function loadNews(tmp) {
+        console.log(tmp);
+        var el = document.getElementById('newsContent');
+        el.innerHTML += '<div class="new_news"> <div class="date_news">' + tmp.id + '</div> <div class="text_news">' + tmp.body + ' </div></div>';
+
+    }
+
+    function getNews(a, b) {
+        fetch('https://jsonplaceholder.typicode.com/posts')
+            .then(response => response.json())
+            .then(json => List = json)
+            .then(List => {
+                for (var i = a; i < b; i++) {
+                    loadNews(List[i]);
+
+                }
+            })
+
+
+    }
+
+
+    document.getElementById("addNews").onclick = function () {
+        console.log('ghbdtn');
+        fetch('https://jsonplaceholder.typicode.com/posts/1', {
+            method: 'PUT',
+            body: JSON.stringify({
+                id: 2,
+                title: 'foo',
+                body: 'bar',
+                userId: 1
+            }),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
             }
         })
+            .then(response => response.json())
+            .then(json => console.log(json))
 
-}
+    }
 
 
-var loadNews = function (tmp) {
+    ///Поведение скрываемых при обновлении страницы
 
-    var el = document.getElementById('newsContent');
-    el.innerHTML += '<div class="new_news"> <div class="date_news">' + tmp.id + '</div> <div class="text_news">' + tmp.body + ' </div></div>';
-    console.log(tmp);
-    
-}
+    function loadElem() {
 
-window.onload = function () {
-    fetch(' http://diplom-fitness.herokuapp.com/myroles.json')
-        .then(response => response.json())
-        .then(json => console.log(json))
+        console.log(sessionStorage.getItem('user'));
+        if (sessionStorage.getItem('user'))  //если кто-то авторизован
+        {
+            btnLogin.innerText = 'Выйти';
+        }
+        else {
+            btnLogin.innerText = 'Вoйти';
+        }
+
+        if (sessionStorage.getItem('user') === "admin")  //авторизован админ
+        {
+            displayBlock("addNews");
+        } else if (sessionStorage.getItem('user') === "user")  //авторизоавн юзер
+        {
+            // displayBlock("userRewInpt");
+        }
+    }
+
+
+
+    var displayNone = function (a) { ////скрыть
+        if (document.getElementById(a))
+            document.getElementById(a).style.display = "none";
+
+    }
+
+    function displayBlock(a) {  ////показать
+
+        if (document.getElementById(a))
+            document.getElementById(a).style.display = "block";
+    }
+
+    document.getElementById('next').onclick = function () {
+        a += 10;
         
+        a = check(a);
+        document.getElementById('newsContent').innerHTML = "";
+        getNews(a, a+10);
+        console.log(a, a+10);
+    }
+
+    document.getElementById('prev').onclick = function () {
+        a -= 10;
+         
+        a = check(a);
+        document.getElementById('newsContent').innerHTML = "";
+        getNews(a, a+10);
+    }
+
+    function check(a){
+        if(a < 0){
+            a = 0;
+        } else if (a + 10 > List.length){    
+            a = List.length - 10;
+        }
+        
+        console.log(a);
+        return a;
+
+    }
+       
 
 }
+

@@ -618,7 +618,7 @@ p{
     height: 200px;
   }
 
-  #setTimetable{
+  .btn_admin{
       display: none;
       height: 40px;
       width: 150px;
@@ -830,4 +830,9 @@ p{
     height:100%;
     padding: 10px;
     border-left: rgba(128, 128, 128, 0.103) solid 1px;
+}
+
+.btn_news{
+    width: 100px;
+    height: 40px;
 }

@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 ////Кнопка наверх
 $(document).ready(function () {
     $('body').append('<a href="#" id="go-top" title="Вверх"> <img src = "up.png"> </a>');
@@ -28,7 +26,6 @@ $(function () {
 });
 /////////////
 
-
 ///Модальное окно
 var modal = document.getElementById("modal");
 var btnLogin = document.getElementById('btnLogin'); ///кнопка логин
@@ -39,7 +36,8 @@ btnLogin.onclick = function () {
     if(sessionStorage.getItem('user')){    ///Если пользователь уже вошел то выйти
         sessionStorage.clear();    ///очищаем память сессии
         btnLogin.innerText = 'Вoйти';   ///меняем надпись
-        displayNone("setTimetable");  //скрываем элементы управления
+        displayNone("setTimetable");
+        displayNone("addNews");  //скрываем элементы управления
         displayNone("userRewInpt");
        
     } else {
@@ -88,7 +86,8 @@ tryLogin.onclick = function () {
     if (login === 'admin') {       //ЕСли админ
         sessionStorage.setItem('user', 'admin');
         btnLogin.innerText = 'Выйти'; 
-        displayBlock("setTimetable");  
+        displayBlock("setTimetable");
+        displayBlock("addNews");   
         clearModal();
     }
 
@@ -96,12 +95,14 @@ tryLogin.onclick = function () {
         sessionStorage.setItem('user', 'user');
         btnLogin.innerText = 'Выйти';
         displayBlock("userRewInpt");     
-        displayNone("setTimetable");  
+        displayNone("setTimetable"); 
+        displayNone("addNews");  
         clearModal();
     }
     else                            //Если нет такого
     {          
-        displayNone("setTimetable");     
+        displayNone("setTimetable"); 
+        displayNone("addNews");     
         displayNone("userRewInpt");
         alert("Что-то пошло не так");
     }
@@ -112,32 +113,8 @@ tryLogin.onclick = function () {
 
 ///Поведение скрываемых при обновлении страницы
 
-window.onload = function(){
-    
-    console.log(sessionStorage.getItem('user'));
-    if(sessionStorage.getItem('user'))  //если кто-то авторизован
-    {
-        btnLogin.innerText = 'Выйти';
-    }
-    else{
-        btnLogin.innerText = 'Вoйти';
-    }
 
-    if(sessionStorage.getItem('user') === "admin")  //авторизован админ
-    {       
-        displayBlock("setTimetable");  
-    } else if(sessionStorage.getItem('user') === "user")  //авторизоавн юзер
-    {   
-        displayBlock("userRewInpt");
-    }
-}
 
-var load = function(){
-    fetch('https://jsonplaceholder.typicode.com/todos/1')
-.then(response => response.json())
-.then(data => console.log(data))
-
-}
 
 
 
