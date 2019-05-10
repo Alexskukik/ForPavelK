@@ -45,8 +45,13 @@
             <h1 class="h1_tt">
                 Здесь вы можете найти полезную информацию о предстоящих событиях, интересных фактах и о ЗОЖ глазами
                 Виктории Незгодинской в целом. </h1>
+            <div class="admin_news" id="addNews">
+               <h2 class="h2_tt">Режим администратора</h2> 
+                <div class="admin_news">
+                <input type="text" class="inpt_news" placeholder="Здесь была новость..">
+                <button class="btn_addnew" onclick="addNews">Добавить новость</Button>
+            </div></div>
 
-            <button class="btn_admin" id="addNews" onclick="addNews">дОБАВИТЬ</Button>
             <div class="news_content" id='newsContent'>
 
                 <div class='new_news'>
@@ -101,30 +106,31 @@
 
                 </div>
 
-               
+
 
             </div>
-            <button id="prev" class="btn_news"> prev</button> <button id="next" class="btn_news">next</button>
-
+            <div class="btns_news">
+                <button id="prev" class="btn_news">Предыдущие</button> <button id="next" class="btn_news">Следующие</button>
+            </div>
 
 
         </div>
-   
 
-    <div class="footer">
-        <div class="f_content">
-            <div class="f_block">
-                <p>2019-...</p>
-                consectetur adipisicing elit. Recusandae rem
-                quibusdam cumque saepe
-            </div>
-            <div class="f_block">
-                <p>Дизайн и front end - <a class="dev" href="https://vk.com/sashaskuki">Скуковская Александра</a>
-                </p>
-                <p>Back end - <a class="dev" href="https://vk.com/id352634005">Лагунова Мария</a> </p>
+
+        <div class="footer">
+            <div class="f_content">
+                <div class="f_block">
+                    <p>2019-...</p>
+                    consectetur adipisicing elit. Recusandae rem
+                    quibusdam cumque saepe
+                </div>
+                <div class="f_block">
+                    <p>Дизайн и front end - <a class="dev" href="https://vk.com/sashaskuki">Скуковская Александра</a>
+                    </p>
+                    <p>Back end - <a class="dev" href="https://vk.com/id352634005">Лагунова Мария</a> </p>
+                </div>
             </div>
         </div>
-</div>
 
     </div>
     <div class="modal" id="modal">
