@@ -872,6 +872,7 @@ p{
     display:none;
     width: 80%;
     height: 100%;
+    border: green solid 1px;
 }
 .admin_news{
     width: 100%;
@@ -880,4 +881,14 @@ p{
     flex-direction: row;
     align-items: flex-end;
    justify-content: flex-end;
+
+   border: blue solid 1px;
+}
+
+.admin_items{
+    height: 100px;  
+    display: flex;
+    flex-direction: column;
+    border: blue solid 1px;
+    justify-content: space-between;
 }

@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <title>Document</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <title>Новости</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
 
@@ -45,11 +46,20 @@
             <h1 class="h1_tt">
                 Здесь вы можете найти полезную информацию о предстоящих событиях, интересных фактах и о ЗОЖ глазами
                 Виктории Незгодинской в целом. </h1>
-            <div class="admin_news" id="addNews">
-               <h2 class="h2_tt">Режим администратора</h2> 
+            <div class="admin_news" id="addNews"> 
                 <div class="admin_news">
-                <input type="text" class="inpt_news" placeholder="Здесь была новость..">
-                <button class="btn_addnew" onclick="addNews">Добавить новость</Button>
+                <input type="text" class="inpt_news" placeholder="Здесь была новость.." id="inptNews">
+                <div class="admin_items">
+                    <select name="" id="selectSmile" placeholder="hfdhg">
+                        <option value=""></option>
+                        <option value="😊">😊</option>
+                        <option value="😡">😡</option>
+                        <option value="💃">💃</option>
+                        <option value="❤">❤</option>
+                    </select>
+                    <button class="btn_addnew" onclick="addNews">Добавить новость</Button>
+                </div>
+               
             </div></div>
 
             <div class="news_content" id='newsContent'>

@@ -31,24 +31,24 @@ window.onload = function () {
     }
 
 
-    document.getElementById("addNews").onclick = function () {
-        console.log('ghbdtn');
-        fetch('https://jsonplaceholder.typicode.com/posts/1', {
-            method: 'PUT',
-            body: JSON.stringify({
-                id: 2,
-                title: 'foo',
-                body: 'bar',
-                userId: 1
-            }),
-            headers: {
-                "Content-type": "application/json; charset=UTF-8"
-            }
-        })
-            .then(response => response.json())
-            .then(json => console.log(json))
+    // document.getElementById("addNews").onclick = function () {
+    //     console.log('ghbdtn');
+    //     fetch('https://jsonplaceholder.typicode.com/posts/1', {
+    //         method: 'PUT',
+    //         body: JSON.stringify({
+    //             id: 2,
+    //             title: 'foo',
+    //             body: 'bar',
+    //             userId: 1
+    //         }),
+    //         headers: {
+    //             "Content-type": "application/json; charset=UTF-8"
+    //         }
+    //     })
+    //         .then(response => response.json())
+    //         .then(json => console.log(json))
 
-    }
+    // }
 
 
     ///Поведение скрываемых при обновлении страницы
@@ -117,5 +117,13 @@ window.onload = function () {
     }
        
 
+    document.getElementById('selectSmile').onclick = function(){
+        var e = document.getElementById('selectSmile');
+        var ind = e.selectedIndex;
+        var inpt = document.getElementById('inptNews');
+        inpt.value += e.options[ind].value;
+        e.selectedIndex = 0;
+        console.log(e.options[ind].value);
+    }
 }
 
