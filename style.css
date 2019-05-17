@@ -653,7 +653,7 @@ p{
 
 .block_rew{
     margin: 50px 0 0;
-    width: 80%;
+    width: 100%;
     min-height: 880px;
     display: flex;
     flex-direction: column;
@@ -663,8 +663,9 @@ p{
 
 #userRewInpt{
     display: none;
-    width: 90%;
+    width: 80%;
     height: 150px;
+    margin: 50px 0;
 
 }
 
@@ -698,56 +699,54 @@ p{
 }
 
 .rew_list{
-    width: 100%;
-    height: 700px;
+    width: 80%;
+    height: 100%;
     border-radius: 4px;
-   
-    border: rgba(128, 128, 128, 0.466) solid 1px; 
-    
-    
-    background: rgb(245, 245, 245) ;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+   
+    margin: 40px 0 0 0;
+   flex-direction: column;
+   align-items: center; 
+    border: rgba(128, 128, 128, 0.466) solid 1px; 
+    background: #f5cfdb42; ;
 }
 
 .rew{
+    margin: 5px 0;
     width: 99%;
-    min-height: 100px;
-    border: rgba(128, 128, 128, 0.466) solid 1px;
-    background: #fdfdfd;
-    border-radius: 4px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    border: rgb(128, 128, 128) solid 1px;
+    
+    background: rgb(255, 255, 255) ;
+    border-radius: 4px;
     
 }
 
 .rew_name{
-    height: 90%;
     text-align: center;
-    width: 10%;
+    width: 15%;
     border-right: rgba(128, 128, 128, 0.103) solid 1px;
     border-radius: 4px;
+    
+    
 }
 
 .rew_text{
     
-    height: 90%;
-    width: 75%;
+    
+    width: 70%;
     border-radius: 4px;
 }
 
 .rew_date{
     
-    height: 90%;
     text-align: center;
     width: 10%;
-    
     border-left: rgba(128, 128, 128, 0.103) solid 1px;
     border-radius: 4px;
+    
 }
 
 .ask_block{
@@ -771,7 +770,7 @@ p{
 }
 
 .ask_list{
-    width: 100%;
+    width: 80%;
     height: 1000px;
     border-radius: 4px;
    
@@ -848,6 +847,7 @@ p{
     display: flex;
     flex-direction: row;
    justify-content: flex-end;
+
    
 }
 
@@ -902,6 +902,6 @@ p{
 .smile{
     width:100%;
     height: 30px; 
-    font-size: 1.1em;
+    font-size: 1em;
 
 }

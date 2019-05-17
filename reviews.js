@@ -4,31 +4,31 @@
 
 
 window.onload = function () {
-    // var a = 0;
-    // var List = [];
+     var a = 0;
+     var List = [];
      loadElem();
-    // getNews(a, a+10);
+     getRev(a, a+15);
 
-    // function loadNews(tmp) {
-    //     console.log(tmp);
-    //     var el = document.getElementById('newsContent');
-    //     el.innerHTML += '<div class="new_news"> <div class="date_news">' + tmp.id + '</div> <div class="text_news">' + tmp.body + ' </div></div>';
+     function loadRev(tmp) {
+        console.log(tmp);
+       var el = document.getElementById('revList');
+       el.innerHTML += '<div class="rew"> <div class="rew_name">' + tmp.id + '</div> <div class="rew_text">' + tmp.body + '</div> <div class="rew_date">' + tmp.id + ' </div></div>';
 
-    // }
+     }
 
-    // function getNews(a, b) {
-    //     fetch('https://jsonplaceholder.typicode.com/posts')
-    //         .then(response => response.json())
-    //         .then(json => List = json)
-    //         .then(List => {
-    //             for (var i = a; i < b; i++) {
-    //                 loadNews(List[i]);
+    function getRev(a, b) {
+        fetch('https://jsonplaceholder.typicode.com/comments')
+             .then(response => response.json())
+            .then(json => List = json)
+            .then(List => {
+             for (var i = a; i < b; i++) {
+                    loadRev(List[i]);
 
-    //             }
-    //         })
+                 }
+            })
 
 
-    // }
+     }
 
 
 
@@ -71,28 +71,28 @@ window.onload = function () {
             document.getElementById(a).style.display = "block";
     }
 
-    // document.getElementById('next').onclick = function () {
-    //     a += 10;
+    document.getElementById('next').onclick = function () {
+        a += 15;
         
-    //     a = check(a);
-    //     document.getElementById('newsContent').innerHTML = "";
-    //     getNews(a, a+10);
-    //     console.log(a, a+10);
-    // }
+        a = check(a);
+        document.getElementById('revList').innerHTML = "";
+        getRev(a, a+15);
+        console.log(a, a+15);
+    }
 
-    // document.getElementById('prev').onclick = function () {
-    //     a -= 10;
+    document.getElementById('prev').onclick = function () {
+        a -= 15;
          
-    //     a = check(a);
-    //     document.getElementById('newsContent').innerHTML = "";
-    //     getNews(a, a+10);
-    // }
+        a = check(a);
+        document.getElementById('revList').innerHTML = "";
+        getRev(a, a+15);
+    }
 
     function check(a){
         if(a < 0){
             a = 0;
-        } else if (a + 10 > List.length){    
-            a = List.length - 10;
+        } else if (a + 15 > List.length){    
+            a = List.length - 15;
         }
         
         console.log(a);
