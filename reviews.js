@@ -5,9 +5,12 @@
 
 window.onload = function () {
      var a = 0;
+     var b = 0;
      var List = [];
+     var ListAsk = [];
      loadElem();
      getRev(a, a+15);
+     getAsk(b, b+10);
 
      function loadRev(tmp) {
         console.log(tmp);
@@ -23,6 +26,38 @@ window.onload = function () {
             .then(List => {
              for (var i = a; i < b; i++) {
                     loadRev(List[i]);
+
+                 }
+            })
+
+
+     }
+
+
+     function loadAsk(tmp) {
+        console.log(tmp);
+       var el = document.getElementById('askList');
+       var innerHTML = '';
+       innerHTML +=  '<div class="q_a"><div class="q"><div class="rew_name">' ;
+       innerHTML += tmp.id;
+       innerHTML +='</div><div class="rew_text">';
+       innerHTML += tmp.body; 
+       innerHTML += '</div><div class="rew_date">';
+       innerHTML += tmp.id;
+       innerHTML +='</div></div><div class="ask">';
+       innerHTML += tmp.title;
+       innerHTML +='</div></div>';
+       el.innerHTML += innerHTML;
+
+     }
+
+    function getAsk(a, b) {
+        fetch('https://jsonplaceholder.typicode.com/posts')
+             .then(response => response.json())
+            .then(json => ListAsk = json)
+            .then(ListAsk => {
+             for (var i = a; i < b; i++) {
+                    loadAsk(ListAsk[i]);
 
                  }
             })
@@ -64,7 +99,7 @@ window.onload = function () {
             document.getElementById(a).style.display = "none";
 
     }
-
+///кнопки отзывов
     function displayBlock(a) {  ////показать
 
         if (document.getElementById(a))
@@ -87,12 +122,41 @@ window.onload = function () {
         document.getElementById('revList').innerHTML = "";
         getRev(a, a+15);
     }
+////кнопки ответов
+    document.getElementById('nextA').onclick = function () {
+        b += 10;
+        
+        b = checkB(b);
+        document.getElementById('askList').innerHTML = "";
+        getAsk(b, b+10);
+        console.log(b, b+10);
+    }
+
+    document.getElementById('prevA').onclick = function () {
+        b -= 10;
+         
+        b = checkB(b);
+        document.getElementById('askList').innerHTML = "";
+        getAsk(b, b+10);
+    }
 
     function check(a){
         if(a < 0){
             a = 0;
         } else if (a + 15 > List.length){    
             a = List.length - 15;
+        }
+        
+        console.log(a);
+        return a;
+
+    }
+
+    function checkB(a){
+        if(a < 0){
+            a = 0;
+        } else if (a + 10 > List.length){    
+            a = List.length - 10;
         }
         
         console.log(a);
