@@ -7,7 +7,18 @@ window.onload = function () {
     var a = 0;
     var List = [];
    // loadElem();
-    getPhoto(a, a+9);
+    getPhoto(a, a+12);
+    getjp();
+
+
+    function getjp() {
+        fetch('timetable.json')
+            .then(response => response.json())
+            .then(json => console.log(json))
+
+
+    }
+
 
     function loadPhoto(tmp1, tmp2, tmp3) {
         console.log(tmp1.url);
