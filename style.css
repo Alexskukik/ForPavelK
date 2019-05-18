@@ -1009,7 +1009,6 @@ p{
     /* top: 60px; 
     right: 100px; */
     width: 900px;
-    min-height: 700px;
     background: #0000000a;
     border-radius: 4px; 
     /* border: rgb(0, 0, 0) solid 1px; */
@@ -1017,9 +1016,10 @@ p{
 
   .big_photo_content img{
     max-width: none;
-  
     min-width: auto;
     min-height: auto;
+
+    object-fit: scale-down;
     
     height: 100%;
     
