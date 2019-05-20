@@ -224,18 +224,19 @@
                 <div class="h_modal">
                     <button id="close" class="btn_modal" title="Закрыть"> </button>
                 </div>
-                <div class="form_modal">
-                    <h2 class="h2_login">Вход в личный кабинет</h1>
+                
+                <h2 class="h2_login">Вход в личный кабинет</h1>
+                <form class="form_modal" action="http://diplom-fitness.herokuapp.com/j_spring_security_check">
                     
-                        <input type="text" class="login_inpt"  id="login_inpt" name="name" placeholder="Логин" method="post">
+                        <input type="text" class="login_inpt"  id="login_inpt" name="j_username" placeholder="Логин" method="post">
                         
-                        <input type="text" class="login_inpt" name="pass" placeholder="Пароль">
+                        <input type="text" class="login_inpt" name="j_password" placeholder="Пароль">
 
-                        <button class="btn_form" id="btnTryLogin"> Войти</button> 
+                        <button class="btn_form" id="btnTryLogin" type="submit"> Войти</button> 
                         
                     
 
-                </div>
+                </form>
 
                 <div class="f_modal">
                         <a id="btnReg" href="reg.html">Регистрация</a>

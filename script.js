@@ -77,11 +77,15 @@ var login;
 var status;
 var tryLogin = document.getElementById("btnTryLogin");
 tryLogin.onclick = function () {
+
     var load = function(){
         fetch('http://diplom-fitness.herokuapp.com/myroles.json')
     .then(response => response.json())
     .then(data => console.log(data))
     }
+
+    load;
+
     login = document.getElementById("login_inpt").value;  //тут Машка что-то пришлет
     if (login === 'admin') {       //ЕСли админ
         sessionStorage.setItem('user', 'admin');
