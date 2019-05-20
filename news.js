@@ -12,12 +12,12 @@ window.onload = function () {
     function loadNews(tmp) {
         console.log(tmp);
         var el = document.getElementById('newsContent');
-        el.innerHTML += '<div class="new_news"> <div class="date_news">' + tmp.id + '</div> <div class="text_news">' + tmp.body + ' </div></div>';
+        el.innerHTML += '<div class="new_news"> <div class="date_news">' + tmp.date + '</div> <div class="text_news">' + tmp.body + ' </div></div>';
 
     }
 
     function getNews(a, b) {
-        fetch('https://jsonplaceholder.typicode.com/posts')
+        fetch('https://api.myjson.com/bins/e06u2')
             .then(response => response.json())
             .then(json => List = json)
             .then(List => {
