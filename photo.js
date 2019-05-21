@@ -6,7 +6,7 @@
 window.onload = function () {
     var a = 0;
     var List = [];
-    // loadElem();
+     loadElem();
     getPhoto(a, a + 12);
 
 
