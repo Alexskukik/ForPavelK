@@ -8,6 +8,7 @@ window.onload = function () {
     var List = [];
     loadElem();
     getNews(a, a+10);
+    //addNew();
 
     function loadNews(tmp) {
         console.log(tmp);
@@ -17,7 +18,7 @@ window.onload = function () {
     }
 
     function getNews(a, b) {
-        fetch('https://api.myjson.com/bins/e06u2')
+        fetch('https://api.myjson.com/bins/sd99i')
             .then(response => response.json())
             .then(json => List = json)
             .then(List => {
@@ -31,24 +32,24 @@ window.onload = function () {
     }
 
 
-    // document.getElementById("addNews").onclick = function () {
-    //     console.log('ghbdtn');
-    //     fetch('https://jsonplaceholder.typicode.com/posts/1', {
-    //         method: 'PUT',
-    //         body: JSON.stringify({
-    //             id: 2,
-    //             title: 'foo',
-    //             body: 'bar',
-    //             userId: 1
-    //         }),
-    //         headers: {
-    //             "Content-type": "application/json; charset=UTF-8"
-    //         }
-    //     })
-    //         .then(response => response.json())
-    //         .then(json => console.log(json))
+    /*  function addNew() {
+         var l = List.length;
 
-    // }
+         console.log(l);
+         fetch('https://api.myjson.com/bins/e06u2', {
+             method: "POST",
+             body: JSON.stringify({
+                body: "bar",
+                date: 1
+             }),
+             headers: {
+               "Content-type": "application/json; charset=UTF-8"
+             }
+         })
+             .then(response => response.json())
+             .then(json => console.log(json))
+
+     } */
 
 
     ///Поведение скрываемых при обновлении страницы

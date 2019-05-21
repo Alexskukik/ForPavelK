@@ -6,21 +6,22 @@
 window.onload = function () {
      var a = 0;
      var b = 0;
+     var str1 = 0;
      var List = [];
      var ListAsk = [];
      loadElem();
-     getRev(a, a+15);
+     getRev(a, a+10);
      getAsk(b, b+10);
 
      function loadRev(tmp) {
         console.log(tmp);
        var el = document.getElementById('revList');
-       el.innerHTML += '<div class="rew"> <div class="rew_name">' + tmp.id + '</div> <div class="rew_text">' + tmp.body + '</div> <div class="rew_date">' + tmp.id + ' </div></div>';
+       el.innerHTML += '<div class="rew"> <div class="rew_name">' + tmp.name + '</div> <div class="rew_text">' + tmp.body + '</div> <div class="rew_date">' + tmp.date + ' </div></div>';
 
      }
 
     function getRev(a, b) {
-        fetch('https://jsonplaceholder.typicode.com/comments')
+        fetch('https://api.myjson.com/bins/vzrke')
              .then(response => response.json())
             .then(json => List = json)
             .then(List => {
@@ -39,20 +40,20 @@ window.onload = function () {
        var el = document.getElementById('askList');
        var innerHTML = '';
        innerHTML +=  '<div class="q_a"><div class="q"><div class="rew_name">' ;
-       innerHTML += tmp.id;
+       innerHTML += tmp.name;
        innerHTML +='</div><div class="rew_text">';
-       innerHTML += tmp.body; 
+       innerHTML += tmp.q; 
        innerHTML += '</div><div class="rew_date">';
-       innerHTML += tmp.id;
+       innerHTML += tmp.date;
        innerHTML +='</div></div><div class="ask">';
-       innerHTML += tmp.title;
+       innerHTML += tmp.ask;
        innerHTML +='</div></div>';
        el.innerHTML += innerHTML;
 
      }
 
     function getAsk(a, b) {
-        fetch('https://jsonplaceholder.typicode.com/posts')
+        fetch('https://api.myjson.com/bins/vecqe')
              .then(response => response.json())
             .then(json => ListAsk = json)
             .then(ListAsk => {
@@ -107,20 +108,21 @@ window.onload = function () {
     }
 
     document.getElementById('next').onclick = function () {
-        a += 15;
+        a += 10;
+
         
         a = check(a);
         document.getElementById('revList').innerHTML = "";
-        getRev(a, a+15);
-        console.log(a, a+15);
+        getRev(a, a+10);
+        console.log(a, a+10);
     }
 
     document.getElementById('prev').onclick = function () {
-        a -= 15;
+        a -= 10;
          
         a = check(a);
         document.getElementById('revList').innerHTML = "";
-        getRev(a, a+15);
+        getRev(a, a+10);
     }
 ////кнопки ответов
     document.getElementById('nextA').onclick = function () {
