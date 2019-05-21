@@ -33,6 +33,8 @@ var close = document.getElementById("close"); ///кнопка закрыть
 
 ///нажимаем на кнопку войти
 btnLogin.onclick = function () { 
+    
+    
     if(sessionStorage.getItem('user')){    ///Если пользователь уже вошел то выйти
         sessionStorage.clear();    ///очищаем память сессии
         btnLogin.innerText = 'Вoйти';   ///меняем надпись
@@ -76,16 +78,28 @@ var dostup;
 var login;
 var status;
 var tryLogin = document.getElementById("btnTryLogin");
+
+/* function submitForm(e, form){
+    e.preventDefault();
+    
+    fetch('file.php', {
+      method: 'post',
+      body: JSON.stringify({j_username: form.j_username.value, j_password: form.j_password.value})
+    }).then(response => response.json())
+    .then(json => alert(json))
+}*/
 tryLogin.onclick = function () {
+    console.log(sessionStorage.getItem('rule')); 
 
     var load = function(){
-        fetch('http://diplom-fitness.herokuapp.com/myroles.json')
-    .then(response => response.json())
-    .then(data => console.log(data))
+        fetch('https://diplom-fitness.herokuapp.com/myroles.json')
+        .then(response => response.json())
+       .then(json => sessionStorage.setItem('rule', json.status))
     }
-
-    load;
-
+    
+    load();
+    
+    
     login = document.getElementById("login_inpt").value;  //тут Машка что-то пришлет
     if (login === 'admin') {       //ЕСли админ
         sessionStorage.setItem('user', 'admin');
