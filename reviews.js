@@ -11,7 +11,7 @@ window.onload = function () {
      var ListAsk = [];
      loadElem();
      getRev(a, a+10);
-     getAsk(b, b+10);
+     getAsk(b, b+5);
 
      function loadRev(tmp) {
         console.log(tmp);
@@ -113,6 +113,8 @@ window.onload = function () {
         
         a = check(a);
         document.getElementById('revList').innerHTML = "";
+        
+        document.getElementById('str1').innerHTML = (a + 1) + "..." + (a + 10);
         getRev(a, a+10);
         console.log(a, a+10);
     }
@@ -122,31 +124,35 @@ window.onload = function () {
          
         a = check(a);
         document.getElementById('revList').innerHTML = "";
+        document.getElementById('str1').innerHTML = (a + 1) + "..." + (a + 10);
         getRev(a, a+10);
     }
 ////кнопки ответов
     document.getElementById('nextA').onclick = function () {
-        b += 10;
+        b += 5;
         
         b = checkB(b);
         document.getElementById('askList').innerHTML = "";
-        getAsk(b, b+10);
-        console.log(b, b+10);
+        document.getElementById('str2').innerHTML = (b + 1) + "..." + (b + 5);
+        getAsk(b, b+5);
+        console.log(b, b+5);
     }
 
     document.getElementById('prevA').onclick = function () {
-        b -= 10;
+        b -= 5;
          
         b = checkB(b);
         document.getElementById('askList').innerHTML = "";
-        getAsk(b, b+10);
+        
+        document.getElementById('str2').innerHTML = (b + 1) + "..." + (b + 5);
+        getAsk(b, b+5);
     }
 
     function check(a){
         if(a < 0){
             a = 0;
-        } else if (a + 15 > List.length){    
-            a = List.length - 15;
+        } else if (a + 10 > List.length){    
+            a = List.length - 10;
         }
         
         console.log(a);
@@ -157,8 +163,9 @@ window.onload = function () {
     function checkB(a){
         if(a < 0){
             a = 0;
-        } else if (a + 10 > List.length){    
-            a = List.length - 10;
+        } else if (a + 5 > ListAsk.length){    
+            a = ListAsk.length - 5;
+            
         }
         
         console.log(a);
