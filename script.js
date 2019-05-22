@@ -31,6 +31,18 @@ var modal = document.getElementById("modal");
 var btnLogin = document.getElementById('btnLogin'); ///кнопка логин
 var close = document.getElementById("close"); ///кнопка закрыть
 
+load();
+function load() {
+    fetch('https://diplom-fitness.herokuapp.com/myroles.json')
+        .then(response => response.json())
+        .then(json => {
+            console.log("В стор");
+            (sessionStorage.setItem('roles', json.user))
+            console.log("This all:" + sessionStorage.getItem('roles'))
+        })
+
+    console.log("Функция load complete");
+}
 ///нажимаем на кнопку войти
 btnLogin.onclick = function () { 
     
@@ -91,13 +103,6 @@ var tryLogin = document.getElementById("btnTryLogin");
 tryLogin.onclick = function () {
    // console.log(sessionStorage.getItem('rule')); 
 
-    var load = function(){
-        fetch('https://diplom-fitness.herokuapp.com/myroles.json')
-        .then(response => response.json())
-       .then(json => sessionStorage.setItem('rule', json))
-    }
-    
-    load();
     
     
     login = document.getElementById("login_inpt").value;  //тут Машка что-то пришлет
