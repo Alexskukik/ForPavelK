@@ -89,12 +89,12 @@ var tryLogin = document.getElementById("btnTryLogin");
     .then(json => alert(json))
 }*/
 tryLogin.onclick = function () {
-    console.log(sessionStorage.getItem('rule')); 
+   // console.log(sessionStorage.getItem('rule')); 
 
     var load = function(){
         fetch('https://diplom-fitness.herokuapp.com/myroles.json')
         .then(response => response.json())
-       .then(json => sessionStorage.setItem('rule', json.status))
+       .then(json => sessionStorage.setItem('rule', json))
     }
     
     load();
