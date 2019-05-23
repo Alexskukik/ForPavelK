@@ -6,25 +6,14 @@ window.onload = function () {
 
     loadElem();
 
-    l();
-    function l() {
-       
-    var sd;
-    
-        fetch('https://diplom-fitness.herokuapp.com/valid.json')
-            .then(response => response.json())
-            .then(status => {
-                console.log(status);
-            })
-    
-    }
+   
 
     load();
     function load() {
        
     
     
-        fetch('https://diplom-fitness.herokuapp.com/whoami.json')
+        fetch('whoami.json')
             .then(response => response.json())
             .then(json => {
                 console.log(json.status);
