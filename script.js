@@ -36,7 +36,7 @@ function load() {
    
 
 
-    fetch('https://diplom-fitness.herokuapp.com/whoami.json')
+    fetch('whoami.json')
         .then(response => response.json())
         .then(json => {
             console.log(json.status);
