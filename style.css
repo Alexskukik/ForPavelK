@@ -601,6 +601,7 @@ p{
   transition: all .3s;
   
   scroll-behavior: smooth;
+
 }
 
 .anchor:hover{
@@ -988,7 +989,7 @@ p{
 }
 
 .photo_block:hover{
-    
+    transition: 0.5s;
     padding: 0px;
     width: 360px;
     height: 360px;
@@ -996,6 +997,7 @@ p{
 }
 
 .modal_photo{
+    
     display: none;
     
     position: fixed;

@@ -33,12 +33,12 @@ var close = document.getElementById("close"); ///кнопка закрыть
 
 load();
 function load() {
-    fetch('https://diplom-fitness.herokuapp.com/myroles.json')
+    fetch('https://diplom-fitness.herokuapp.com/whoami.json')
         .then(response => response.json())
         .then(json => {
             console.log("В стор");
-            (sessionStorage.setItem('roles', json.user))
-            console.log("This all:" + sessionStorage.getItem('roles'))
+            (sessionStorage.setItem('status', json.status))
+            console.log("This role:" + sessionStorage.getItem('status'))
         })
 
     console.log("Функция load complete");
