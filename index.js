@@ -11,7 +11,7 @@ window.onload = function () {
 
     function loadElem() {
 
-        console.log("This:" + sessionStorage.getItem('roles'));
+       // console.log("This:" + sessionStorage.getItem('status'));
         //console.log(sessionStorage.getItem('user'));
         if (sessionStorage.getItem('user'))  //если кто-то авторизован
         {

@@ -33,7 +33,12 @@ var close = document.getElementById("close"); ///кнопка закрыть
 
 load();
 function load() {
-    fetch('https://diplom-fitness.herokuapp.com/whoami.json')
+    var myInit = { method: 'GET',
+               mode: 'no-cors',
+               cache: 'default' };
+
+var myRequest = new Request('https://diplom-fitness.herokuapp.com/whoami.json', myInit);
+    fetch(myRequest)
         .then(response => response.json())
         .then(json => {
             console.log("В стор");
@@ -43,6 +48,8 @@ function load() {
 
     console.log("Функция load complete");
 }
+
+console.log("This:" + sessionStorage.getItem('status'));
 ///нажимаем на кнопку войти
 btnLogin.onclick = function () { 
     
