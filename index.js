@@ -6,7 +6,21 @@ window.onload = function () {
 
     loadElem();
 
-  
+    load();
+    function load() {
+       
+    
+    
+        fetch('https://diplom-fitness.herokuapp.com/whoami.json')
+            .then(response => response.json())
+            .then(json => {
+                console.log(json.status);
+                (sessionStorage.setItem('status', json.status))
+                console.log("This role:" + sessionStorage.getItem('status'))
+            })
+    
+        console.log("Функция load complete");
+    }
     
 
     function loadElem() {
