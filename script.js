@@ -31,33 +31,40 @@ var modal = document.getElementById("modal");
 var btnLogin = document.getElementById('btnLogin'); ///кнопка логин
 var close = document.getElementById("close"); ///кнопка закрыть
 
-load();
-function load() {
+getStatus();
+
+
+
+
+function getStatus() {
    
-
-
-    fetch('whoami.json')
+    fetch('http://diplom-fitness.herokuapp.com/whoami.json')
         .then(response => response.json())
         .then(json => {
-            console.log(json.status);
             (sessionStorage.setItem('status', json.status))
-            console.log("This role:" + sessionStorage.getItem('status'))
+            (sessionStorage.setItem('userName', json.name))
+            console.log("role:" + sessionStorage.getItem('status'))
         })
 
     console.log("Функция load complete");
 }
 
+
+function hello(){
+    if(sessionStorage.getItem('status')){
+        
+    }
+}
+
+
 ///нажимаем на кнопку войти
-btnLogin.onclick = function () { 
+ btnLogin.onclick = function () { 
     
-    
-    if(sessionStorage.getItem('user')){    ///Если пользователь уже вошел то выйти
+    if(sessionStorage.getItem('status')){    ///Если пользователь уже вошел то выйти
         sessionStorage.clear();    ///очищаем память сессии
         btnLogin.innerText = 'Вoйти';   ///меняем надпись
-        displayNone("setTimetable");
-        displayNone("addNews");  //скрываем элементы управления
-        displayNone("userRewInpt");
-       
+        window.location.href='logout';//выходим
+        displayNone("addNews");  //скрываем элементы управления);      
     } else {
         document.getElementById("login_inpt").value = "";  ///если еще никто не авторизован
         modal.style.display = "block";  ///отображаем модалку
@@ -73,10 +80,10 @@ var clearModal = function(){  //// очищаем данные в модалке
     modal.style.display = "none";
 
 }
-
+ 
 //Функции отображения элементов
 
-var displayNone = function(a){ ////скрыть
+/* var displayNone = function(a){ ////скрыть
     if(document.getElementById(a))
     document.getElementById(a).style.display = "none";  
     
@@ -86,14 +93,10 @@ var displayBlock = function(a){  ////показать
     
     if(document.getElementById(a))
     document.getElementById(a).style.display = "block";  
-}
+} */
 
 
 ///Авторизация
-var dostup;
-var login;
-var status;
-var tryLogin = document.getElementById("btnTryLogin");
 
 /* function submitForm(e, form){
     e.preventDefault();
@@ -104,38 +107,6 @@ var tryLogin = document.getElementById("btnTryLogin");
     }).then(response => response.json())
     .then(json => alert(json))
 }*/
-tryLogin.onclick = function () {
-   // console.log(sessionStorage.getItem('rule')); 
-
-    
-    
-    login = document.getElementById("login_inpt").value;  //тут Машка что-то пришлет
-    if (login === 'admin') {       //ЕСли админ
-        sessionStorage.setItem('user', 'admin');
-        btnLogin.innerText = 'Выйти'; 
-        displayBlock("setTimetable");
-        displayBlock("addNews");   
-        clearModal();
-    }
-
-    else if (login === 'user') { //ЕСли юзер
-        sessionStorage.setItem('user', 'user');
-        btnLogin.innerText = 'Выйти';
-        displayBlock("userRewInpt");     
-        displayNone("setTimetable"); 
-        displayNone("addNews");  
-        clearModal();
-    }
-    else                            //Если нет такого
-    {          
-        displayNone("setTimetable"); 
-        displayNone("addNews");     
-        displayNone("userRewInpt");
-        alert("Что-то пошло не так");
-    }
-
-    alert( "Вы зашли как " + sessionStorage.getItem('user'));
-}
 
 
 
