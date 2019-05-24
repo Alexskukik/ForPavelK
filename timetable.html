@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="icon" href="favicon.ico" type="image/x-icon"><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <title>Расписание</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -18,26 +19,26 @@
 
     <div class="main">
 
-            <div class="header">
-                    <div class="h_content">
-                        <div class="h_first_content">
-                            <a href="index.html" class="h_link">Главная</a>
-                            <a href="training.html" class="h_link">Тренировки</a>
-                            <a href="timetable.html" class="h_link">Расписание</a>
-                            <a href="news.html" class="h_link">Новости</a>
-                            <a href="photo.html" class="h_link">Фото</a>
-                            <a href="reviews.html" class="h_link">Отзывы</a>
-                            <a href="price.html" class="h_link" id="adminFu" >Еще..</a>
-        
-                        </div>
-        
-                        <div class="h_second_content">
-                            <button class="btn_login" id="btnLogin" value = "Войти"> Войти</button>
-                        </div>
-        
-                    </div>
-        
+        <div class="header">
+            <div class="h_content">
+                <div class="h_first_content">
+                    <a href="index.html" class="h_link">Главная</a>
+                    <a href="training.html" class="h_link">Тренировки</a>
+                    <a href="timetable.html" class="h_link">Расписание</a>
+                    <a href="news.html" class="h_link">Новости</a>
+                    <a href="photo.html" class="h_link">Фото</a>
+                    <a href="reviews.html" class="h_link">Отзывы</a>
+                    <a href="price.html" class="h_link" id="adminFu">Еще..</a>
+
                 </div>
+
+                <div class="h_second_content">
+                    <button class="btn_login" id="btnLogin" value="Войти"> Войти</button>
+                </div>
+
+            </div>
+
+        </div>
 
         <div class="content">
 
@@ -45,58 +46,50 @@
                 Здесь представлено расписание занятий на неделю.</h1>
             <h2 class="h2_tt">
                 Следите за изменениями, расписание может меняться в течение недели!</h2>
-            <a href="https://docs.google.com/spreadsheets/d/1qb7PXVOA_KnIkvzZ6Ke1hVPj4BPl4qCknZHAjM41544/edit#gid=0" id="setTimetable" class="btn_admin">
+            <a href="https://docs.google.com/spreadsheets/d/1qb7PXVOA_KnIkvzZ6Ke1hVPj4BPl4qCknZHAjM41544/edit#gid=0" id="setTimetable"
+                class="btn_admin">
                 Изменить расписание</a>
 
             <iframe class="timetable" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSaP-Jv-jCmjeiAqtw-6FZF-f2yvoExzPEs64g8T-uuSk78bHu8CW9zqBkvZIWBKVzD5BGN52NvzetS/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
 
             <div class="footer">
-                    <div class="f_content">
-                        <div class="f_block">
-                            <p>2019-...</p>
-                            consectetur adipisicing elit. Recusandae rem
-                            quibusdam cumque saepe
-                        </div>
-                        <div class="f_block">
-                            <p>Дизайн и front end - <a class="dev" href="https://vk.com/sashaskuki">Скуковская Александра</a>
-                            </p>
-                            <p>Back end - <a class="dev" href="https://vk.com/id352634005">Лагунова Мария</a> </p>
-                        </div>
+                <div class="f_content">
+                    <div class="f_block">
+                        <p>2019-...</p>
+                        consectetur adipisicing elit. Recusandae rem
+                        quibusdam cumque saepe
+                    </div>
+                    <div class="f_block">
+                        <p>Дизайн и front end - <a class="dev" href="https://vk.com/sashaskuki">Скуковская Александра</a>
+                        </p>
+                        <p>Back end - <a class="dev" href="https://vk.com/id352634005">Лагунова Мария</a> </p>
                     </div>
                 </div>
+            </div>
         </div>
 
-        
+
         <div class="modal" id="modal">
-
-
             <div class="modal_login">
-
                 <div class="modal_content">
+
                     <div class="h_modal">
                         <button id="close" class="btn_modal" title="Закрыть"> </button>
                     </div>
-                    <div class="form_modal">
-                        <h2 class="h2_login">Вход в личный кабинет</h1>
 
-                            <input type="text" class="login_inpt" id="login_inpt" name="name" placeholder="Логин"
+                    <h2 class="h2_login">Вход в личный кабинет</h1>
+
+                        <form class="form_modal" action="j_spring_security_check" method="post">
+                            <input type="text" class="login_inpt" id="login_inpt" name="j_username" placeholder="Логин"
                                 method="post">
+                            <input type="text" class="login_inpt" name="j_password" placeholder="Пароль">
+                            <button class="btn_form" id="btnTryLogin" type="submit"> Войти</button>
+                        </form>
 
-                            <input type="text" class="login_inpt" name="pass" placeholder="Пароль">
-
-                            <button class="btn_form" id="btnTryLogin"> Войти</button>
-
-
-
-                    </div>
-
-                    <div class="f_modal">
-                        <a id="btnReg" href="reg.html">Регистрация</a>
-
-                    </div>
-
+                        <div class="f_modal">
+                            <a id="btnReg" href="reg.html">Регистрация</a>
+                        </div>
                 </div>
-
             </div>
         </div>
 

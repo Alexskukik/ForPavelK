@@ -5,8 +5,8 @@
 
 window.onload = function(){
     
-    console.log(sessionStorage.getItem('user'));
-    if(sessionStorage.getItem('user'))  //если кто-то авторизован
+    console.log(sessionStorage.getItem('status'));
+    if(sessionStorage.getItem('status'))  //если кто-то авторизован
     {
         btnLogin.innerText = 'Выйти';
     }
@@ -14,13 +14,12 @@ window.onload = function(){
         btnLogin.innerText = 'Вoйти';
     }
 
-    if(sessionStorage.getItem('user') === "admin")  //авторизован админ
+    if(sessionStorage.getItem('status') === "ADMIN")  //авторизован админ
     {       
         displayBlock("setTimetable");  
-        // displayBlock("addNews"); 
-    } else if(sessionStorage.getItem('user') === "user")  //авторизоавн юзер
+    } else if(sessionStorage.getItem('status') === "ADMIN")  //авторизоавн юзер
     {   
-        // displayBlock("userRewInpt");
+        displayNone("setTimetable");
     }
 }
 

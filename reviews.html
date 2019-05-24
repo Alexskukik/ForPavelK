@@ -122,36 +122,28 @@
 
    
     <div class="modal" id="modal">
-
-
-        <div class="modal_login">
-
-            <div class="modal_content">
-                <div class="h_modal">
-                    <button id="close" class="btn_modal" title="Закрыть"> </button>
-                </div>
-                <div class="form_modal">
+            <div class="modal_login">
+                <div class="modal_content">
+    
+                    <div class="h_modal">
+                        <button id="close" class="btn_modal" title="Закрыть"> </button>
+                    </div>
+    
                     <h2 class="h2_login">Вход в личный кабинет</h1>
-
-                        <input type="text" class="login_inpt" id="login_inpt" name="name" placeholder="Логин" method="post">
-
-                        <input type="text" class="login_inpt" name="pass" placeholder="Пароль">
-
-                        <button class="btn_form" id="btnTryLogin"> Войти</button>
-
-
-
+    
+                        <form class="form_modal" action="j_spring_security_check" method="post">
+                            <input type="text" class="login_inpt" id="login_inpt" name="j_username" placeholder="Логин"
+                                method="post">
+                            <input type="text" class="login_inpt" name="j_password" placeholder="Пароль">
+                            <button class="btn_form" id="btnTryLogin" type="submit"> Войти</button>
+                        </form>
+    
+                        <div class="f_modal">
+                            <a id="btnReg" href="reg.html">Регистрация</a>
+                        </div>
                 </div>
-
-                <div class="f_modal">
-                    <a id="btnReg" href="reg.html">Регистрация</a>
-
-                </div>
-
             </div>
-
         </div>
-    </div>
 
     <script src="reviews.js"></script>
     <script src="script.js"></script>

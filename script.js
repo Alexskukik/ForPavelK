@@ -44,7 +44,7 @@ function getStatus() {
         .then(response => {
             if (response.status != 200) {
                 sessionStorage.clear();
-                console.log("be");
+                console.log("Еrror!");
                 return;
             }
             response.json()

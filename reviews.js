@@ -73,23 +73,23 @@ window.onload = function () {
 
     function loadElem() {
 
-        console.log(sessionStorage.getItem('user'));
-        if (sessionStorage.getItem('user'))  //если кто-то авторизован
+        console.log(sessionStorage.getItem('status'));
+        if (sessionStorage.getItem('status'))  //если кто-то авторизован
         {
             btnLogin.innerText = 'Выйти';
-            console.log(sessionStorage.getItem('user'));
+            console.log(sessionStorage.getItem('status'));
         }
         else {
             btnLogin.innerText = 'Вoйти'; 
             console.log('neout');
         }
 
-        if (sessionStorage.getItem('user') === "user")  //авторизован админ
+        if (sessionStorage.getItem('status') === "USER")  //авторизован админ
         {
             displayBlock("userRewInpt");
-        } else if (sessionStorage.getItem('user') === "admin")  //авторизоавн юзер
+        } else if (sessionStorage.getItem('status') === "ADMIN")  //авторизоавн юзер
         {
-            // displayBlock("userRewInpt");
+            displayNone("userRewInpt");
         }
     }
 
