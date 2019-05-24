@@ -28,7 +28,6 @@ $(function () {
 
 ///Модальное окно
 var modal = document.getElementById("modal");
-var btnLogin = document.getElementById('btnLogin'); ///кнопка логин
 var close = document.getElementById("close"); ///кнопка закрыть
 
 getStatus();
@@ -45,8 +44,6 @@ function getStatus() {
             (sessionStorage.setItem('userName', json.name))
             console.log("role:" + sessionStorage.getItem('status'))
         })
-
-    console.log("Функция load complete");
 }
 
 
@@ -58,8 +55,8 @@ function hello(){
 
 
 ///нажимаем на кнопку войти
- btnLogin.onclick = function () { 
-    
+document.getElementById('btnLogin').onclick = function () { 
+
     if(sessionStorage.getItem('status')){    ///Если пользователь уже вошел то выйти
         sessionStorage.clear();    ///очищаем память сессии
         btnLogin.innerText = 'Вoйти';   ///меняем надпись
