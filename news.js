@@ -32,32 +32,12 @@ window.onload = function () {
     }
 
 
-    /*  function addNew() {
-         var l = List.length;
-
-         console.log(l);
-         fetch('https://api.myjson.com/bins/e06u2', {
-             method: "POST",
-             body: JSON.stringify({
-                body: "bar",
-                date: 1
-             }),
-             headers: {
-               "Content-type": "application/json; charset=UTF-8"
-             }
-         })
-             .then(response => response.json())
-             .then(json => console.log(json))
-
-     } */
-
-
     ///Поведение скрываемых при обновлении страницы
 
     function loadElem() {
 
-        console.log(sessionStorage.getItem('user'));
-        if (sessionStorage.getItem('user'))  //если кто-то авторизован
+        console.log(sessionStorage.getItem('status'));
+        if (sessionStorage.getItem('status'))  //если кто-то авторизован
         {
             btnLogin.innerText = 'Выйти';
         }
@@ -65,12 +45,12 @@ window.onload = function () {
             btnLogin.innerText = 'Вoйти';
         }
 
-        if (sessionStorage.getItem('user') === "admin")  //авторизован админ
+        if (sessionStorage.getItem('status') === "ADMIN")  //авторизован админ
         {
             displayBlock("addNews");
-        } else if (sessionStorage.getItem('user') === "user")  //авторизоавн юзер
+        } else if (sessionStorage.getItem('status') === "USER")  //авторизоавн юзер
         {
-            // displayBlock("userRewInpt");
+            displayNone("addNews");
         }
     }
 
