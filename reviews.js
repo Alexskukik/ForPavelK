@@ -89,7 +89,7 @@ window.onload = function () {
             displayBlock("userRewInpt");
         } else if (sessionStorage.getItem('status') === "ADMIN")  //авторизоавн юзер
         {
-            displayNone("userRewInpt");
+            
         }
     }
 

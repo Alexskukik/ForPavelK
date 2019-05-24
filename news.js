@@ -50,7 +50,7 @@ window.onload = function () {
             displayBlock("addNews");
         } else if (sessionStorage.getItem('status') === "USER")  //авторизоавн юзер
         {
-            displayNone("addNews");
+           // displayNone("addNews");
         }
     }
 

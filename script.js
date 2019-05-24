@@ -71,7 +71,7 @@ document.getElementById('btnLogin').onclick = function () {
     if (sessionStorage.getItem('status')) {    ///Если пользователь уже вошел то выйти
         sessionStorage.clear();    ///очищаем память сессии
         btnLogin.innerText = 'Вoйти';   ///меняем надпись
-        window.location.href = 'logout';//выходим
+       // window.location.href = 'logout';//выходим
         displayNone("addNews");  //скрываем элементы управления);      
     } else {
         document.getElementById("login_inpt").value = "";  ///если еще никто не авторизован
