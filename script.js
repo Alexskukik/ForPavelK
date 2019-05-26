@@ -70,6 +70,8 @@ document.getElementById('btnLogin').onclick = function () {
 
     if (sessionStorage.getItem('status')) {    ///Если пользователь уже вошел то выйти
         sessionStorage.clear();
+        
+        console.log('clear');
         console.log(sessionStorage.getItem('status'));    ///очищаем память сессии
         btnLogin.innerText = 'Вoйти';   ///меняем надпись
         window.location.href = 'logout';//выходим
