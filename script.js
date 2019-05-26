@@ -49,7 +49,7 @@ function getStatus() {
             }
             response.json()
                 .then(data => {
-                   // console.log(data);
+                   console.log(data);
                     (sessionStorage.setItem('status', data.status));
                     (sessionStorage.setItem('userName', data.firstName));
                 })
@@ -69,10 +69,11 @@ function hello() {
 document.getElementById('btnLogin').onclick = function () {
 
     if (sessionStorage.getItem('status')) {    ///Если пользователь уже вошел то выйти
-        sessionStorage.clear();    ///очищаем память сессии
+        sessionStorage.clear();
+        console.log(sessionStorage.getItem('status'));    ///очищаем память сессии
         btnLogin.innerText = 'Вoйти';   ///меняем надпись
         window.location.href = 'logout';//выходим
-        displayNone("addNews");  //скрываем элементы управления);      
+     //скрываем элементы управления);      
     } else {
         document.getElementById("login_inpt").value = "";  ///если еще никто не авторизован
         modal.style.display = "block";  ///отображаем модалку
