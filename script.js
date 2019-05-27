@@ -40,7 +40,7 @@ function getStatus() {
 
 
 
-    fetch('whoime.json')
+    fetch('whoame.json')
         .then(response => {
             if (response.status != 200) {
                 sessionStorage.clear();
