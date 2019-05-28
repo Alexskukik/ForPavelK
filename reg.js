@@ -1,4 +1,4 @@
-/* 
+
 document.getElementById('btnReg').onsubmit = function(){
 
  console.log('пись');
@@ -21,7 +21,7 @@ document.getElementById('btnReg').onsubmit = function(){
   })
   .then(response => console.log('регистрация: ' + response.status))
   //.then(json => console.log(json))
-} */
+} 
 
 window.onload = function(){
 
