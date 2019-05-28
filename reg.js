@@ -1,5 +1,5 @@
 
-document.getElementById('btnReg').onclick = function(){
+document.getElementById('btnReg').onsubmit = function(){
 
 
 
