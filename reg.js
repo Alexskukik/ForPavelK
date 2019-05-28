@@ -1,4 +1,4 @@
-
+/* 
 document.getElementById('btnReg').onsubmit = function(){
 
  console.log('пись');
@@ -8,12 +8,12 @@ document.getElementById('btnReg').onsubmit = function(){
     fetch('register.html', {
     method: 'POST',
     body: JSON.stringify({
-     firstName: document.getElementsByName('firstName'),
-     lastName: document.getElementsByName('lastName'),
-     email: document.getElementsByName('email'),
-     city: document.getElementsByName('city'),
-     login: document.getElementsByName('login'),
-     password: document.getElementsByName('password')
+     firstName: document.getElementsByName('firstname').values,
+     lastName: document.getElementsByName('lastname').values,
+     email: document.getElementsByName('email').values,
+     city: document.getElementsByName('city').values,
+     login: document.getElementsByName('login').values,
+     password: document.getElementsByName('password').values
     }),
     headers: {
       "Content-type": "application/json; charset=UTF-8"
@@ -21,7 +21,7 @@ document.getElementById('btnReg').onsubmit = function(){
   })
   .then(response => console.log('регистрация: ' + response.status))
   //.then(json => console.log(json))
-}
+} */
 
 window.onload = function(){
 
