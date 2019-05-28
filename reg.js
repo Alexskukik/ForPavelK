@@ -22,3 +22,17 @@ document.getElementById('btnReg').onsubmit = function(){
   .then(response => console.log('регистрация: ' + response.status))
   //.then(json => console.log(json))
 }
+
+window.onload = function(){
+
+regStatus();
+
+
+
+    function regStatus() {
+        fetch('register.html')
+            .then(response => console.log('регистрация2: ' + response.status))
+
+
+    }
+}
