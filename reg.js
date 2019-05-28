@@ -19,6 +19,6 @@ document.getElementById('btnReg').onsubmit = function(){
       "Content-type": "application/json; charset=UTF-8"
     }
   })
-  .then(response => console.log(response.status))
+  .then(response => console.log('регистрация: ' + response.status))
   //.then(json => console.log(json))
 }
