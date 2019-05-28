@@ -1,7 +1,7 @@
 
 document.getElementById('btnReg').onsubmit = function(){
 
-
+ console.log('пись');
 
 
 
