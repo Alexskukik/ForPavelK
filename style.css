@@ -1047,3 +1047,12 @@ p{
       padding: 5px;
   }
 
+
+  .del{
+      display: none;
+      width: 15px;
+      height: 15px;
+      background: #d65656;
+      border-radius: 3px;
+    }
+
