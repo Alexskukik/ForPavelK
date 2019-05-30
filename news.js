@@ -30,15 +30,9 @@ window.onload = function () {
 
             if (confirm('Вы уверены, что хотите удалить запись?') == true) {
                 console.log(tmp.id);
-                fetch('/news.del', {
-                    method: 'POST',
-                    body: JSON.stringify({
-                        id: tmp.id
-                    }),
-                    headers: {
-                        "Content-type": "application/json; charset=UTF-8"
-                    }
-                })
+                fetch(`/news.del?id=${tmp.id}`, {
+                    method: 'POST'})
+                    .then(response => console.log(response.status))
             }
         }
 
