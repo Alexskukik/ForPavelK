@@ -836,7 +836,7 @@ p{
 }
 
 .date_news{
-    width: 10%;
+    width: 15%;
     
     padding: 10px;
     background: rgba(243, 243, 243, 0.486);
@@ -844,7 +844,7 @@ p{
 }
 
 .text_news{
-    width: 90%;
+    width: 80%;
     padding: 10px;
     border-left: rgba(128, 128, 128, 0.103) solid 1px;
 }
