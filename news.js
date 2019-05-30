@@ -6,8 +6,9 @@
 window.onload = function () {
     var a = 0;
     var List = [];
-    loadElem();
-    getNews(a, a+10);
+    get();
+    /* loadElem();
+    getNews(a, a+10); */
     //addNew();
 
     function loadNews(tmp) {
@@ -17,7 +18,23 @@ window.onload = function () {
 
     }
 
-    function getNews(a, b) {
+
+    function get() {
+        fetch('/news.get', {
+    method: 'POST',
+    body: JSON.stringify({
+        offset: 0
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8"
+    }
+  })
+  .then(response => response.json())
+  .then(json => console.log('mur' + json))
+
+ }
+
+   /*  function getNews(a, b) {
         fetch('https://api.myjson.com/bins/sd99i')
             .then(response => response.json())
             .then(json => List = json)
@@ -29,7 +46,7 @@ window.onload = function () {
             })
 
 
-    }
+    } */
 
 
     ///Поведение скрываемых при обновлении страницы
