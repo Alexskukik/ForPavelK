@@ -46,7 +46,8 @@ window.onload = function () {
 
         del.appendChild(delIMG);
         var date = new Date(tmp.date);
-        newsRow.innerHTML = '<div class="date_news">' + date + '</div> <div class="text_news">' + tmp.text + ' </div>';
+        var dateStr = date.getDate() + "." + date.getMonth() + "." + date.getFullYear();
+        newsRow.innerHTML = '<div class="date_news">' + dateStr + '</div> <div class="text_news">' + tmp.text + ' </div>';
         newsRow.appendChild(del);
         el.appendChild(newsRow);
 
