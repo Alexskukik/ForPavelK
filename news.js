@@ -25,7 +25,7 @@ window.onload = function () {
         delIMG.src = "close.png";
         del.className = 'del';
         del.title = "Удалить";
-        if (true) del.style.display = "block";
+        if (sessionStorage.getItem('status') == 'ADMIN') del.style.display = "block";
         del.onclick = function () {
 
             if (confirm('Вы уверены, что хотите удалить запись?') == true) {
