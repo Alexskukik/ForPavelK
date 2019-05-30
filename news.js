@@ -20,15 +20,7 @@ window.onload = function () {
 
 
     function get() {
-        fetch('/news.get', {
-    method: 'GET',
-    body: JSON.stringify({
-        offset: 1
-    }),
-    headers: {
-      "Content-type": "application/json; charset=UTF-8"
-    }
-  })
+        fetch('/news.get?offset=${a}')
   .then(response => response.json())
   .then(json => console.log('mur' + json))
 
