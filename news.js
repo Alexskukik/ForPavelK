@@ -7,8 +7,8 @@ window.onload = function () {
     var a = 0;
     var List = [];
     get();
-    /* loadElem();
-    getNews(a, a+10); */
+    loadElem();
+    getNews(a);
     //addNew();
 
     function loadNews(tmp) {
@@ -19,26 +19,26 @@ window.onload = function () {
     }
 
 
-    function get() {
+    function getNews(a) {
         fetch('/news.get?offset=${a}')
-  .then(response => response.json())
-  .then(json => console.log('mur' + json))
-
- }
-
-   /*  function getNews(a, b) {
-        fetch('https://api.myjson.com/bins/sd99i')
             .then(response => response.json())
-            .then(json => List = json)
-            .then(List => {
-                for (var i = a; i < b; i++) {
-                    loadNews(List[i]);
+            .then(json => console.log('mur' + json))
 
-                }
-            })
+    }
 
-
-    } */
+    /*  function getNews(a, b) {
+         fetch('https://api.myjson.com/bins/sd99i')
+             .then(response => response.json())
+             .then(json => List = json)
+             .then(List => {
+                 for (var i = a; i < b; i++) {
+                     loadNews(List[i]);
+ 
+                 }
+             })
+ 
+ 
+     } */
 
 
     ///Поведение скрываемых при обновлении страницы
@@ -59,7 +59,7 @@ window.onload = function () {
             displayBlock("addNews");
         } else if (sessionStorage.getItem('status') === "USER")  //авторизоавн юзер
         {
-           // displayNone("addNews");
+            // displayNone("addNews");
         }
     }
 
@@ -79,35 +79,35 @@ window.onload = function () {
 
     document.getElementById('next').onclick = function () {
         a += 10;
-        
+
         a = check(a);
         document.getElementById('newsContent').innerHTML = "";
-        getNews(a, a+10);
-        console.log(a, a+10);
+        getNews(a, a + 10);
+        console.log(a, a + 10);
     }
 
     document.getElementById('prev').onclick = function () {
         a -= 10;
-         
+
         a = check(a);
         document.getElementById('newsContent').innerHTML = "";
-        getNews(a, a+10);
+        getNews(a, a + 10);
     }
 
-    function check(a){
-        if(a < 0){
+    function check(a) {
+        if (a < 0) {
             a = 0;
-        } else if (a + 10 > List.length){    
+        } else if (a + 10 > List.length) {
             a = List.length - 10;
         }
-        
+
         console.log(a);
         return a;
 
     }
-       
 
-    document.getElementById('selectSmile').onclick = function(){
+
+    document.getElementById('selectSmile').onclick = function () {
         var e = document.getElementById('selectSmile');
         var ind = e.selectedIndex;
         var inpt = document.getElementById('inptNews');
