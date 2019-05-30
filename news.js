@@ -6,61 +6,74 @@
 window.onload = function () {
     var a = 0;
     var List = [];
-   // get();
-   // loadElem();
+    // get();
+    loadElem();
     getNews(a);
-    
+
     //addNew();
 
     function loadNews(tmp) {
-        console.log(tmp);
+        console.log('запись: ' + tmp);
         var el = document.getElementById('newsContent');
 
         var newsRow = document.createElement('div');
         var del = document.createElement('div');
         var delIMG = document.createElement('img');
 
-        
+
         newsRow.className = 'new_news';
         delIMG.src = "close.png";
         del.className = 'del';
         del.title = "Удалить";
-        if(true)del.style.display = "block";
-        del.onclick = function(){
+        if (true) del.style.display = "block";
+        del.onclick = function () {
 
-            if(confirm('Вы уверены, что хотите удалить запись?') == true){
-                console.log(tmp.date, tmp.body);
-            } 
+            if (confirm('Вы уверены, что хотите удалить запись?') == true) {
+                //console.log(tmp.id);
+                fetch('/news.del', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        id: tmp.id
+                    }),
+                    headers: {
+                        "Content-type": "application/json; charset=UTF-8"
+                    }
+                })
+                    .then(response => response.json())
+                    .then(json => console.log(json))
+            }
         }
 
         del.appendChild(delIMG);
-        newsRow.innerHTML = '<div class="date_news">' + tmp.date + '</div> <div class="text_news">' + tmp.body + ' </div>';
+        newsRow.innerHTML = '<div class="date_news">' + tmp.date + '</div> <div class="text_news">' + tmp.text + ' </div>';
         newsRow.appendChild(del);
         el.appendChild(newsRow);
 
     }
 
 
+    /*     function getNews(a) {
+            fetch(`/news.get?offset=${a}`)
+                .then(response => response.json())
+                .then(json => console.log('mur' + json))
+    
+        } */
+
     function getNews(a) {
         fetch(`/news.get?offset=${a}`)
             .then(response => response.json())
-            .then(json => console.log('mur' + json))
+            .then(json => List = json)
+            .then(List => {
+                for (var i = a; i < List.length; i++) {
+                    loadNews(List[i]);
+
+                }
+            })
 
     }
 
-    /*  function getNews(a, b) {
-         fetch('https://api.myjson.com/bins/sd99i')
-             .then(response => response.json())
-             .then(json => List = json)
-             .then(List => {
-                 for (var i = a; i < b; i++) {
-                     loadNews(List[i]);
- 
-                 }
-             })
- 
- 
-     } */
+
+
 
 
     ///Поведение скрываемых при обновлении страницы
