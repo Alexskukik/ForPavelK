@@ -21,9 +21,9 @@ window.onload = function () {
 
     function get() {
         fetch('/news.get', {
-    method: 'POST',
+    method: 'GET',
     body: JSON.stringify({
-        offset: 0
+        offset: 1
     }),
     headers: {
       "Content-type": "application/json; charset=UTF-8"
