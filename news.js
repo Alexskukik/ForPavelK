@@ -29,7 +29,7 @@ window.onload = function () {
         del.onclick = function () {
 
             if (confirm('Вы уверены, что хотите удалить запись?') == true) {
-                //console.log(tmp.id);
+                console.log(tmp.id);
                 fetch('/news.del', {
                     method: 'POST',
                     body: JSON.stringify({
