@@ -45,7 +45,8 @@ window.onload = function () {
         }
 
         del.appendChild(delIMG);
-        newsRow.innerHTML = '<div class="date_news">' + tmp.date + '</div> <div class="text_news">' + tmp.text + ' </div>';
+        var date = new Date(tmp.date);
+        newsRow.innerHTML = '<div class="date_news">' + date + '</div> <div class="text_news">' + tmp.text + ' </div>';
         newsRow.appendChild(del);
         el.appendChild(newsRow);
 
