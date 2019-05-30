@@ -39,15 +39,12 @@ window.onload = function () {
                         "Content-type": "application/json; charset=UTF-8"
                     }
                 })
-                    .then(response => response.json())
-                    .then(json => console.log(json))
             }
         }
 
         del.appendChild(delIMG);
         var date = new Date(tmp.date);
-        var dateStr = date.getDate() + "." + date.getMonth() + "." + date.getFullYear() + " " + date.getHours() + ":" + date.getMinutes();
-        newsRow.innerHTML = '<div class="date_news">' + dateStr + '</div> <div class="text_news">' + tmp.text + ' </div>';
+        newsRow.innerHTML = '<div class="date_news">' + date.toLocaleString() + '</div> <div class="text_news">' + tmp.text + ' </div>';
         newsRow.appendChild(del);
         el.appendChild(newsRow);
 
