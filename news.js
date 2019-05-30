@@ -42,7 +42,7 @@ window.onload = function () {
 
 
     function getNews(a) {
-        fetch('/news.get?offset=${a}')
+        fetch(`/news.get?offset=${a}`, {method = 'POST'})
             .then(response => response.json())
             .then(json => console.log('mur' + json))
 
