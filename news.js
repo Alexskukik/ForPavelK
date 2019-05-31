@@ -66,9 +66,11 @@ window.onload = function () {
                 "Content-type": "text/plain; charset=UTF-8"
             }
         })
-            .then(response => console.log(response.status))
-        document.getElementById('newsContent').innerHTML = "";
-        getNews(a);
+        .then(response => {
+            console.log(response.status)
+            document.getElementById('newsContent').innerHTML = "";
+            getNews(a);
+        })
     }
 
 
