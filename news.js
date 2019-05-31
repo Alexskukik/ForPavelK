@@ -47,7 +47,7 @@ window.onload = function () {
     }
 
 
-    document.getElementById('getNews').onclick = addNews("sub", document.getElementById("inptNews").value);
+    document.getElementById('addNewsB').onclick = addNews("sub", document.getElementById("inptNews").value);
 
 
     function addNews(subject, text) {
@@ -115,10 +115,10 @@ window.onload = function () {
     document.getElementById('next').onclick = function () {
         a += 10;
 
-        a = check(a);
+        
         document.getElementById('newsContent').innerHTML = "";
-        getNews(a, a + 10);
-        console.log(a, a + 10);
+        getNews(a);
+        console.log(a);
     }
 
     document.getElementById('prev').onclick = function () {
@@ -126,19 +126,15 @@ window.onload = function () {
 
         a = check(a);
         document.getElementById('newsContent').innerHTML = "";
-        getNews(a, a + 10);
+        getNews(a);
     }
 
     function check(a) {
         if (a < 0) {
             a = 0;
-        } else if (a + 10 > List.length) {
-            a = List.length - 10;
         }
-
         console.log(a);
         return a;
-
     }
 
 
