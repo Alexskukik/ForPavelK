@@ -47,10 +47,13 @@ window.onload = function () {
     }
 
 
-    document.getElementById('addNewsB').onclick = addNews("sub", document.getElementById("inptNews").value);
+    document.getElementById('addNewsB').onclick = function addNews(){
 
+        var text = document.getElementById("inptNews").value;
+        var subject = "sub";
 
-    function addNews(subject, text) {
+        console.log(text);
+
         fetch(`/news.add?subject=${subject}&text=${text}`, {
             method: 'POST',
         })
