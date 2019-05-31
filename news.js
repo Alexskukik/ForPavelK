@@ -31,8 +31,10 @@ window.onload = function () {
             if (confirm('Вы уверены, что хотите удалить запись?') == true) {
                 console.log(tmp.id);
                 fetch(`/news.del?id=${tmp.id}`, {
-                    method: 'POST'})
-                    .then(response => console.log(response.status))
+                    method: 'POST'
+                })
+                .then(response => console.log(response.status))
+                getNews(a);
             }
         }
 
@@ -45,12 +47,17 @@ window.onload = function () {
     }
 
 
-    /*     function getNews(a) {
-            fetch(`/news.get?offset=${a}`)
-                .then(response => response.json())
-                .then(json => console.log('mur' + json))
-    
-        } */
+    document.getElementById('getNews').onclick = addNews("sub", document.getElementById("inptNews").value);
+
+
+    function addNews(subject, text) {
+        fetch(`/news.add?subject=${subject}&text=${text}`, {
+            method: 'POST',
+        })
+        .then(response => console.log(response.status))
+        getNews(a);
+    }
+
 
     function getNews(a) {
         fetch(`/news.get?offset=${a}`)
