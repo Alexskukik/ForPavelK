@@ -63,7 +63,7 @@ window.onload = function () {
             method: 'POST',
             body: newText,
             headers: {
-                "Content-type": "application/json; charset=UTF-8"
+                "Content-type": "text/plain; charset=UTF-8"
             }
         })
             .then(response => console.log(response.status))
