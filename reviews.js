@@ -15,8 +15,9 @@ window.onload = function () {
 
      function loadRev(tmp) {
         console.log(tmp);
+        var date = new Date(tmp.date);
        var el = document.getElementById('revList');
-       el.innerHTML += '<div class="rew"> <div class="rew_name">' + tmp.name + '</div> <div class="rew_text">' + tmp.body + '</div> <div class="rew_date">' + tmp.date + ' </div></div>';
+       el.innerHTML += '<div class="rew"> <div class="rew_name">' + sessionStorage.getItem("userName") + '</div> <div class="rew_text">' + tmp.text + '</div> <div class="rew_date">' + date + ' </div></div>';
 
      }
 
