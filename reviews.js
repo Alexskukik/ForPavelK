@@ -10,7 +10,7 @@ window.onload = function () {
      var List = [];
      var ListAsk = [];
      loadElem();
-     getRev(a, a+10);
+     getRev(a);
      getAsk(b, b+5);
 
      function loadRev(tmp) {
@@ -20,7 +20,41 @@ window.onload = function () {
 
      }
 
-    function getRev(a, b) {
+     function getRev(a) {
+        fetch(`/comments.get?offset=${a}`)
+            .then(response => response.json())
+            .then(json => List = json)
+            .then(List => {
+                for (var i = a; i < List.length; i++) {
+                    loadRev(List[i]);
+
+                }
+            })
+    }
+
+    document.getElementById('addRevB').onclick = function addNews() {
+
+        var newText = document.getElementById("inptRev").value;
+        var subject = "sub";
+
+        console.log(newText);
+
+        fetch(`/comments.add`, {
+            method: 'POST',
+            body: newText,
+            headers: {
+                "Content-type": "text/plain; charset=UTF-8"
+            }
+        })
+        .then(response => {
+            console.log(response.status)
+            document.getElementById('revList').innerHTML = "";
+            getRev(a);
+        })
+    }
+
+
+   /*  function getRev(a, b) {
         fetch('https://api.myjson.com/bins/vzrke')
              .then(response => response.json())
             .then(json => List = json)
@@ -32,7 +66,7 @@ window.onload = function () {
             })
 
 
-     }
+     } */
 
 
      function loadAsk(tmp) {
@@ -108,24 +142,26 @@ window.onload = function () {
     }
 
     document.getElementById('next').onclick = function () {
-        a += 10;
-
-        
-        a = check(a);
+        a++;
         document.getElementById('revList').innerHTML = "";
-        
-        document.getElementById('str1').innerHTML = (a + 1) + "..." + (a + 10);
-        getRev(a, a+10);
-        console.log(a, a+10);
+        getNews(a);
+        //console.log(a);
     }
 
     document.getElementById('prev').onclick = function () {
-        a -= 10;
-         
+        a--;
+
         a = check(a);
         document.getElementById('revList').innerHTML = "";
-        document.getElementById('str1').innerHTML = (a + 1) + "..." + (a + 10);
-        getRev(a, a+10);
+        getNews(a);
+    }
+
+    function check(a) {
+        if (a < 0) {
+            a = 0;
+        }
+        console.log(a);
+        return a;
     }
 ////кнопки ответов
     document.getElementById('nextA').onclick = function () {
@@ -160,7 +196,7 @@ window.onload = function () {
 
     }
 
-    function checkB(a){
+   /*  function checkB(a){
         if(a < 0){
             a = 0;
         } else if (a + 5 > ListAsk.length){    
@@ -172,6 +208,6 @@ window.onload = function () {
         return a;
 
     }
-       
+        */
 
 }
