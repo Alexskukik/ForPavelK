@@ -33,7 +33,9 @@ window.onload = function () {
                 fetch(`/news.del?id=${tmp.id}`, {
                     method: 'POST'
                 })
-                .then(response => console.log(response.status))
+                    .then(response => console.log(response.status))
+
+                document.getElementById('newsContent').innerHTML = "";
                 getNews(a);
             }
         }
@@ -47,17 +49,24 @@ window.onload = function () {
     }
 
 
-    document.getElementById('addNewsB').onclick = function addNews(){
+    document.getElementById('addNewsB').onclick = function addNews() {
 
-        var text = document.getElementById("inptNews").value;
+        var newText = document.getElementById("inptNews").value;
         var subject = "sub";
 
-        console.log(text);
+        console.log(newText);
 
-        fetch(`/news.add?subject=${subject}&text=${text}`, {
+        fetch(`/news.add?subject=${subject}`, {
             method: 'POST',
+            body: JSON.stringify({
+                text: newText
+              }),
+              headers: {
+                "Content-type": "application/json; charset=UTF-8"
+              }
         })
-        .then(response => console.log(response.status))
+            .then(response => console.log(response.status))
+        document.getElementById('newsContent').innerHTML = "";
         getNews(a);
     }
 
@@ -118,7 +127,7 @@ window.onload = function () {
     document.getElementById('next').onclick = function () {
         a += 10;
 
-        
+
         document.getElementById('newsContent').innerHTML = "";
         getNews(a);
         console.log(a);
