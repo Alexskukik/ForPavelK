@@ -12,6 +12,23 @@ window.onload = function () {
 
     //addNew();
 
+
+    ///// Загрузка новостей с сервера
+    function getNews(a) {
+        fetch(`/news.get?offset=${a}`)
+            .then(response => response.json())
+            .then(json => List = json)
+            .then(List => {
+                for (var i = a; i < List.length; i++) {
+                    loadNews(List[i]);
+
+                }
+            })
+
+    }
+
+
+    ///// Загрузка новости на страницу
     function loadNews(tmp) {
         console.log('запись: ' + tmp);
         var el = document.getElementById('newsContent');
@@ -26,6 +43,7 @@ window.onload = function () {
         del.className = 'del';
         del.title = "Удалить";
         if (sessionStorage.getItem('status') == 'ADMIN') del.style.display = "block";
+        //// Удаление новости
         del.onclick = function () {
 
             if (confirm('Вы уверены, что хотите удалить запись?') == true) {
@@ -52,6 +70,8 @@ window.onload = function () {
     }
 
 
+
+    ///// Добавление новости
     document.getElementById('addNewsB').onclick = function addNews() {
 
         var newText = document.getElementById("inptNews").value;
@@ -72,23 +92,6 @@ window.onload = function () {
             getNews(a);
         })
     }
-
-
-    function getNews(a) {
-        fetch(`/news.get?offset=${a}`)
-            .then(response => response.json())
-            .then(json => List = json)
-            .then(List => {
-                for (var i = a; i < List.length; i++) {
-                    loadNews(List[i]);
-
-                }
-            })
-
-    }
-
-
-
 
 
     ///Поведение скрываемых при обновлении страницы
@@ -128,16 +131,14 @@ window.onload = function () {
     }
 
     document.getElementById('next').onclick = function () {
-        a += 10;
-
-
+        a++;
         document.getElementById('newsContent').innerHTML = "";
         getNews(a);
-        console.log(a);
+        //console.log(a);
     }
 
     document.getElementById('prev').onclick = function () {
-        a -= 10;
+        a--;
 
         a = check(a);
         document.getElementById('newsContent').innerHTML = "";
