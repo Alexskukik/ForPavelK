@@ -58,9 +58,7 @@ window.onload = function () {
 
         fetch(`/news.add?subject=${subject}`, {
             method: 'POST',
-            body: JSON.stringify({
-                text: newText
-              }),
+            body: JSON.stringify(newText),
               headers: {
                 "Content-type": "application/json; charset=UTF-8"
               }
