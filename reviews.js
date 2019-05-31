@@ -17,7 +17,7 @@ window.onload = function () {
         console.log(tmp);
         var date = new Date(tmp.date);
        var el = document.getElementById('revList');
-       el.innerHTML += '<div class="rew"> <div class="rew_name">' + sessionStorage.getItem("userName") + '</div> <div class="rew_text">' + tmp.text + '</div> <div class="rew_date">' + date + ' </div></div>';
+       el.innerHTML += '<div class="rew"> <div class="rew_name">' + tmp.user.firstName + '</div> <div class="rew_text">' + tmp.text + '</div> <div class="rew_date">' + date.toLocaleString() + ' </div></div>';
 
      }
 
@@ -130,13 +130,14 @@ window.onload = function () {
 
 
 
-    var displayNone = function (a) { ////скрыть
+    var displayNone = function (a) {       ////скрыть
         if (document.getElementById(a))
             document.getElementById(a).style.display = "none";
-
     }
+
+
 ///кнопки отзывов
-    function displayBlock(a) {  ////показать
+    function displayBlock(a) {             ////показать
 
         if (document.getElementById(a))
             document.getElementById(a).style.display = "block";
