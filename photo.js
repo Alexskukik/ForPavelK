@@ -43,7 +43,7 @@ window.onload = function () {
             document.getElementById("bigContent").innerHTML = '<img src = "' + img1.src + '">';
             document.getElementById("modalPhoto").style.display = "block";
         };
-
+        if (sessionStorage.getItem('status') == 'ADMIN') delPhoto.style.display = "block";
         delPhoto.onclick = function () {
 
             if (confirm('Вы уверены, что хотите удалить фото?') == true) {

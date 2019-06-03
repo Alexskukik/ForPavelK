@@ -1002,10 +1002,10 @@ p{
 
 .del_photo{
     /* display: absolute; */
-    /* display: none; */
+    display: none;
     width: 15px;
-    height: 15px;
-    border-bottom: none;
+    height: 15px; 
+    background: #d65656;
 }
 
 .modal_photo{
