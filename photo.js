@@ -47,7 +47,7 @@ window.onload = function () {
         delPhoto.onclick = function () {
 
             if (confirm('Вы уверены, что хотите удалить фото?') == true) {
-                console.log(tmp.id);
+                console.log(tmp1.id);
                 fetch(`/image.del?id=${tmp1.id}`, {
                     method: 'POST'
                 })
