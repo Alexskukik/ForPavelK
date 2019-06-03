@@ -178,33 +178,30 @@ window.onload = function () {
     }
 ////кнопки ответов
     document.getElementById('nextA').onclick = function () {
-        b += 5;
+        b++;
         
         b = checkB(b);
         document.getElementById('askList').innerHTML = "";
         document.getElementById('str2').innerHTML = (b + 1) + " стр.";
-        getAsk(b, b+5);
-        console.log(b, b+5);
+        getAsk(b);
+        console.log(b);
     }
 
     document.getElementById('prevA').onclick = function () {
-        b -= 5;
+        b++;
          
         b = checkB(b);
         document.getElementById('askList').innerHTML = "";
         
        
         document.getElementById('str2').innerHTML = (b + 1) + " стр.";
-        getAsk(b, b+5);
+        getAsk(b);
     }
 
     function check(a){
         if(a < 0){
             a = 0;
-        } else if (a + 10 > List.length){    
-            a = List.length - 10;
-        }
-        
+        } 
         console.log(a);
         return a;
 
