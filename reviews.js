@@ -188,7 +188,7 @@ window.onload = function () {
     }
 
     document.getElementById('prevA').onclick = function () {
-        b++;
+        b--;
          
         b = checkB(b);
         document.getElementById('askList').innerHTML = "";
@@ -210,10 +210,7 @@ window.onload = function () {
     function checkB(a){
         if(a < 0){
             a = 0;
-        } else if (a + 5 > ListAsk.length){    
-            a = ListAsk.length - 5;
-            
-        }
+        } 
         
         console.log(a);
         return a;
