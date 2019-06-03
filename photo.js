@@ -7,7 +7,7 @@ window.onload = function () {
     var a = 0;
     var List = [];
     loadElem();
-    getPhoto(a, a + 12);
+    getPhoto(a);
 
 
 
@@ -23,22 +23,47 @@ window.onload = function () {
     function bigPhoto(tmp1, photoRow) {
         var el = document.getElementById('photoContent');
 
-
+        
         var block1 = document.createElement('div');
         block1.className = "photo_block";
-        var type = tmp1.type.split('/');
+        var delPhoto = document.createElement('div');
+        delPhoto.className = 'del_photo';
+        delPhoto.title = "Удалить";
+        var delIMG = document.createElement('img');
+        delIMG.src = "close.png";
+
+       var type = tmp1.type.split('/');
         var img1 = document.createElement('img');
-        img1.src = "/image-" + tmp1.id + "." + type[1];  ///
+       img1.src = "/image-" + tmp1.id + "." + type[1]; 
+       //  img1.src = tmp1.url;
+        console.log(img1.src); ///
+
         img1.onclick = function () {
             console.log('kfk');
             document.getElementById("bigContent").innerHTML = '<img src = "' + img1.src + '">';
             document.getElementById("modalPhoto").style.display = "block";
-
-
         };
 
+        delPhoto.onclick = function () {
+
+            if (confirm('Вы уверены, что хотите удалить фото?') == true) {
+                console.log(tmp.id);
+                fetch(`/image.del?id=${tmp1.id}`, {
+                    method: 'POST'
+                })
+                    .then(response => {
+                        console.log(response.status)
+                        el.innerHTML = "";
+                        getPhoto(a);
+                    })
 
 
+            }
+        }
+
+
+        delPhoto.appendChild(delIMG);
+        block1.appendChild(delPhoto);
         block1.appendChild(img1);
         photoRow.appendChild(block1);
         el.appendChild(photoRow);
@@ -61,7 +86,7 @@ window.onload = function () {
 
 
     ///получение отзывов с сервера
-    function getPhoto(a) {
+ /*    function getPhoto(a) {
         fetch(`image.get?offset=${a}`)
             .then(response => response.json())
             .then(json => List = json)
@@ -75,25 +100,26 @@ window.onload = function () {
                 }
 
             })
-    }
+    } */
 
 
-    /*   function getPhoto(a, b) {
-          fetch('https://api.myjson.com/bins/f8hqq')
+      function getPhoto(a, b) {
+          fetch(`/image.get?offset=${a}`)
               .then(response => response.json())
               .then(json => List = json)
               .then(List => {
-                  for (var i = a; i < b;) {
+                  for (var i = a; i < 12;) {
   
                       console.log(i);
                       loadPhoto(List[i], List[i + 1], List[i + 2]);
                       console.log(i);
                       i += 3;
                   }
-              }) */
+              })
+            }
 
     document.getElementById('next').onclick = function () {
-        a += 12;
+        a++;
 
         a = check(a);
         document.getElementById('photoContent').innerHTML = "";
@@ -102,7 +128,7 @@ window.onload = function () {
     }
 
     document.getElementById('prev').onclick = function () {
-        a -= 12;
+        a--;
 
         a = check(a);
         document.getElementById('photoContent').innerHTML = "";

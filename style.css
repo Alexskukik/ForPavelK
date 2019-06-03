@@ -972,6 +972,7 @@ p{
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    padding: 5px;
 }
 
 .photo_block{
@@ -997,6 +998,14 @@ p{
     width: 360px;
     height: 360px;
 
+}
+
+.del_photo{
+    /* display: absolute; */
+    /* display: none; */
+    width: 15px;
+    height: 15px;
+    border-bottom: none;
 }
 
 .modal_photo{
