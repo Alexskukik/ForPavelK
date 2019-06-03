@@ -123,8 +123,8 @@ window.onload = function () {
 
         a = check(a);
         document.getElementById('photoContent').innerHTML = "";
-        getPhoto(a, a + 12);
-        console.log(a, a + 12);
+        getPhoto(a);
+        console.log(a);
     }
 
     document.getElementById('prev').onclick = function () {
@@ -132,7 +132,7 @@ window.onload = function () {
 
         a = check(a);
         document.getElementById('photoContent').innerHTML = "";
-        getPhoto(a, a + 12);
+        getPhoto(a);
     }
 
     function check(a) {
