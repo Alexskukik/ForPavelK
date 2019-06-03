@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="icon" href="favicon.ico" type="image/x-icon"><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <title>Новости</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
@@ -46,40 +47,44 @@
             <h1 class="h1_tt">
                 Здесь вы можете найти полезную информацию о предстоящих событиях, интересных фактах и о ЗОЖ глазами
                 Виктории Незгодинской в целом. </h1>
-            <div class="admin_news" id="addNews"> 
+            <div class="admin_news" id="addNews">
                 <div class="admin_news">
-                <input type="text" class="inpt_news" placeholder="Здесь была новость.." id="inptNews">
-                <div class="admin_items">
-                    <select name="" id="selectSmile" placeholder="hfdhg">
-                        <option value="" class="smile"></option>
-                        <option value="😊" class="smile">😊</option>
-                        <option value="🔥" class="smile">🔥</option>
-                        <option value="💪" class="smile">💪</option>
-                        <option value="👍" class="smile">👍</option>
-                        <option value="👎" class="smile">👎</option>
-                        <option value="🌈" class="smile">🌈</option>
-                        <option value="🍓" class="smile">🍓</option>
-                        <option value="🏆" class="smile">🏆</option>
-                        <option value="😻" class="smile">😻</option>
-                        <option value="⚠" class="smile">⚠</option>
-                        <option value="☑" class="smile">☑</option>
-                        <option value="💃" class="smile">💃</option>
-                        <option value="❤" class="smile">❤</option>
-                    </select>
-                    <button class="btn_addnew" id="addNewsB">Добавить новость</button>
+                    <input type="text" class="inpt_news" placeholder="Здесь была новость.." id="inptNews">
+                    <div class="admin_items">
+                        <select name="" id="selectSmile" placeholder="hfdhg">
+                            <option value="" class="smile"></option>
+                            <option value="😊" class="smile">😊</option>
+                            <option value="🔥" class="smile">🔥</option>
+                            <option value="💪" class="smile">💪</option>
+                            <option value="👍" class="smile">👍</option>
+                            <option value="👎" class="smile">👎</option>
+                            <option value="🌈" class="smile">🌈</option>
+                            <option value="🍓" class="smile">🍓</option>
+                            <option value="🏆" class="smile">🏆</option>
+                            <option value="😻" class="smile">😻</option>
+                            <option value="⚠" class="smile">⚠</option>
+                            <option value="☑" class="smile">☑</option>
+                            <option value="💃" class="smile">💃</option>
+                            <option value="❤" class="smile">❤</option>
+                        </select>
+                        <button class="btn_addnew" id="addNewsB">Добавить новость</button>
+                    </div>
+
                 </div>
-               
-            </div></div>
+            </div>
 
             <div class="news_content" id='newsContent'>
 
-            
+
 
 
 
             </div>
             <div class="btns_news">
-                <button id="prev" class="btn_news">Предыдущие</button> <button id="next" class="btn_news">Следующие</button>
+
+                <div class="str" id="str1">1 стр.</div>
+                <button id="prev" class="btn_news">Предыдущие</button> <button id="next"
+                    class="btn_news">Следующие</button>
             </div>
 
 
@@ -103,7 +108,7 @@
 
     </div>
 
-      <div class="modal" id="modal">
+    <div class="modal" id="modal">
         <div class="modal_login">
             <div class="modal_content">
 

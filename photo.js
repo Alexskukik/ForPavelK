@@ -123,6 +123,7 @@ window.onload = function () {
 
         a = check(a);
         document.getElementById('photoContent').innerHTML = "";
+        document.getElementById('str1').innerHTML = (a + 1) + " стр.";
         getPhoto(a);
         console.log(a);
     }
@@ -132,6 +133,7 @@ window.onload = function () {
 
         a = check(a);
         document.getElementById('photoContent').innerHTML = "";
+        document.getElementById('str1').innerHTML = (a + 1) + " стр.";
         getPhoto(a);
     }
 

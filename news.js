@@ -133,6 +133,8 @@ window.onload = function () {
     document.getElementById('next').onclick = function () {
         a++;
         document.getElementById('newsContent').innerHTML = "";
+        
+        document.getElementById('str1').innerHTML = (a + 1) + " стр.";
         getNews(a);
         //console.log(a);
     }
@@ -142,6 +144,8 @@ window.onload = function () {
 
         a = check(a);
         document.getElementById('newsContent').innerHTML = "";
+        
+        document.getElementById('str1').innerHTML = (a + 1) + " стр.";
         getNews(a);
     }
 

@@ -11,7 +11,7 @@ window.onload = function () {
      var ListAsk = [];
      loadElem();
      getRev(a);
-     getAsk(b, b+5);
+     getAsk(b);
 
 
      ///загрузка на страницу отзывов
@@ -95,16 +95,16 @@ window.onload = function () {
 
      }
 
-    function getAsk(a, b) {
-        fetch('https://api.myjson.com/bins/vecqe')
-             .then(response => response.json())
-            .then(json => ListAsk = json)
-            .then(ListAsk => {
-             for (var i = a; i < b; i++) {
-                    loadAsk(ListAsk[i]);
-
-                 }
-            })
+    function getAsk(b) {
+        fetch(`/questions.get?offset=${b}`)
+        .then(response => response.json())
+        .then(json => ListAsk = json)
+        .then(List => {
+            for (var i = b; i < ListAsk.length; i++) {
+                console.log(ListAsk[i]);
+               // loadAsk(ListAsk[i]);
+            }
+        })
 
 
      }
@@ -154,6 +154,8 @@ window.onload = function () {
     document.getElementById('next').onclick = function () {
         a++;
         document.getElementById('revList').innerHTML = "";
+        
+        document.getElementById('str1').innerHTML = (a + 1) + " стр.";
         getNews(a);
         //console.log(a);
     }
@@ -163,6 +165,7 @@ window.onload = function () {
 
         a = check(a);
         document.getElementById('revList').innerHTML = "";
+        document.getElementById('str1').innerHTML = (a + 1) + " стр.";
         getNews(a);
     }
 
@@ -179,7 +182,7 @@ window.onload = function () {
         
         b = checkB(b);
         document.getElementById('askList').innerHTML = "";
-        document.getElementById('str2').innerHTML = (b + 1) + "..." + (b + 5);
+        document.getElementById('str2').innerHTML = (b + 1) + " стр.";
         getAsk(b, b+5);
         console.log(b, b+5);
     }
@@ -190,7 +193,8 @@ window.onload = function () {
         b = checkB(b);
         document.getElementById('askList').innerHTML = "";
         
-        document.getElementById('str2').innerHTML = (b + 1) + "..." + (b + 5);
+       
+        document.getElementById('str2').innerHTML = (b + 1) + " стр.";
         getAsk(b, b+5);
     }
 
