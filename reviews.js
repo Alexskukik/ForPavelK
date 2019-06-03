@@ -27,6 +27,7 @@ window.onload = function () {
      function getRev(a) {
         fetch(`/comments.get?offset=${a}`)
             .then(response => response.json())
+            .then(json => {if(json.status == 400)})
             .then(json => List = json)
             .then(List => {
                 for (var i = a; i < List.length; i++) {
