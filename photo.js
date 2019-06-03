@@ -138,10 +138,7 @@ window.onload = function () {
     function check(a) {
         if (a < 0) {
             a = 0;
-        } else if (a + 12 > List.length) {
-            a = List.length - 12;
         }
-
         console.log(a);
         return a;
 
