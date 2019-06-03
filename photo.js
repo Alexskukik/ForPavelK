@@ -26,9 +26,9 @@ window.onload = function () {
 
         var block1 = document.createElement('div');
         block1.className = "photo_block";
-
+        var type = tmp1.type.split('/');
         var img1 = document.createElement('img');
-        img1.src = "/image-" + tmp.id + "." + tmp.type;
+        img1.src = "/image-" + tmp1.id + "." + type[1];  ///
         img1.onclick = function () {
             console.log('kfk');
             document.getElementById("bigContent").innerHTML = '<img src = "' + img1.src + '">';

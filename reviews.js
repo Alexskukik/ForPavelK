@@ -206,7 +206,7 @@ window.onload = function () {
 
     }
 
-   /*  function checkB(a){
+    function checkB(a){
         if(a < 0){
             a = 0;
         } else if (a + 5 > ListAsk.length){    
@@ -218,6 +218,6 @@ window.onload = function () {
         return a;
 
     }
-        */
+       
 
 }
