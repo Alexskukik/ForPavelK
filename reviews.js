@@ -13,6 +13,8 @@ window.onload = function () {
      getRev(a);
      getAsk(b, b+5);
 
+
+     ///загрузка на страницу отзывов
      function loadRev(tmp) {
         console.log(tmp);
         var date = new Date(tmp.date);
@@ -21,6 +23,7 @@ window.onload = function () {
 
      }
 
+     ///получение отзывов с сервера
      function getRev(a) {
         fetch(`/comments.get?offset=${a}`)
             .then(response => response.json())
@@ -33,10 +36,9 @@ window.onload = function () {
             })
     }
 
-    document.getElementById('addRevB').onclick = function addNews() {
+    document.getElementById('addRevB').onclick = function addRev() {
 
         var newText = document.getElementById("inptRev").value;
-        var subject = "sub";
 
         console.log(newText);
 
@@ -48,10 +50,16 @@ window.onload = function () {
             }
         })
         .then(response => {
-            console.log(response.status)
+            if((response.status) == 200){
             document.getElementById('revList').innerHTML = "";
             getRev(a);
+            document.getElementById("inptRev").value = "";
+            } else{
+                alert("Что-то пошло не так! Отзыв не был добавлен!");
+            }
         })
+
+
     }
 
 

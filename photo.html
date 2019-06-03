@@ -43,8 +43,15 @@
 
         <div class="content">
 
-                <h1 class="h1_tt">
-                        Наша фотогалерея </h1>
+            <h1 class="h1_tt">
+                Наша фотогалерея </h1>
+
+            <div class="add_photo">
+                <form action="image.add" enctype="multipart/form-data" method="post" class="photo_form">
+                    <input id="fileToUpload" name="file" type="file" class="a">
+                    <input name="submit" type="submit" value="Загрузить изображение" class="btn_add_photo">
+                </form>
+            </div>
             <div class="photo_content" id="photoContent">
                 <!-- <div class="photo_row">
                         <div class="photo_block">
@@ -53,8 +60,9 @@
                 </div> -->
             </div>
             <div class="btns_news">
-                    <button id="prev" class="btn_news">Предыдущие</button> <button id="next" class="btn_news">Следующие</button>
-                </div>
+                <button id="prev" class="btn_news">Предыдущие</button> <button id="next"
+                    class="btn_news">Следующие</button>
+            </div>
         </div>
 
         <div class="footer">
@@ -79,7 +87,7 @@
         <div class="big_photo">
             <div class="big_photo_content" id="bigContent">
 
-                    <!-- <img src="tr3.jpg" alt=""> -->
+                <!-- <img src="tr3.jpg" alt=""> -->
             </div>
         </div>
 
@@ -87,29 +95,29 @@
 
 
     <div class="modal" id="modal">
-            <div class="modal_login">
-                <div class="modal_content">
-    
-                    <div class="h_modal">
-                        <button id="close" class="btn_modal" title="Закрыть"> </button>
-                    </div>
-    
-                    <h2 class="h2_login">Вход в личный кабинет</h1>
-    
-                        <form class="form_modal" action="j_spring_security_check" method="post">
-                            <input type="text" class="login_inpt" id="login_inpt" name="j_username" placeholder="Логин"
-                                method="post">
-                            <input type="text" class="login_inpt" name="j_password" placeholder="Пароль">
-                            <button class="btn_form" id="btnTryLogin" type="submit"> Войти</button>
-                        </form>
-    
-                        <div class="f_modal">
-                            <a id="btnReg" href="reg.html">Регистрация</a>
-                        </div>
+        <div class="modal_login">
+            <div class="modal_content">
+
+                <div class="h_modal">
+                    <button id="close" class="btn_modal" title="Закрыть"> </button>
                 </div>
+
+                <h2 class="h2_login">Вход в личный кабинет</h1>
+
+                    <form class="form_modal" action="j_spring_security_check" method="post">
+                        <input type="text" class="login_inpt" id="login_inpt" name="j_username" placeholder="Логин"
+                            method="post">
+                        <input type="text" class="login_inpt" name="j_password" placeholder="Пароль">
+                        <button class="btn_form" id="btnTryLogin" type="submit"> Войти</button>
+                    </form>
+
+                    <div class="f_modal">
+                        <a id="btnReg" href="reg.html">Регистрация</a>
+                    </div>
             </div>
         </div>
-        
+    </div>
+
     <script src="photo.js"></script>
     <script src="script.js"></script>
 </body>
