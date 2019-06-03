@@ -1110,7 +1110,7 @@ p{
     }
 
     .add_photo{
-        /* display: none; */
+        display: none; 
         margin: 40px 850px 0  0 ;
         height: 100px;
     }
