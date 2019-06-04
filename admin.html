@@ -9,36 +9,39 @@
         <title>Админ</title>
     
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+        <script src="https://www.google.com/jsapi"></script>
 </head>
 <body>
 
     <div class="main">
 
         <div class="admin_anchors">
-            <div>Вопросы</div>
-            <div>Пользователи</div>
-            <div>Рассылка</div>
-            <div>Статистика</div>
-            <div> <a href="index.html" class="admin_out">Выйти</a> </div>
+            <div onclick="location.href='#q';" title="Перейти к вопросам">Вопросы</div>
+            <div onclick="location.href='#u';" title="Перейти к пользователям">Пользователи</div>
+            <div onclick="location.href='#e';" title="Перейти к рассылке">Рассылка</div>
+            <div onclick="location.href='#s';" title="Перейти к статистике">Статистика</div>
+            <div> <a href="index.html" class="admin_out" title="Перейти на главную">Выйти</a> </div>
         </div>
 
-
+        <a href="" name="q"></a>
+        <div class="asks">
         <div class="block_rew">
             <div class="rev_h">Вопросы от пользователей</div>
-            <div class="ask_list" id="askList">
+            <div class="ask_list new_ask" id="askList">
 
                 
             </div>
 
-            <div class="btns_news">     
+            <!-- <div class="btns_news">     
                 <div class="str" id="str2">1 стр.</div>
                 <button id="prevA" class="btn_news">Предыдущие</button> <button id="nextA" class="btn_news">Следующие</button>
-            </div>
+            </div> -->
 
-            <a href="" name="rew"></a>
-        </div>
+            
+        </div></div>
 
-        
+        <div id="oil" style="width: 500px; height: 400px;"></div>
 
         
     Привет, админ!

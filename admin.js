@@ -89,5 +89,23 @@ window.onload = function(){
 
 
 
+    ////статистика
+  /*    google.load("visualization", "1", {packages:["corechart"]});
+     google.setOnLoadCallback(drawChart);
+     function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+       ['Возраст', 'Зумба', 'Кидс', 'Степы', 'TRX'],
+       ['10-20', 1.3, 70, 34, 43],
+       ['20-30', 2000, 3120,56, 57],
+       ['30-40', 12170, 9920, 23, 456]
+      ]);
+      var options = {
+       title: 'Добыча нефти',
+       hAxis: {title: 'Год'},
+       vAxis: {title: 'Тыс. тонн'}
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById('oil'));
+      chart.draw(data, options);
+     } */
     
 }
