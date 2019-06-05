@@ -26,20 +26,22 @@ window.onload = function () {
     ///получение отзывов с сервера
     function getRev(a) {
         fetch(`/comments.get?offset=${a}`)
-            .then(response => response.json())
-            .then(json => {
+            .then(response => {
                 if (json.status != 200) {
                     alert("Что-то пошло не так.. Отзывы не были загружены");
                     return;
                 }
-            })
-            .then(json => List = json)
-            .then(List => {
-                for (var i = a; i < List.length; i++) {
-                    loadRev(List[i]);
 
-                }
-            })
+                response.json()
+                .then(json => List = json)
+                .then(List => {
+                    for (var i = a; i < List.length; i++) {
+                        loadRev(List[i]);
+    
+                    }
+                })
+
+            })        
     }
 
     document.getElementById('addRevB').onclick = function addRev() {
