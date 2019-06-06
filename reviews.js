@@ -113,16 +113,18 @@ window.onload = function () {
 
     function loadAsk(tmp) {
         console.log(tmp);
+        dateQ = new Date(tmp.date);
+        dateA = new Date(tmp.answerDate);
         var el = document.getElementById('askList');
         var innerHTML = '';
         innerHTML += '<div class="q_a"><div class="q"><div class="rew_name">';
-        innerHTML += tmp.name;
+        innerHTML += tmp.user.firstName;
         innerHTML += '</div><div class="rew_text">';
-        innerHTML += tmp.q;
+        innerHTML += tmp.question;
         innerHTML += '</div><div class="rew_date">';
-        innerHTML += tmp.date;
+        innerHTML += dateA.toLocaleString();
         innerHTML += '</div></div><div class="ask">';
-        innerHTML += tmp.ask;
+        innerHTML += tmp.answer;
         innerHTML += '</div></div>';
         el.innerHTML += innerHTML;
 
@@ -130,7 +132,7 @@ window.onload = function () {
 
     function getAsk(b) {
         console.log('лалала');
-        fetch(`/questions.get?offset=${b}&answered=false`)
+        fetch(`/questions.get?offset=${b}&answered=true`)
         .then(response => {
             if (response.status != 200) {
                 alert("Что-то пошло не так.. Ответы не были загружены!");
@@ -140,7 +142,7 @@ window.onload = function () {
             .then(json => ListAsk = json)
             .then(ListAsk => {
                 for (var i = b; i < ListAsk.length; i++) {
-                    console.log(ListAsk[i]);
+                    loadAsk(ListAsk[i]);
 
                 }
             })

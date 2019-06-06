@@ -56,6 +56,7 @@ window.onload = function(){
                         if ((response.status) == 200) {
                             alert("Ваш ответ был отправлен!:)");
                             inpt.value = "";
+                            el.innerHTML = "";
                             getQ(b);
                         } else 
                         {
