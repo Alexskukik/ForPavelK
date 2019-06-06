@@ -130,7 +130,7 @@ window.onload = function () {
 
     function getAsk(b) {
         console.log('лалала');
-        fetch(`/questions.get?offset=${b}`)
+        fetch(`/questions.get?offset=${b}&answered=false`)
             .then(response => response.json())
             .then(json => ListAsk = json)
             .then(ListAsk => {
