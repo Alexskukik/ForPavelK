@@ -17,8 +17,9 @@ window.onload = function(){
 
        var q = document.createElement('div');
        q.className = "q";
-
-       q.innerHTML+=tmp.q;
+       
+       var date = new Date(tmp.date);
+       q.innerHTML += '<div class="rew"> <div class="rew_name">' + tmp.user.firstName + '</div> <div class="rew_text">' + tmp.question + '</div> <div class="rew_date">' + date.toLocaleString() + ' </div></div>';
 
        row.appendChild(q);
 
@@ -63,16 +64,24 @@ window.onload = function(){
 
 
      function getQ(b) {
-        fetch('https://api.myjson.com/bins/1ewrpj')
-        .then(response => response.json())
-        .then(json => ListAsk = json)
-        .then(List => {
-            for (var i = b; i < ListAsk.length; i++) {
-                console.log(ListAsk[i]);
-                loadQ(ListAsk[i]);
-               // loadAsk(ListAsk[i]);
+      //  console.log('лалала');
+        fetch(`/questions.get?offset=${b}&answered=false`)
+        .then(response => {
+            if (response.status != 200) {
+                alert("Что-то пошло не так.. Вопросы не были загружены");
+                return;
             }
-        })
+            response.json()
+            .then(json => ListAsk = json)
+            .then(ListAsk => {
+                for (var i = b; i < ListAsk.length; i++) {
+                    console.log(ListAsk[i]);
+                    loadQ(ListAsk[i]);
+
+                }
+            })
+
+        })    
     }
 
    /*  function getQ(b) {

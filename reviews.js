@@ -131,14 +131,21 @@ window.onload = function () {
     function getAsk(b) {
         console.log('лалала');
         fetch(`/questions.get?offset=${b}&answered=false`)
-            .then(response => response.json())
-            .then(json =>console.log(json))
-           /*  .then(ListAsk => {
-                for (var i = 0; i < ListAsk.length; i++) {
+        .then(response => {
+            if (response.status != 200) {
+                alert("Что-то пошло не так.. Ответы не были загружены!");
+                return;
+            }
+            response.json()
+            .then(json => ListAsk = json)
+            .then(ListAsk => {
+                for (var i = b; i < ListAsk.length; i++) {
                     console.log(ListAsk[i]);
-                    // loadAsk(ListAsk[i]);
+
                 }
-            }) */
+            })
+
+        })    
     }
 
 
