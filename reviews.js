@@ -27,11 +27,10 @@ window.onload = function () {
     function getRev(a) {
         fetch(`/comments.get?offset=${a}`)
             .then(response => {
-                if (json.status != 200) {
+                if (response.status != 200) {
                     alert("Что-то пошло не так.. Отзывы не были загружены");
                     return;
                 }
-
                 response.json()
                 .then(json => List = json)
                 .then(List => {
