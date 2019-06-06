@@ -39,12 +39,12 @@ window.onload = function(){
 
        btn.onclick = function(){
             console.log('лалала');
-            {
+            
 
                 var newText = document.getElementById("newAsk").value;
         
                 console.log(newText);
-        
+                if(inpt.value != ""){
                 fetch(`/answer.add?id=${tmp.id}`, {
                     method: 'POST',
                     body: newText,
@@ -65,9 +65,7 @@ window.onload = function(){
         
         
             }
-        }
-           if(inpt.value != "")
-           {console.log(tmp.id, inpt.value);}
+        
        }
 
        q.onclick = function(){
