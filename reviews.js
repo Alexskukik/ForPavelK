@@ -70,6 +70,32 @@ window.onload = function () {
     }
 
 
+    document.getElementById('addQuesB').onclick = function addQues() {
+
+        var newText = document.getElementById("inptQues").value;
+
+        console.log(newText);
+
+        fetch(`/questions.add `, {
+            method: 'POST',
+            body: newText,
+            headers: {
+                "Content-type": "text/plain; charset=UTF-8"
+            }
+        })
+            .then(response => {
+                if ((response.status) == 200) {
+                    alert("Ваш вопрос был отправлен!:)");
+                    document.getElementById("inptQues").value = "";
+                } else {
+                    alert("Что-то пошло не так! Вопрос не был добавлен!");
+                }
+            })
+
+
+    }
+
+
     /*  function getRev(a, b) {
          fetch('https://api.myjson.com/bins/vzrke')
               .then(response => response.json())
@@ -103,11 +129,12 @@ window.onload = function () {
     }
 
     function getAsk(b) {
+        console.log('лалала');
         fetch(`/questions.get?offset=${b}`)
             .then(response => response.json())
             .then(json => ListAsk = json)
             .then(ListAsk => {
-                for (var i = b; i < ListAsk.length; i++) {
+                for (var i = 0; i < ListAsk.length; i++) {
                     console.log(ListAsk[i]);
                     // loadAsk(ListAsk[i]);
                 }
@@ -135,6 +162,7 @@ window.onload = function () {
         if (sessionStorage.getItem('status') === "USER")  //авторизован админ
         {
             displayBlock("userRewInpt");
+            displayBlock("userQuesInpt");
         } else if (sessionStorage.getItem('status') === "ADMIN")  //авторизоавн юзер
         {
 
