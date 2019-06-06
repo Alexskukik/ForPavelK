@@ -132,13 +132,13 @@ window.onload = function () {
         console.log('лалала');
         fetch(`/questions.get?offset=${b}&answered=false`)
             .then(response => response.json())
-            .then(json => ListAsk = json)
-            .then(ListAsk => {
+            .then(json =>console.log(json))
+           /*  .then(ListAsk => {
                 for (var i = 0; i < ListAsk.length; i++) {
                     console.log(ListAsk[i]);
                     // loadAsk(ListAsk[i]);
                 }
-            })
+            }) */
     }
 
 
