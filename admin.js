@@ -19,7 +19,7 @@ window.onload = function(){
        q.className = "q";
        
        var date = new Date(tmp.date);
-       q.innerHTML += '<div class="rew"> <div class="rew_name">' + tmp.user.firstName + '</div> <div class="rew_text">' + tmp.question + '</div> <div class="rew_date">' + date.toLocaleString() + ' </div></div>';
+       q.innerHTML += '<div class="q"> <div class="rew_name">' + tmp.user.firstName + '</div> <div class="rew_text">' + tmp.question + '</div> <div class="rew_date">' + date.toLocaleString() + ' </div></div>';
 
        row.appendChild(q);
 
@@ -38,6 +38,34 @@ window.onload = function(){
        a.appendChild(btn);
 
        btn.onclick = function(){
+            console.log('лалала');
+            {
+
+                var newText = document.getElementById("newAsk").value;
+        
+                console.log(newText);
+        
+                fetch(`/answer.add?id=${tmp.id}`, {
+                    method: 'POST',
+                    body: newText,
+                    headers: {
+                        "Content-type": "text/plain; charset=UTF-8"
+                    }
+                })
+                    .then(response => {
+                        if ((response.status) == 200) {
+                            alert("Ваш ответ был отправлен!:)");
+                            document.getElementById("inptQues").value = "";
+                            getQ(b);
+                        } else 
+                        {
+                            alert("Что-то пошло не так! Ответ не был добавлен!");
+                        }
+                    })
+        
+        
+            }
+        }
            if(inpt.value != "")
            {console.log(tmp.id, inpt.value);}
        }
