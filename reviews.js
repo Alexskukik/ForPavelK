@@ -106,7 +106,7 @@ window.onload = function () {
         fetch(`/questions.get?offset=${b}`)
             .then(response => response.json())
             .then(json => ListAsk = json)
-            .then(List => {
+            .then(ListAsk => {
                 for (var i = b; i < ListAsk.length; i++) {
                     console.log(ListAsk[i]);
                     // loadAsk(ListAsk[i]);
