@@ -132,7 +132,7 @@ window.onload = function () {
 
     function getAsk(b) {
         console.log('лалала');
-        fetch(`/questions.get?offset=${b}&answered=true`)
+        fetch(`/questions.get?offset=${b}`)
         .then(response => {
             if (response.status != 200) {
                 alert("Что-то пошло не так.. Ответы не были загружены!");
