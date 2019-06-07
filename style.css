@@ -286,6 +286,8 @@ p{
 
 }
 
+
+
 .about_contacts{
     width: 100%;
     border-top: 2px  #747171c0 solid;
@@ -374,7 +376,9 @@ p{
     flex-direction: row;
     
     align-items: center;
-    border: rgba(0, 0, 0, 0.438) 2px solid;
+    border-top: rgba(0, 0, 0, 0.438) 2px solid;
+    
+    border-bottom: rgba(0, 0, 0, 0.438) 2px solid;
     
     background: #f7b0c542; 
 }
@@ -382,6 +386,11 @@ p{
 .training_main_box{
     width: 33.3%;
     height:340px;
+   
+}
+
+.training_main_box img{
+    object-fit: cover;
 }
 
 .h1_training{
