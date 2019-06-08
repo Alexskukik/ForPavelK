@@ -13,7 +13,7 @@ window.onload = function () {
 
     document.getElementById("sendPhoto").onclick = function(){
        // var img = new Image();
-        file = document.getElementById('fileToUpload');
+       var file = document.getElementById('fileToUpload');
         var formData = new FormData();
         formData.append("upload", file.files[0]);
         
