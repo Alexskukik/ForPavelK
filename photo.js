@@ -15,11 +15,11 @@ window.onload = function () {
         var img = new Image();
         img = document.getElementById('fileToUpload').value;
         console.log("img");
-        fetch(`/image2.add`, {
+        fetch(`/image.add`, {
             method: 'POST',
             body: img,
             headers: {
-                "Content-type": "image/jpeg; image/png"
+                "Content-type": "image/jpg; image/png"
             }
         })
             .then(response => {
