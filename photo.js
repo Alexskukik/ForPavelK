@@ -12,9 +12,12 @@ window.onload = function () {
 
 
     document.getElementById("sendPhoto").onclick = function(){
-        var img = new Image();
-        img = document.getElementById('fileToUpload').value;
-        console.log("img");
+       // var img = new Image();
+        file = document.getElementById('fileToUpload');
+        var formData = new FormData();
+        formData.append("upload", file.files[0]);
+        
+        console.log(file.files[0]);
         fetch(`/image.add`, {
             method: 'POST',
             body: img,
