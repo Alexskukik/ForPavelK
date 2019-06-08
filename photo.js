@@ -21,7 +21,7 @@ window.onload = function () {
 
         console.log(document.getElementById('fileToUpload').value);
 
-        var img = document.getElementById('fileToUpload').value
+        var img = document.getElementById('fileToUpload').value;
         fetch(`/image.add`, {
             method: 'POST',
             body: img,
