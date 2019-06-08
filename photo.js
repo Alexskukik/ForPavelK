@@ -20,7 +20,7 @@ window.onload = function () {
         console.log(file.files[0]);
         fetch(`/image.add`, {
             method: 'POST',
-            body: img,
+            body: formData,
             headers: {
                 "Content-type": "image/jpg; image/png"
             }
