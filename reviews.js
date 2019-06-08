@@ -113,7 +113,7 @@ window.onload = function () {
 
     function loadAsk(tmp) {
         console.log(tmp);
-        dateQ = new Date(tmp.date);
+       // dateQ = new Date(tmp.date);
         dateA = new Date(tmp.answerDate);
         var el = document.getElementById('askList');
         var innerHTML = '';
