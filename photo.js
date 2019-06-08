@@ -18,6 +18,8 @@ window.onload = function () {
         formData.append("upload", file.files[0]);
         
         console.log(file.files[0]);
+
+        console.log(document.getElementById('fileToUpload').value);
         fetch(`/image.add`, {
             method: 'POST',
             body: formData,
