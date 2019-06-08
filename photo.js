@@ -34,7 +34,7 @@ window.onload = function () {
     }
 
 
-    }
+    
 
     function loadPhoto(tmp1, tmp2, tmp3) {
         var r = document.createElement('div');
