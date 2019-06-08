@@ -19,7 +19,7 @@ window.onload = function () {
             method: 'POST',
             body: img,
             headers: {
-                "Content-type": "image/gif; image/jpeg; image/png"
+                "Content-type": "image/jpeg; image/png"
             }
         })
             .then(response => {
