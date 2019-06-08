@@ -30,6 +30,7 @@ window.onload = function () {
             }
         })
             .then(response => {
+                console.log(response.json());
                 if ((response.status) == 200) {
                     alert("Фото былы отправлено!:)");
                 } else {
