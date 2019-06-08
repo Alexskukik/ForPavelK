@@ -11,6 +11,31 @@ window.onload = function () {
 
 
 
+    document.getElementById("sendPhoto").onclick = function(){
+        var img = new Image();
+        img = document.getElementById('fileToUpload').value;
+        console.log("img");
+        fetch(`image.add`, {
+            method: 'POST',
+            body: img,
+            headers: {
+                "Content-type": "image/gif; image/jpeg; image/png"
+            }
+        })
+            .then(response => {
+                if ((response.status) == 200) {
+                    alert("Фото былы отправлено!:)");
+                } else {
+                    alert("Что-то пошло не так!");
+                }
+            })
+
+
+    }
+
+
+    }
+
     function loadPhoto(tmp1, tmp2, tmp3) {
         var r = document.createElement('div');
         r.className = "photo_row";
