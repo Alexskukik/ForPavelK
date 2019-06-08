@@ -26,7 +26,7 @@ window.onload = function () {
             method: 'POST',
             body: formData,
             headers: {
-                "Content-type": "image/jpg; image/png"
+               
             }
         })
             .then(response => {
