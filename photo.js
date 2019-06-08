@@ -20,9 +20,11 @@ window.onload = function () {
         console.log(file.files[0]);
 
         console.log(document.getElementById('fileToUpload').value);
+
+        var img = document.getElementById('fileToUpload').value
         fetch(`/image.add`, {
             method: 'POST',
-            body: formData,
+            body: img,
             headers: {
                 "Content-type": "image/jpg; image/png"
             }
