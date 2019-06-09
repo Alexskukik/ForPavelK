@@ -174,7 +174,7 @@ window.onload = function () {
         el.appendChild(newsRow);
 
         if(tmp.images){
-            var ListIMG = tmp.image;
+            var ListIMG = tmp.images;
 
             for (var j = 0; j < ListIMG.length; j++) {
                 var type = ListIMG[i].type.split('/');
