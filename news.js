@@ -16,18 +16,45 @@ window.onload = function () {
 
 
 
-    function setIcon(icon){
-        var newIcon = document.createElement("img");
-        newIcon.className = "icon_news";
-        newIcon.src = icon.id;
+    function setIcon() {
+        
+        document.getElementById('divIcon').innerHTML = "";
+        for (let i = 0; i < iconList.length; i++) {
 
-        var newIconBlock = document.createElement("div");
-        newIconBlock.className = "block_icon";
-        newIconBlock.appendChild(newIcon);
+            var id = iconList[i].id;
+            var type = iconList[i].type.split('/'); 
 
-        document.getElementById('divIcon').appendChild(newIconBlock);
+            var newIcon = document.createElement("img");
+            newIcon.className = "icon_news";
+           newIcon.src = "/image-" + id + "." + type[1];
 
+            var del = document.createElement("div");
+            del.className = "icon_del";
+
+            var delIMG = document.createElement('img');
+            delIMG.src = "close.png";
+            del.appendChild(delIMG);
+
+            
+            del.onclick = function () {
+                iconList.splice(i, 1);
+                console.log(i);
+                // var child = newIconBlock;
+                // document.getElementById('divIcon').removeChild(child); 
+                    setIcon();
+
+            }
+
+            var newIconBlock = document.createElement("div");
+            newIconBlock.className = "block_icon";
+            newIconBlock.appendChild(newIcon);
+            newIconBlock.appendChild(del);
+
+            document.getElementById('divIcon').appendChild(newIconBlock);
+
+        }
     }
+
 
     document.getElementById("sendPhoto").onclick = function () {
         // var img = new Image();
@@ -42,43 +69,46 @@ window.onload = function () {
         var img = document.getElementById('fileToUpload').value;
         if (iconList.length < 10) {
             console.log(iconList.length);
-
-            /* fetch('https://api.myjson.com/bins/140481')
-            .then(response => response.json())
-            .then(json => {iconList[iconList.length] = json; 
-               
-                    setIcon(iconList[iconList.length-1]);
-               
-                }) */
-           
-
-
-
-            fetch(`/image.add`, {
-                method: 'POST',
-                body: formData,
-                headers: {
-
-                }
-            })
-                .then(response => {
-                    if ((response.status) == 200) {
-                        alert("Фото было отправлено!:)");
-                        return response.json();
-
-
-                    } else {
-                        alert("Что-то пошло не так!");
-                        return;
-                    }
-
-
-                })
+/* 
+            fetch('https://api.myjson.com/bins/140481')
+                .then(response => response.json())
                 .then(json => {
-                    iconList[iconList.length] = json; 
-               
-                    console.log(iconList[iconList.length-1].id);})
-                
+                    iconList[iconList.length] = json;
+                    
+                        setIcon();
+                    
+
+
+                }) */
+
+
+
+
+             fetch(`/image.add`, {
+                 method: 'POST',
+                 body: formData,
+                 headers: {
+ 
+                 }
+             })
+                 .then(response => {
+                     if ((response.status) == 200) {
+                         alert("Фото было отправлено!:)");
+                         return response.json();
+ 
+ 
+                     } else {
+                         alert("Что-то пошло не так!");
+                         return;
+                     }
+ 
+ 
+                 })
+                 .then(json => {
+                     iconList[iconList.length] = json;  
+                     console.log(iconList[iconList.length-1].id);
+                     setIcon();})
+
         } else alert("Можно добавлять не больше шести фото");
 
 

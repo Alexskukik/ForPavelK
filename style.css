@@ -922,20 +922,32 @@ p{
 .img_ico_news{
     display: flex;
     flex-direction: row;
-    height: 60px; 
-   
+    
+    height: 70px; 
     margin: 0 0 0 250px;
+}
+
+.icon_del{
+    height: 15px;
+   width: 15px;
+    top: 0%;
+    right:0%;
+    object-fit: cover;
 }
 
 .block_icon{
     height: 50px; 
     width: 50px;
     margin: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: red solid;
+
 }
 
-.icon_news{
+.block_icon img{
     object-fit: cover;
-    
 
 }
 
