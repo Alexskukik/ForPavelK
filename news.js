@@ -8,7 +8,6 @@ window.onload = function () {
     var List = [];
     var iconList = [];
 
-    iconList[iconList.length] = {'gg':"fff"};
     // get();
     loadElem();
     getNews(a);
@@ -16,6 +15,19 @@ window.onload = function () {
     //addNew();
 
 
+
+    function setIcon(icon){
+        var newIcon = document.createElement("img");
+        newIcon.className = "icon_news";
+        newIcon.src = icon.id;
+
+        var newIconBlock = document.createElement("div");
+        newIconBlock.className = "block_icon";
+        newIconBlock.appendChild(newIcon);
+
+        document.getElementById('divIcon').appendChild(newIconBlock);
+
+    }
 
     document.getElementById("sendPhoto").onclick = function () {
         // var img = new Image();
@@ -28,7 +40,20 @@ window.onload = function () {
         console.log(document.getElementById('fileToUpload').value);
 
         var img = document.getElementById('fileToUpload').value;
-        if (iconList.length <= 3) {
+        if (iconList.length < 10) {
+            console.log(iconList.length);
+
+            /* fetch('https://api.myjson.com/bins/140481')
+            .then(response => response.json())
+            .then(json => {iconList[iconList.length] = json; 
+               
+                    setIcon(iconList[iconList.length-1]);
+               
+                }) */
+           
+
+
+
             fetch(`/image.add`, {
                 method: 'POST',
                 body: formData,
@@ -49,13 +74,12 @@ window.onload = function () {
 
 
                 })
-                .then(json => iconList[iconList.length] = json)
-
-                for(var i = 0; i < iconList.length; i++){
-                    console.log(iconList[i]);
-                }
+                .then(json => {
+                    iconList[iconList.length] = json; 
+               
+                    setIcon(iconList[iconList.length-1]);})
                 
-        } else alert("Можно добавлять не больше трех фото");
+        } else alert("Можно добавлять не больше шести фото");
 
 
     }

@@ -922,12 +922,24 @@ p{
 .img_ico_news{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    height: 50px; 
-    width: 160px;
-    border: green solid;
+    height: 60px; 
+   
     margin: 0 0 0 250px;
 }
+
+.block_icon{
+    height: 50px; 
+    width: 50px;
+    margin: 5px;
+}
+
+.icon_news{
+    object-fit: cover;
+    
+
+}
+
+
 
 .admin_news{
     width: 100%;
