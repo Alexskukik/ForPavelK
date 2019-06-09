@@ -174,9 +174,12 @@ window.onload = function () {
         el.appendChild(newsRow);
 
         if(tmp.images){
-            var ListIMG = tmp.images;
+            var ListIMG = [];
+            ListIMG = tmp.images;
+            console.log(tmp.images);
 
             for (var j = 0; j < ListIMG.length; j++) {
+                console.log(ListIMG[i].type);
                 var type = ListIMG[i].type.split('/');
                 var img = document.createElement('img');
                 img.src = "/image-" + ListIMG[i].id + "." + type[1];
