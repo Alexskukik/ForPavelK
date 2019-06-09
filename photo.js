@@ -32,14 +32,16 @@ window.onload = function () {
             .then(response => {
                 if ((response.status) == 200) {
                     alert("Фото былы отправлено!:)");
-                    response.json();
+                    
                     
                 } else {
                     alert("Что-то пошло не так!");
                     return;
                 }
+                response.json()
+                .then(json => console.log(json.id))
             })
-            .then(json => console.log(json))
+            
 
 
     }

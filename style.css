@@ -906,7 +906,7 @@ p{
 
 .inpt_news{
     height: 100px;
-    width: 100%;
+    width: 79%;
     margin: 0 10px 0 0;
   border-radius: 4px; 
   border: solid #747171 1px;
@@ -914,7 +914,7 @@ p{
 }
 #addNews{
     margin: 0px 0 0 0;
-    display:none;
+    /* display:none; */
     width: 80%;
     height: 100%;
 }
@@ -1129,9 +1129,31 @@ p{
     }
 
     .add_photo{
-        display: none; 
+        /* display: none;  */
         margin: 40px 850px 0  0 ;
         height: 100px;
+        border: #000000 solid;
+    }
+
+    .add_photo_news{
+        /* display: none;  */
+        display: flex;
+        flex-direction: column;
+        height: 100px;
+        width: 21%;
+        align-items: flex-start;
+        justify-content: flex-end;
+    }
+
+    .photo_form_news{
+        display: flex;
+        flex-direction: column;
+        height: 80px; 
+        padding: 0 -60px 0 0;
+        align-items: center;
+        justify-content: space-between;
+        
+        width: 70%;
     }
 
     .admin_out{
@@ -1140,7 +1162,6 @@ p{
 
     #formQ{
         width: 100%;
-        border: red solid;
         display: flex;
         flex-direction: column;
     }
