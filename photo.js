@@ -31,7 +31,7 @@ window.onload = function () {
         })
             .then(response => {
                 if ((response.status) == 200) {
-                    alert("Фото былы отправлено!:)");
+                    alert("Фото было отправлено!:)");
                     return response.json();
                     
                     
