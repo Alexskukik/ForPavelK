@@ -165,9 +165,9 @@ window.onload = function () {
         }
 
         del.appendChild(delIMG);
-       
-        
-        
+
+
+
         var date = new Date(tmp.date);
         newsRow.innerHTML = '<div class="date_news">' + date.toLocaleString() + '</div> <div class="text_news" id="textNews">' + tmp.text + ' </div>';
         newsRow.appendChild(del);
@@ -175,13 +175,15 @@ window.onload = function () {
 
         var ListIMG = [];
         ListIMG = tmp.image;
-        
-        ListIMG.forEach(el => {
-            var type = el.type.split('/');
+
+        for (var j = 0; j < ListIMG.length; j++) {
+            var type = ListIMG[i].type.split('/');
             var img = document.createElement('img');
-             img.src = "/image-" + el.id + "." + type[1]; 
-            document.getElementById("textNews").appendChild(img); 
-        })
+            img.src = "/image-" + ListIMG[i].id + "." + type[1];
+            document.getElementById("textNews").appendChild(img);
+        }
+
+
 
     }
 
@@ -196,7 +198,7 @@ window.onload = function () {
         console.log(newText);
         console.log(iconList.length);
         if (iconList.length == 0) {
-           // console.log('мур');
+            // console.log('мур');
 
             fetch(`/news.add?subject=${subject}`, {
                 method: 'POST',
@@ -213,10 +215,16 @@ window.onload = function () {
 
         } else {
             var ListID = "";
-            iconList.forEach(element => {
-                ListID += element.id + ",";
-            });
+            for (var j = 0; j < iconList.lenght; j++) {
+                if (j == 0) 
+                { ListID = iconList[j].id; }
+                else 
+                {
+                    ListID += "," + iconList[j].id;
+                }
+            }
 
+           
 
             fetch(`/news.add?subject=${subject}&images=${ListID}`, {
                 method: 'POST',
