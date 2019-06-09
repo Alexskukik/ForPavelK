@@ -173,7 +173,7 @@ window.onload = function () {
         newsRow.appendChild(del);
         el.appendChild(newsRow);
 
-        if(tmp.image){
+        if(tmp.images){
             var ListIMG = tmp.image;
 
             for (var j = 0; j < ListIMG.length; j++) {
