@@ -77,7 +77,7 @@ window.onload = function () {
                 .then(json => {
                     iconList[iconList.length] = json; 
                
-                    setIcon(iconList[iconList.length-1]);})
+                    console.log(iconList[iconList.length-1].id);})
                 
         } else alert("Можно добавлять не больше шести фото");
 
