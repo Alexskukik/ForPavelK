@@ -84,8 +84,6 @@ window.onload = function () {
                 }) */
 
 
-
-
              fetch(`/image.add`, {
                  method: 'POST',
                  body: formData,
@@ -111,7 +109,7 @@ window.onload = function () {
                      console.log(iconList[iconList.length-1].id);
                      setIcon();})
 
-        } else alert("Можно добавлять не больше шести фото");
+        } else alert("Можно добавлять не больше 10 фото");
 
 
     }
@@ -182,19 +180,46 @@ window.onload = function () {
         var subject = "sub";
 
         console.log(newText);
+        if(iconList.length == 0){
 
-        fetch(`/news.add?subject=${subject}`, {
-            method: 'POST',
-            body: newText,
-            headers: {
-                "Content-type": "text/plain; charset=UTF-8"
-            }
-        })
-            .then(response => {
-                console.log(response.status)
-                document.getElementById('newsContent').innerHTML = "";
-                getNews(a);
+            fetch(`/news.add?subject=${subject}`, {
+                method: 'POST',
+                body: newText,
+                headers: {
+                    "Content-type": "text/plain; charset=UTF-8"
+                }
             })
+                .then(response => {
+                    console.log(response.status)
+                    document.getElementById('newsContent').innerHTML = "";
+                    getNews(a);
+                })
+
+        } else {
+            var ListID = "";
+            iconList.forEach(element => { 
+                ListID += element.id + "," ; 
+              });
+
+            }
+            fetch(`/news.add?subject=${subject}&images=${ListID}`, {
+                method: 'POST',
+                body: newText,
+                headers: {
+                    "Content-type": "text/plain; charset=UTF-8"
+                }
+            })
+                .then(response => {
+                    console.log(response.status)
+                    document.getElementById('newsContent').innerHTML = "";
+                    getNews(a);
+                })
+
+                iconList = [];
+                setIcon();
+        }
+
+       
     }
 
 
