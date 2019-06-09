@@ -183,7 +183,7 @@ window.onload = function () {
                 console.log(ListIMG[j].type);
                 var type = ListIMG[j].type.split('/');
                 var img = document.createElement('img');
-                img.src = "/image-" + ListIMG[i].id + "." + type[1];
+                img.src = "/image-" + ListIMG[j].id + "." + type[1];
                 document.getElementById("textNews").appendChild(img);
             }
 
