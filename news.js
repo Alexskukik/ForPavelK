@@ -181,7 +181,9 @@ window.onload = function () {
         var subject = "sub";
 
         console.log(newText);
+        console.log(iconList.length);
         if (iconList.length == 0) {
+            console.log('мур');
 
             fetch(`/news.add?subject=${subject}`, {
                 method: 'POST',
@@ -213,7 +215,7 @@ window.onload = function () {
                 .then(response => {
                     console.log(response.status)
                     document.getElementById('newsContent').innerHTML = "";
-                    getNews(a);
+                    //getNews(a);
                 })
 
             iconList = [];
