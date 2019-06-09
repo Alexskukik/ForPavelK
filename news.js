@@ -173,15 +173,18 @@ window.onload = function () {
         newsRow.appendChild(del);
         el.appendChild(newsRow);
 
-        var ListIMG = [];
-        ListIMG = tmp.image;
+        if(tmp.image){
+            var ListIMG = tmp.image;
 
-        for (var j = 0; j < ListIMG.length; j++) {
-            var type = ListIMG[i].type.split('/');
-            var img = document.createElement('img');
-            img.src = "/image-" + ListIMG[i].id + "." + type[1];
-            document.getElementById("textNews").appendChild(img);
+            for (var j = 0; j < ListIMG.length; j++) {
+                var type = ListIMG[i].type.split('/');
+                var img = document.createElement('img');
+                img.src = "/image-" + ListIMG[i].id + "." + type[1];
+                document.getElementById("textNews").appendChild(img);
+            }
+
         }
+       
 
 
 
