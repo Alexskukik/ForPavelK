@@ -202,24 +202,24 @@ window.onload = function () {
                 ListID += element.id + ",";
             });
 
-       
-        fetch(`/news.add?subject=${subject}&images=${ListID}`, {
-            method: 'POST',
-            body: newText,
-            headers: {
-                "Content-type": "text/plain; charset=UTF-8"
-            }
-        })
-            .then(response => {
-                console.log(response.status)
-                document.getElementById('newsContent').innerHTML = "";
-                getNews(a);
-            })
 
-        iconList = [];
-        setIcon();
+            fetch(`/news.add?subject=${subject}&images=${ListID}`, {
+                method: 'POST',
+                body: newText,
+                headers: {
+                    "Content-type": "text/plain; charset=UTF-8"
+                }
+            })
+                .then(response => {
+                    console.log(response.status)
+                    document.getElementById('newsContent').innerHTML = "";
+                    getNews(a);
+                })
+
+            iconList = [];
+            setIcon();
+        }
     }
- }
 
 
 
