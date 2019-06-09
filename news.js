@@ -17,18 +17,18 @@ window.onload = function () {
 
 
     function setIcon() {
-        
+
         document.getElementById('divIcon').innerHTML = "";
         for (var i = 0; i < iconList.length; i++) {
             console.log(iconList[i]);
             console.log(iconList[i].id);
 
             var id = iconList[i].id;
-            var type = iconList[i].type.split('/'); 
+            var type = iconList[i].type.split('/');
 
             var newIcon = document.createElement("img");
             newIcon.className = "icon_news";
-           newIcon.src = "/image-" + id + "." + type[1];
+            newIcon.src = "/image-" + id + "." + type[1];
 
             var del = document.createElement("div");
             del.className = "icon_del";
@@ -37,13 +37,13 @@ window.onload = function () {
             delIMG.src = "close.png";
             del.appendChild(delIMG);
 
-            
+
             del.onclick = function () {
                 iconList.splice(i, 1);
                 console.log(i);
                 // var child = newIconBlock;
                 // document.getElementById('divIcon').removeChild(child); 
-                    setIcon();
+                setIcon();
 
             }
 
@@ -71,43 +71,44 @@ window.onload = function () {
         var img = document.getElementById('fileToUpload').value;
         if (iconList.length < 10) {
             console.log(iconList.length);
-/* 
-            fetch('https://api.myjson.com/bins/140481')
-                .then(response => response.json())
+            /* 
+                        fetch('https://api.myjson.com/bins/140481')
+                            .then(response => response.json())
+                            .then(json => {
+                                iconList[iconList.length] = json;
+                                
+                                    setIcon();
+                                
+            
+            
+                            }) */
+
+
+            fetch(`/image.add`, {
+                method: 'POST',
+                body: formData,
+                headers: {
+
+                }
+            })
+                .then(response => {
+                    if ((response.status) == 200) {
+                        alert("Фото было отправлено!:)");
+                        return response.json();
+
+
+                    } else {
+                        alert("Что-то пошло не так!");
+                        return;
+                    }
+
+
+                })
                 .then(json => {
                     iconList[iconList.length] = json;
-                    
-                        setIcon();
-                    
-
-
-                }) */
-
-
-             fetch(`/image.add`, {
-                 method: 'POST',
-                 body: formData,
-                 headers: {
- 
-                 }
-             })
-                 .then(response => {
-                     if ((response.status) == 200) {
-                         alert("Фото было отправлено!:)");
-                         return response.json();
- 
- 
-                     } else {
-                         alert("Что-то пошло не так!");
-                         return;
-                     }
- 
- 
-                 })
-                 .then(json => {
-                     iconList[iconList.length] = json;  
-                     console.log(iconList[iconList.length-1].id);
-                     setIcon();})
+                    console.log(iconList[iconList.length - 1].id);
+                    setIcon();
+                })
 
         } else alert("Можно добавлять не больше 10 фото");
 
@@ -180,7 +181,7 @@ window.onload = function () {
         var subject = "sub";
 
         console.log(newText);
-        if(iconList.length == 0){
+        if (iconList.length == 0) {
 
             fetch(`/news.add?subject=${subject}`, {
                 method: 'POST',
@@ -197,30 +198,30 @@ window.onload = function () {
 
         } else {
             var ListID = "";
-            iconList.forEach(element => { 
-                ListID += element.id + "," ; 
-              });
-
-            }
-            fetch(`/news.add?subject=${subject}&images=${ListID}`, {
-                method: 'POST',
-                body: newText,
-                headers: {
-                    "Content-type": "text/plain; charset=UTF-8"
-                }
-            })
-                .then(response => {
-                    console.log(response.status)
-                    document.getElementById('newsContent').innerHTML = "";
-                    getNews(a);
-                })
-
-                iconList = [];
-                setIcon();
-        }
+            iconList.forEach(element => {
+                ListID += element.id + ",";
+            });
 
        
+        fetch(`/news.add?subject=${subject}&images=${ListID}`, {
+            method: 'POST',
+            body: newText,
+            headers: {
+                "Content-type": "text/plain; charset=UTF-8"
+            }
+        })
+            .then(response => {
+                console.log(response.status)
+                document.getElementById('newsContent').innerHTML = "";
+                getNews(a);
+            })
+
+        iconList = [];
+        setIcon();
     }
+ }
+
+
 
 
     ///Поведение скрываемых при обновлении страницы
