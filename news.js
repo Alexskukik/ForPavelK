@@ -7,6 +7,8 @@ window.onload = function () {
     var a = 0;
     var List = [];
     var iconList = [];
+
+    iconList[iconList.length] = {'gg':"fff"};
     // get();
     loadElem();
     getNews(a);
@@ -47,15 +49,13 @@ window.onload = function () {
 
 
                 })
-                .then(json => {
-                    iconList[iconList.length].id = json.id;
-                    iconList[iconList.length].type = json.type;
-                })
+                .then(json => iconList[iconList.length] = json)
+
                 for(var i = 0; i < iconList.length; i++){
                     console.log(iconList[i]);
                 }
                 
-        }
+        } else alert("Можно добавлять не больше трех фото");
 
 
     }
