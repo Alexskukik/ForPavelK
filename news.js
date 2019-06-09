@@ -6,11 +6,59 @@
 window.onload = function () {
     var a = 0;
     var List = [];
+    var iconList = [];
     // get();
     loadElem();
     getNews(a);
 
     //addNew();
+
+
+
+    document.getElementById("sendPhoto").onclick = function () {
+        // var img = new Image();
+        var file = document.getElementById('fileToUpload');
+        var formData = new FormData();
+        formData.append("file", file.files[0]);
+
+        console.log(file.files[0]);
+
+        console.log(document.getElementById('fileToUpload').value);
+
+        var img = document.getElementById('fileToUpload').value;
+        if (iconList.length <= 3) {
+            fetch(`/image.add`, {
+                method: 'POST',
+                body: formData,
+                headers: {
+
+                }
+            })
+                .then(response => {
+                    if ((response.status) == 200) {
+                        alert("Фото было отправлено!:)");
+                        return response.json();
+
+
+                    } else {
+                        alert("Что-то пошло не так!");
+                        return;
+                    }
+
+
+                })
+                .then(json => {
+                    iconList[iconList.length].id = json.id;
+                    iconList[iconList.length].type = json.type;
+                })
+                for(var i = 0; i < iconList.length; i++){
+                    console.log(iconList[i]);
+                }
+                
+        }
+
+
+    }
 
 
     ///// Загрузка новостей с сервера
@@ -86,11 +134,11 @@ window.onload = function () {
                 "Content-type": "text/plain; charset=UTF-8"
             }
         })
-        .then(response => {
-            console.log(response.status)
-            document.getElementById('newsContent').innerHTML = "";
-            getNews(a);
-        })
+            .then(response => {
+                console.log(response.status)
+                document.getElementById('newsContent').innerHTML = "";
+                getNews(a);
+            })
     }
 
 
@@ -133,7 +181,7 @@ window.onload = function () {
     document.getElementById('next').onclick = function () {
         a++;
         document.getElementById('newsContent').innerHTML = "";
-        
+
         document.getElementById('str1').innerHTML = (a + 1) + " стр.";
         getNews(a);
         //console.log(a);
@@ -144,7 +192,7 @@ window.onload = function () {
 
         a = check(a);
         document.getElementById('newsContent').innerHTML = "";
-        
+
         document.getElementById('str1').innerHTML = (a + 1) + " стр.";
         getNews(a);
     }

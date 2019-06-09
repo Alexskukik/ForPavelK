@@ -918,6 +918,17 @@ p{
     width: 80%;
     height: 100%;
 }
+
+.img_ico_news{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50px; 
+    width: 160px;
+    border: green solid;
+    margin: 0 0 0 250px;
+}
+
 .admin_news{
     width: 100%;
     height: 200px;
@@ -1156,6 +1167,7 @@ p{
         width: 70%;
     }
 
+   
     .admin_out{
         color: white;
     }
