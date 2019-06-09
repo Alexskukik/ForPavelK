@@ -19,7 +19,9 @@ window.onload = function () {
     function setIcon() {
         
         document.getElementById('divIcon').innerHTML = "";
-        for (let i = 0; i < iconList.length; i++) {
+        for (var i = 0; i < iconList.length; i++) {
+            console.log(iconList[i]);
+            console.log(iconList[i].id);
 
             var id = iconList[i].id;
             var type = iconList[i].type.split('/'); 
