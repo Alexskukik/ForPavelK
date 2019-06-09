@@ -165,10 +165,24 @@ window.onload = function () {
         }
 
         del.appendChild(delIMG);
+       
+        var type = tmp1.type.split('/');
+        var img1 = document.createElement('img');
+        img1.src = "/image-" + tmp1.id + "." + type[1]; 
         var date = new Date(tmp.date);
-        newsRow.innerHTML = '<div class="date_news">' + date.toLocaleString() + '</div> <div class="text_news">' + tmp.text + ' </div>';
+        newsRow.innerHTML = '<div class="date_news">' + date.toLocaleString() + '</div> <div class="text_news" id="textNews">' + tmp.text + ' </div>';
         newsRow.appendChild(del);
         el.appendChild(newsRow);
+
+        var ListIMG = [];
+        ListIMG = tmp.image;
+        
+        ListIMG.forEach(el => {
+            var type = el.type.split('/');
+            var img = document.createElement('img');
+             img.src = "/image-" + el.id + "." + type[1]; 
+            document.getElementById("textNews").appendChild(img); 
+        })
 
     }
 
@@ -183,7 +197,7 @@ window.onload = function () {
         console.log(newText);
         console.log(iconList.length);
         if (iconList.length == 0) {
-            console.log('мур');
+           // console.log('мур');
 
             fetch(`/news.add?subject=${subject}`, {
                 method: 'POST',
@@ -215,7 +229,7 @@ window.onload = function () {
                 .then(response => {
                     console.log(response.status)
                     document.getElementById('newsContent').innerHTML = "";
-                    //getNews(a);
+                    getNews(a);
                 })
 
             iconList = [];
