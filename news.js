@@ -166,9 +166,8 @@ window.onload = function () {
 
         del.appendChild(delIMG);
        
-        var type = tmp1.type.split('/');
-        var img1 = document.createElement('img');
-        img1.src = "/image-" + tmp1.id + "." + type[1]; 
+        
+        
         var date = new Date(tmp.date);
         newsRow.innerHTML = '<div class="date_news">' + date.toLocaleString() + '</div> <div class="text_news" id="textNews">' + tmp.text + ' </div>';
         newsRow.appendChild(del);
