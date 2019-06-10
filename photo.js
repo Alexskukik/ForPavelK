@@ -60,7 +60,7 @@ window.onload = function () {
         bigPhoto(tmp1, r);
         bigPhoto(tmp2, r);
         bigPhoto(tmp3, r);
-        el.appendChild(photoRow);
+        el.appendChild(r);
 
     }
 
