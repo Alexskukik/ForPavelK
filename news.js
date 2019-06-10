@@ -171,7 +171,7 @@ window.onload = function () {
         textNews += tmp.text; 
 
         var date = new Date(tmp.date);
-        var dateNews = createElement('div');
+        var dateNews = document.createElement('div');
         dateNews.className = "date_news";
         dateNews.innerHTML += date.toLocaleString();
 
