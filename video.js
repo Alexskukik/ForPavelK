@@ -55,9 +55,70 @@ window.onload = function () {
                 })
 
         
+    }
 
+    function getVideo(a) {
+        fetch(`/video.get?offset=${a}`)
+            .then(response => response.json())
+            .then(json => List = json)
+            .then(List => {
+                for (var i = a; i < List.length;) {
+
+                    console.log(i);
+                    loadVideo(List[i], List[i + 1]);
+                    console.log(i);
+                    i += 2;
+                }
+            })
+    }
+
+    function loadVideo(tmp1, tmp2) {
+        var r = document.createElement('div');
+        r.className = "photo_row";
+        bigPhoto(tmp1, r);
+        bigPhoto(tmp2, r);
+        bigPhoto(tmp3, r);
+
+    }
+
+    function bigPhoto(tmp1, photoRow) {
+        var el = document.getElementById('photoContent');
+        console.log(tmp1);
+
+        var block1 = document.createElement('iframe');
+        block1.className = "video";
+        var delPhoto = document.createElement('div');
+        delPhoto.className = 'del_video';
+        delPhoto.title = "Удалить";
+        var delIMG = document.createElement('img');
+        delIMG.src = "close.png";
+
+        block1.src = tmp1.src;
 
         
+        if (sessionStorage.getItem('status') == 'ADMIN') delPhoto.style.display = "block";
+        delPhoto.onclick = function () {
+
+            if (confirm('Вы уверены, что хотите удалить видео?') == true) {
+                console.log(tmp1.id);
+                fetch(`/video.del?id=${tmp1.id}`, {
+                    method: 'POST'
+                })
+                    .then(response => {
+                        console.log(response.status)
+                        el.innerHTML = "";
+                        getVideo(a);
+                    })
+
+
+            }
+        }
+
+
+        delPhoto.appendChild(delIMG);
+        block1.appendChild(delPhoto);
+        photoRow.appendChild(block1);
+        el.appendChild(photoRow);
     }
 
 
