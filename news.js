@@ -93,7 +93,6 @@ window.onload = function () {
             })
                 .then(response => {
                     if ((response.status) == 200) {
-                        alert("Фото было отправлено!:)");
                         return response.json();
 
 
@@ -226,7 +225,7 @@ window.onload = function () {
        // console.log(img1.src); ///
 
         img1.onclick = function () {
-            console.log('kfk');
+           // console.log('kfk');
             document.getElementById("bigContent").innerHTML = '<img src = "' + img1.src + '">';
             document.getElementById("modalPhoto").style.display = "block";
         };
@@ -289,10 +288,12 @@ window.onload = function () {
                     console.log(response.status)
                     document.getElementById('newsContent').innerHTML = "";
                     getNews(a);
+                    iconList = [];
+                    setIcon();
                 })
 
-            iconList = [];
-            setIcon();
+            
+            
         }
     }
 
