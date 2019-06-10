@@ -186,9 +186,9 @@ window.onload = function () {
             console.log(tmp.images);
             for (var j = 0; j < ListIMG.length;) {
                 // console.log(i);
-                loadPhoto(ListIMG[j], ListIMG[j + 1], ListIMG[j + 2], textNews);
+                loadPhoto(ListIMG[j], ListIMG[j + 1], ListIMG[j + 2], ListIMG[j + 3], textNews);
                 // console.log(i);
-                j += 3;
+                j += 4;
             }
 
         } else {
@@ -206,13 +206,14 @@ window.onload = function () {
     }
 
     ///////////////////////////////////////////////////////////////////
-    function loadPhoto(tmp1, tmp2, tmp3, textNews) {
+    function loadPhoto(tmp1, tmp2, tmp3, tmp4, textNews) {
         console.log(textNews);
         var r = document.createElement('div');
         r.className = "imgs_news";
         bigPhoto(tmp1, r);
         bigPhoto(tmp2, r);
         bigPhoto(tmp3, r);
+        bigPhoto(tmp4, r);
         textNews.appendChild(r);
 
     }
