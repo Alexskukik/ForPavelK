@@ -271,7 +271,7 @@ window.onload = function () {
 
         } else {
             console.log('С картинков' );
-            for (var j = 0; j < iconList.lenght; j++) 
+            for (var j = 0; j < iconList.length; j++) 
             {
                 if (j == 0) 
                 { ListID += iconList[j].id; }
