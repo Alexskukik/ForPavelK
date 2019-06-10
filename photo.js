@@ -66,7 +66,7 @@ window.onload = function () {
 
     function bigPhoto(tmp1, photoRow) {
 
-
+        console.log(tmp1);
         var block1 = document.createElement('div');
         block1.className = "photo_block";
         var delPhoto = document.createElement('div');
@@ -127,7 +127,7 @@ window.onload = function () {
             .then(json => List = json)
             .then(List => {
                 console.log(List.length);
-                for (var i = a; i < List.length;) {
+                for (var i = 0; i < List.length;) {
 
                     console.log(i);
                     loadPhoto(List[i], List[i + 1], List[i + 2]);

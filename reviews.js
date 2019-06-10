@@ -34,7 +34,7 @@ window.onload = function () {
                 response.json()
                     .then(json => List = json)
                     .then(List => {
-                        for (var i = a; i < List.length; i++) {
+                        for (var i = 0; i < List.length; i++) {
                             loadRev(List[i]);
 
                         }
@@ -141,7 +141,7 @@ window.onload = function () {
             response.json()
             .then(json => ListAsk = json)
             .then(ListAsk => {
-                for (var i = b; i < ListAsk.length; i++) {
+                for (var i = 0; i < ListAsk.length; i++) {
                     loadAsk(ListAsk[i]);
 
                 }

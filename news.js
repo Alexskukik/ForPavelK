@@ -121,7 +121,7 @@ window.onload = function () {
             .then(response => response.json())
             .then(json => List = json)
             .then(List => {
-                for (var i = a; i < List.length; i++) {
+                for (var i = 0; i < List.length; i++) {
                     loadNews(List[i]);
 
                 }
