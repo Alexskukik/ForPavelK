@@ -271,16 +271,21 @@ window.onload = function () {
         } else {
             console.log('С картинков');
             var ListID = "";
-            for (var j = 0; j < iconList.lenght; j++) {
-                if (j == 0) { ListID = iconList[j].id; }
+            for (var j = 0; j < iconList.lenght; j++) 
+            {
+                if (j == 0) 
+                { ListID += iconList[j].id; }
                 else {
                     ListID += "," + iconList[j].id;
                 }
+                
+            console.log("список ID " + ListID);
             }
 
             console.log("картиинкиа" + ListID);
 
 
+            console.log("отправляю " + ListID);
 
             fetch(`/news.add?subject=${subject}&images=${ListID}`, {
                 method: 'POST',
@@ -293,11 +298,10 @@ window.onload = function () {
                     console.log(response.status)
                     document.getElementById('newsContent').innerHTML = "";
                     getNews(a);
-                    iconList = [];
-                    setIcon();
                 })
 
-
+                iconList = [];
+                setIcon();
 
         }
     }
