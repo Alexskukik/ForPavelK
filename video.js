@@ -77,7 +77,6 @@ window.onload = function () {
         r.className = "photo_row";
         bigPhoto(tmp1, r);
         bigPhoto(tmp2, r);
-        bigPhoto(tmp3, r);
 
     }
 
