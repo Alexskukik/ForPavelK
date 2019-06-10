@@ -206,6 +206,7 @@ window.onload = function () {
 
     ///////////////////////////////////////////////////////////////////
     function loadPhoto(tmp1, tmp2, tmp3, textNews) {
+        console.log(textNews);
         var r = document.createElement('div');
         r.className = "imgs_news";
         bigPhoto(tmp1, r);
