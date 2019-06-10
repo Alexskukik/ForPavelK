@@ -11,12 +11,12 @@ window.onload = function () {
 
 
 
-    document.getElementById("sendPhoto").onclick = function(){
-       // var img = new Image();
-       var file = document.getElementById('fileToUpload');
+    document.getElementById("sendPhoto").onclick = function () {
+        // var img = new Image();
+        var file = document.getElementById('fileToUpload');
         var formData = new FormData();
         formData.append("file", file.files[0]);
-        
+
         console.log(file.files[0]);
 
         console.log(document.getElementById('fileToUpload').value);
@@ -26,30 +26,30 @@ window.onload = function () {
             method: 'POST',
             body: formData,
             headers: {
-               
+
             }
         })
             .then(response => {
                 if ((response.status) == 200) {
                     alert("Фото было отправлено!:)");
                     return response.json();
-                    
-                    
+
+
                 } else {
                     alert("Что-то пошло не так!");
                     return;
                 }
-                
-                
+
+
             })
             .then(json => console.log(json))
-            
+
 
 
     }
 
 
-    
+
 
     function loadPhoto(tmp1, tmp2, tmp3) {
         var r = document.createElement('div');
@@ -63,7 +63,7 @@ window.onload = function () {
     function bigPhoto(tmp1, photoRow) {
         var el = document.getElementById('photoContent');
 
-        
+
         var block1 = document.createElement('div');
         block1.className = "photo_block";
         var delPhoto = document.createElement('div');
@@ -72,10 +72,10 @@ window.onload = function () {
         var delIMG = document.createElement('img');
         delIMG.src = "close.png";
 
-       var type = tmp1.type.split('/');
+        var type = tmp1.type.split('/');
         var img1 = document.createElement('img');
-       img1.src = "/image-" + tmp1.id + "." + type[1]; 
-       //  img1.src = tmp1.url;
+        img1.src = "/image-" + tmp1.id + "." + type[1];
+        //  img1.src = tmp1.url;
         console.log(img1.src); ///
 
         img1.onclick = function () {
@@ -126,37 +126,37 @@ window.onload = function () {
 
 
     ///получение отзывов с сервера
- /*    function getPhoto(a) {
-        fetch(`image.get?offset=${a}`)
+    /*    function getPhoto(a) {
+           fetch(`image.get?offset=${a}`)
+               .then(response => response.json())
+               .then(json => List = json)
+               .then(List => {
+                   console.log(List);
+                   for (var i = a; i < List.length;) {
+                       console.log(i);
+                       loadPhoto(List[i], List[i + 1], List[i + 2]);
+                       // console.log(i);
+                       i += 3;
+                   }
+   
+               })
+       } */
+
+
+    function getPhoto(a) {
+        fetch(`/image.get?offset=${a}`)
             .then(response => response.json())
             .then(json => List = json)
             .then(List => {
-                console.log(List);
-                for (var i = a; i < List.length;) {
+                for (var i = a; i < 12;) {
+
                     console.log(i);
                     loadPhoto(List[i], List[i + 1], List[i + 2]);
-                    // console.log(i);
+                    console.log(i);
                     i += 3;
                 }
-
             })
-    } */
-
-
-      function getPhoto(a, b) {
-          fetch(`/image.get?offset=${a}`)
-              .then(response => response.json())
-              .then(json => List = json)
-              .then(List => {
-                  for (var i = a; i < 12;) {
-  
-                      console.log(i);
-                      loadPhoto(List[i], List[i + 1], List[i + 2]);
-                      console.log(i);
-                      i += 3;
-                  }
-              })
-            }
+    }
 
     document.getElementById('next').onclick = function () {
         a++;
@@ -207,7 +207,7 @@ window.onload = function () {
 
         if (sessionStorage.getItem('status') === "ADMIN")  //авторизован админ
         {
-         displayBlock("addPhoto");
+            displayBlock("addPhoto");
 
         } else if (sessionStorage.getItem('status') === "USER")  //авторизоавн юзер
         {

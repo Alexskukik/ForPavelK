@@ -32,15 +32,15 @@ window.onload = function () {
                     return;
                 }
                 response.json()
-                .then(json => List = json)
-                .then(List => {
-                    for (var i = a; i < List.length; i++) {
-                        loadRev(List[i]);
-    
-                    }
-                })
+                    .then(json => List = json)
+                    .then(List => {
+                        for (var i = a; i < List.length; i++) {
+                            loadRev(List[i]);
 
-            })        
+                        }
+                    })
+
+            })
     }
 
     document.getElementById('addRevB').onclick = function addRev() {
@@ -114,7 +114,7 @@ window.onload = function () {
     function loadAsk(tmp) {
         console.log(tmp);
        // dateQ = new Date(tmp.date);
-        dateA = new Date(tmp.answerDate);
+        var dateA = new Date(tmp.answerDate);
         var el = document.getElementById('askList');
         var innerHTML = '';
         innerHTML += '<div class="q_a"><div class="q"><div class="rew_name">';
