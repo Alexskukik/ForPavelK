@@ -7,6 +7,7 @@ window.onload = function () {
     var a = 0;
     var List = [];
     var iconList = [];
+    var ListID = "";
 
     // get();
     loadElem();
@@ -270,7 +271,6 @@ window.onload = function () {
 
         } else {
             console.log('С картинков' );
-            var ListID = "";
             for (var j = 0; j < iconList.lenght; j++) 
             {
                 if (j == 0) 
@@ -301,6 +301,7 @@ window.onload = function () {
                 })
 
                 iconList = [];
+                ListID = "";
                 setIcon();
                 
 
