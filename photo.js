@@ -53,16 +53,18 @@ window.onload = function () {
 
 
     function loadPhoto(tmp1, tmp2, tmp3) {
+        
+        var el = document.getElementById('photoContent');
         var r = document.createElement('div');
         r.className = "photo_row";
         bigPhoto(tmp1, r);
         bigPhoto(tmp2, r);
         bigPhoto(tmp3, r);
+        el.appendChild(photoRow);
 
     }
 
     function bigPhoto(tmp1, photoRow) {
-        var el = document.getElementById('photoContent');
 
 
         var block1 = document.createElement('div');
@@ -108,7 +110,7 @@ window.onload = function () {
         block1.appendChild(delPhoto);
         block1.appendChild(img1);
         photoRow.appendChild(block1);
-        el.appendChild(photoRow);
+        
     }
 
     document.getElementById("modalPhoto").onclick = function () {
@@ -117,33 +119,7 @@ window.onload = function () {
     }
 
 
-    /*  function loadRev(tmp) {
-         console.log(tmp);
-         var date = new Date(tmp.date);
-        var el = document.getElementById('revList');
-        el.innerHTML += '<div class="rew"> <div class="rew_name">' + tmp.user.firstName + '</div> <div class="rew_text">' + tmp.text + '</div> <div class="rew_date">' + date.toLocaleString() + ' </div></div>';
- 
-      } */
-
-
-
-    ///получение отзывов с сервера
-    /*    function getPhoto(a) {
-           fetch(`image.get?offset=${a}`)
-               .then(response => response.json())
-               .then(json => List = json)
-               .then(List => {
-                   console.log(List);
-                   for (var i = a; i < List.length;) {
-                       console.log(i);
-                       loadPhoto(List[i], List[i + 1], List[i + 2]);
-                       // console.log(i);
-                       i += 3;
-                   }
    
-               })
-       } */
-
 
     function getPhoto(a) {
         fetch(`/image.get?offset=${a}`)
