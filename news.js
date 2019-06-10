@@ -168,10 +168,15 @@ window.onload = function () {
         var textNews = document.createElement("div");
         textNews.className = 'text_news';
         textNews.id = "textNews";
-        textNews.innerHTML = tmp.text; 
+        textNews += tmp.text; 
 
         var date = new Date(tmp.date);
-        newsRow.innerHTML = '<div class="date_news">' + date.toLocaleString() + '</div>' + textNews.innerHTML;
+        var dateNews = createElement('div');
+        dateNews.className = "date_news";
+        dateNews.innerHTML += date.toLocaleString();
+
+        
+        
         newsRow.appendChild(del);
        
 
@@ -190,6 +195,8 @@ window.onload = function () {
             console.log("без картиночек");
         }
 
+        newsRow.appendChild(dateNews);
+        newsRow.appendChild(textNews);
         el.appendChild(newsRow);
 
 
