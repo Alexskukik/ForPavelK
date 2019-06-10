@@ -45,6 +45,7 @@ window.onload = function () {
             .then(json => console.log(json))
 
 
+            getPhoto(a);
 
     }
 
@@ -83,6 +84,7 @@ window.onload = function () {
             document.getElementById("bigContent").innerHTML = '<img src = "' + img1.src + '">';
             document.getElementById("modalPhoto").style.display = "block";
         };
+        
         if (sessionStorage.getItem('status') == 'ADMIN') delPhoto.style.display = "block";
         delPhoto.onclick = function () {
 
