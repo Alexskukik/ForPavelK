@@ -172,7 +172,7 @@ window.onload = function () {
         newsRow.appendChild(del);
         el.appendChild(newsRow);
 
-        if(tmp.images){
+        if (tmp.images.lenght != 0) {
             var ListIMG = [];
             ListIMG = tmp.images;
             console.log(tmp.images);
@@ -185,21 +185,21 @@ window.onload = function () {
                 img.src = "/image-" + ListIMG[j].id + "." + type[1];
                 document.getElementById("textNews").appendChild(img);
             } */
-            for (var j = 0; j < ListIMG.length;){
-               // console.log(i);
+            for (var j = 0; j < ListIMG.length;) {
+                // console.log(i);
                 loadPhoto(ListIMG[j], ListIMG[j + 1], ListIMG[j + 2]);
-               // console.log(i);
+                // console.log(i);
                 j += 3;
             }
 
         }
-       
+
 
 
 
     }
 
-///////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////
     function loadPhoto(tmp1, tmp2, tmp3) {
         var r = document.createElement('div');
         r.className = "imgs_news";
@@ -210,36 +210,38 @@ window.onload = function () {
     }
 
     function bigPhoto(tmp1, photoRow) {
+        if (tmp1.type) {
         var el = document.getElementById('textNews');
 
 
         var block1 = document.createElement('div');
         block1.className = "img_news";
         var delPhoto = document.createElement('div');
-    
 
-        var type = tmp1.type.split('/');
-        var img1 = document.createElement('img');
-        img1.src = "/image-" + tmp1.id + "." + type[1];
-        //  img1.src = tmp1.url;
-       // console.log(img1.src); ///
+       
+            var type = tmp1.type.split('/');
+            var img1 = document.createElement('img');
+            img1.src = "/image-" + tmp1.id + "." + type[1];
+            //  img1.src = tmp1.url;
+            // console.log(img1.src); ///
 
-        img1.onclick = function () {
-           // console.log('kfk');
-            document.getElementById("bigContent").innerHTML = '<img src = "' + img1.src + '">';
-            document.getElementById("modalPhoto").style.display = "block";
-        };
+            img1.onclick = function () {
+                // console.log('kfk');
+                document.getElementById("bigContent").innerHTML = '<img src = "' + img1.src + '">';
+                document.getElementById("modalPhoto").style.display = "block";
+            };
 
-        block1.appendChild(img1);
-        photoRow.appendChild(block1);
-        el.appendChild(photoRow);
+            block1.appendChild(img1);
+            photoRow.appendChild(block1);
+            el.appendChild(photoRow);
+        }
     }
 
     document.getElementById("modalPhoto").onclick = function () {
         document.getElementById("modalPhoto").style.display = "none";
 
     }
-////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////
     ///// Добавление новости
     document.getElementById('addNewsB').onclick = function addNews() {
 
@@ -267,15 +269,13 @@ window.onload = function () {
         } else {
             var ListID = "";
             for (var j = 0; j < iconList.lenght; j++) {
-                if (j == 0) 
-                { ListID = iconList[j].id; }
-                else 
-                {
+                if (j == 0) { ListID = iconList[j].id; }
+                else {
                     ListID += "," + iconList[j].id;
                 }
             }
 
-           
+
 
             fetch(`/news.add?subject=${subject}&images=${ListID}`, {
                 method: 'POST',
@@ -292,8 +292,8 @@ window.onload = function () {
                     setIcon();
                 })
 
-            
-            
+
+
         }
     }
 
