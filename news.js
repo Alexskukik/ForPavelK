@@ -192,6 +192,8 @@ window.onload = function () {
                 j += 3;
             }
 
+        } else{
+            console.log("без картиночек");
         }
 
 
