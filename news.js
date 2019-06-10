@@ -276,7 +276,7 @@ window.onload = function () {
                 }
             }
 
-            console.log(ListID);
+            console.log("картиинкиа" + ListID);
 
 
 
