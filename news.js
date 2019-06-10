@@ -165,10 +165,13 @@ window.onload = function () {
 
         del.appendChild(delIMG);
 
-
+        var textNews = document.createElement("div");
+        textNews.className = 'text_news';
+        textNews.id = id="textNews";
+        textNews.innerHTML = tmp.text; 
 
         var date = new Date(tmp.date);
-        newsRow.innerHTML = '<div class="date_news">' + date.toLocaleString() + '</div> <div class="text_news" id="textNews">' + tmp.text + ' </div>';
+        newsRow.innerHTML = '<div class="date_news">' + date.toLocaleString() + '</div>' + textNews;
         newsRow.appendChild(del);
        
 
@@ -178,7 +181,7 @@ window.onload = function () {
             console.log(tmp.images);
             for (var j = 0; j < ListIMG.length;) {
                 // console.log(i);
-                loadPhoto(ListIMG[j], ListIMG[j + 1], ListIMG[j + 2], newsRow);
+                loadPhoto(ListIMG[j], ListIMG[j + 1], ListIMG[j + 2], textNews);
                 // console.log(i);
                 j += 3;
             }
@@ -195,13 +198,13 @@ window.onload = function () {
     }
 
     ///////////////////////////////////////////////////////////////////
-    function loadPhoto(tmp1, tmp2, tmp3, newsRow) {
+    function loadPhoto(tmp1, tmp2, tmp3, textNews) {
         var r = document.createElement('div');
         r.className = "imgs_news";
         bigPhoto(tmp1, r);
         bigPhoto(tmp2, r);
         bigPhoto(tmp3, r);
-        newsRow.appendChild(r);
+        textNews.appendChild(r);
 
     }
 
