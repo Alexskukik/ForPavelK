@@ -92,7 +92,7 @@ window.onload = function () {
         var delIMG = document.createElement('img');
         delIMG.src = "close.png";
 
-        block1.src = tmp1.src;
+        block1.src = tmp1.link;
 
         
         if (sessionStorage.getItem('status') == 'ADMIN') delPhoto.style.display = "block";
