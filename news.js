@@ -168,7 +168,7 @@ window.onload = function () {
         var textNews = document.createElement("div");
         textNews.className = 'text_news';
         textNews.id = "textNews";
-        textNews += tmp.text; 
+        textNews.innerHTML += tmp.text; 
 
         var date = new Date(tmp.date);
         var dateNews = document.createElement('div');
