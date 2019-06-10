@@ -176,15 +176,6 @@ window.onload = function () {
             var ListIMG = [];
             ListIMG = tmp.images;
             console.log(tmp.images);
-
-            /* for (var j = 0; j < ListIMG.length; j++) {
-               
-                console.log(ListIMG[j].type);
-                var type = ListIMG[j].type.split('/');
-                var img = document.createElement('img');
-                img.src = "/image-" + ListIMG[j].id + "." + type[1];
-                document.getElementById("textNews").appendChild(img);
-            } */
             for (var j = 0; j < ListIMG.length;) {
                 // console.log(i);
                 loadPhoto(ListIMG[j], ListIMG[j + 1], ListIMG[j + 2]);
@@ -253,7 +244,6 @@ window.onload = function () {
         console.log(newText);
         console.log(iconList.length);
         if (iconList.length == 0) {
-            console.log('Без картинков');
 
             fetch(`/news.add?subject=${subject}`, {
                 method: 'POST',
@@ -271,7 +261,6 @@ window.onload = function () {
         } else {
 
             var ListID = "";
-            console.log('С картинков');
             for (var j = 0; j < iconList.length; j++) {
 
                 if (j == 0) { ListID += iconList[j].id; }
@@ -297,10 +286,11 @@ window.onload = function () {
                 .then(response => {
                     console.log(response.status)
                     document.getElementById('newsContent').innerHTML = "";
-                    getNews(a);
                     iconList = [];
                     ListID = "";
                     setIcon();
+                    getNews(a);
+                   
                 })
 
 
