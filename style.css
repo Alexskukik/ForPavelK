@@ -1186,7 +1186,6 @@ p{
         display: none; 
         margin: 40px 850px 0  0 ;
         height: 100px;
-        border: #000000 solid;
     }
 
     .add_photo_news{
@@ -1227,4 +1226,14 @@ p{
 
     .asks{
         padding: 100px 0 0;
+    }
+
+
+    .inpt_video{
+        height: 50px;
+        width: 50%;
+        margin: 0 10px 0 0;
+      border-radius: 4px; 
+      border: solid #747171 1px;
+      font-size: 1em;
     }
