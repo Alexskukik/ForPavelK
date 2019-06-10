@@ -286,8 +286,10 @@ window.onload = function () {
                 .then(response => {
                     console.log(response.status)
                     document.getElementById('newsContent').innerHTML = "";
+                    console.log("1" + ListID);
                     iconList = [];
                     ListID = "";
+                    console.log("2" + ListID);
                     setIcon();
                     getNews(a);
                    
