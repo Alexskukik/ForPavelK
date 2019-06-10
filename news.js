@@ -7,7 +7,6 @@ window.onload = function () {
     var a = 0;
     var List = [];
     var iconList = [];
-    var ListID = "";
 
     // get();
     loadElem();
@@ -193,7 +192,7 @@ window.onload = function () {
                 j += 3;
             }
 
-        } else{
+        } else {
             console.log("без картиночек");
         }
 
@@ -213,15 +212,15 @@ window.onload = function () {
     }
 
     function bigPhoto(tmp1, photoRow) {
-        if (tmp1.type) {
-        var el = document.getElementById('textNews');
+        if (tmp1) {
+            var el = document.getElementById('textNews');
 
 
-        var block1 = document.createElement('div');
-        block1.className = "img_news";
-        var delPhoto = document.createElement('div');
+            var block1 = document.createElement('div');
+            block1.className = "img_news";
+            var delPhoto = document.createElement('div');
 
-       
+
             var type = tmp1.type.split('/');
             var img1 = document.createElement('img');
             img1.src = "/image-" + tmp1.id + "." + type[1];
@@ -254,7 +253,7 @@ window.onload = function () {
         console.log(newText);
         console.log(iconList.length);
         if (iconList.length == 0) {
-             console.log('Без картинков');
+            console.log('Без картинков');
 
             fetch(`/news.add?subject=${subject}`, {
                 method: 'POST',
@@ -270,16 +269,17 @@ window.onload = function () {
                 })
 
         } else {
-            console.log('С картинков' );
-            for (var j = 0; j < iconList.length; j++) 
-            {
-                if (j == 0) 
-                { ListID += iconList[j].id; }
+
+            var ListID = "";
+            console.log('С картинков');
+            for (var j = 0; j < iconList.length; j++) {
+
+                if (j == 0) { ListID += iconList[j].id; }
                 else {
                     ListID += "," + iconList[j].id;
                 }
-                
-            console.log("список ID " + ListID);
+
+                console.log("список ID " + ListID);
             }
 
             console.log("картиинкиа" + ListID);
@@ -298,12 +298,13 @@ window.onload = function () {
                     console.log(response.status)
                     document.getElementById('newsContent').innerHTML = "";
                     getNews(a);
+                    iconList = [];
+                    ListID = "";
+                    setIcon();
                 })
 
-                iconList = [];
-                ListID = "";
-                setIcon();
-                
+
+
 
         }
     }
