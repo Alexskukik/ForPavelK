@@ -1237,3 +1237,9 @@ p{
       border: solid #747171 1px;
       font-size: 1em;
     }
+
+    .video{
+        width: 500px;
+        height: 300px;
+        border: 0;
+    }
