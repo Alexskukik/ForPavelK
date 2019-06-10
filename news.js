@@ -177,7 +177,7 @@ window.onload = function () {
 
         
         
-        newsRow.appendChild(del);
+      
        
 
         if (tmp.images.lenght != 0) {
@@ -197,6 +197,7 @@ window.onload = function () {
 
         newsRow.appendChild(dateNews);
         newsRow.appendChild(textNews);
+        newsRow.appendChild(del);
         el.appendChild(newsRow);
 
 
