@@ -269,7 +269,7 @@ window.onload = function () {
                 })
 
         } else {
-            console.log('С картинков');
+            console.log('С картинков' );
             var ListID = "";
             for (var j = 0; j < iconList.lenght; j++) 
             {
@@ -302,6 +302,7 @@ window.onload = function () {
 
                 iconList = [];
                 setIcon();
+                
 
         }
     }
