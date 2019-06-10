@@ -251,7 +251,7 @@ window.onload = function () {
         console.log(newText);
         console.log(iconList.length);
         if (iconList.length == 0) {
-            // console.log('мур');
+             console.log('Без картинков');
 
             fetch(`/news.add?subject=${subject}`, {
                 method: 'POST',
@@ -267,6 +267,7 @@ window.onload = function () {
                 })
 
         } else {
+            console.log('С картинков');
             var ListID = "";
             for (var j = 0; j < iconList.lenght; j++) {
                 if (j == 0) { ListID = iconList[j].id; }
@@ -274,6 +275,8 @@ window.onload = function () {
                     ListID += "," + iconList[j].id;
                 }
             }
+
+            console.log(ListID);
 
 
 
