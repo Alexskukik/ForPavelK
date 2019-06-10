@@ -178,13 +178,19 @@ window.onload = function () {
             ListIMG = tmp.images;
             console.log(tmp.images);
 
-            for (var j = 0; j < ListIMG.length; j++) {
+            /* for (var j = 0; j < ListIMG.length; j++) {
                
                 console.log(ListIMG[j].type);
                 var type = ListIMG[j].type.split('/');
                 var img = document.createElement('img');
                 img.src = "/image-" + ListIMG[j].id + "." + type[1];
                 document.getElementById("textNews").appendChild(img);
+            } */
+            for (var j = 0; j < ListIMG.length;){
+               // console.log(i);
+                loadPhoto(ListIMG[j], ListIMG[j + 1], ListIMG[j + 2]);
+               // console.log(i);
+                j += 3;
             }
 
         }
@@ -194,8 +200,47 @@ window.onload = function () {
 
     }
 
+///////////////////////////////////////////////////////////////////
+    function loadPhoto(tmp1, tmp2, tmp3) {
+        var r = document.createElement('div');
+        r.className = "imgs_news";
+        bigPhoto(tmp1, r);
+        bigPhoto(tmp2, r);
+        bigPhoto(tmp3, r);
+
+    }
+
+    function bigPhoto(tmp1, photoRow) {
+        var el = document.getElementById('textNews');
 
 
+        var block1 = document.createElement('div');
+        block1.className = "img_news";
+        var delPhoto = document.createElement('div');
+    
+
+        var type = tmp1.type.split('/');
+        var img1 = document.createElement('img');
+        img1.src = "/image-" + tmp1.id + "." + type[1];
+        //  img1.src = tmp1.url;
+       // console.log(img1.src); ///
+
+        img1.onclick = function () {
+            console.log('kfk');
+            document.getElementById("bigContent").innerHTML = '<img src = "' + img1.src + '">';
+            document.getElementById("modalPhoto").style.display = "block";
+        };
+
+        block1.appendChild(img1);
+        photoRow.appendChild(block1);
+        el.appendChild(photoRow);
+    }
+
+    document.getElementById("modalPhoto").onclick = function () {
+        document.getElementById("modalPhoto").style.display = "none";
+
+    }
+////////////////////////////////////////////////////////////////
     ///// Добавление новости
     document.getElementById('addNewsB').onclick = function addNews() {
 
