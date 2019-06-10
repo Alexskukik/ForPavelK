@@ -126,6 +126,7 @@ window.onload = function () {
             .then(response => response.json())
             .then(json => List = json)
             .then(List => {
+                console.log(List.length);
                 for (var i = a; i < List.length;) {
 
                     console.log(i);
