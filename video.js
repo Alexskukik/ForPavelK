@@ -7,7 +7,7 @@ window.onload = function () {
     var a = 0;
     var List = [];
     loadElem();
-   // getVideo(a);
+   getVideo(a);
 
 
 
