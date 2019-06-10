@@ -150,7 +150,7 @@ window.onload = function () {
             .then(response => response.json())
             .then(json => List = json)
             .then(List => {
-                for (var i = a; i < 12;) {
+                for (var i = a; i < List.length;) {
 
                     console.log(i);
                     loadPhoto(List[i], List[i + 1], List[i + 2]);

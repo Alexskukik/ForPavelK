@@ -7,156 +7,60 @@ window.onload = function () {
     var a = 0;
     var List = [];
     loadElem();
-    getPhoto(a);
+   // getVideo(a);
 
 
 
-    document.getElementById("sendPhoto").onclick = function () {
-        // var img = new Image();
-        var file = document.getElementById('fileToUpload');
-        var formData = new FormData();
-        formData.append("file", file.files[0]);
-
-        console.log(file.files[0]);
-
-        console.log(document.getElementById('fileToUpload').value);
-
-        var img = document.getElementById('fileToUpload').value;
-        fetch(`/image.add`, {
-            method: 'POST',
-            body: formData,
-            headers: {
-
-            }
-        })
-            .then(response => {
-                if ((response.status) == 200) {
-                    alert("Фото было отправлено!:)");
-                    return response.json();
-
-
-                } else {
-                    alert("Что-то пошло не так!");
-                    return;
-                }
-
-
-            })
-            .then(json => console.log(json))
-
-
-
-    }
-
-
-
-
-    function loadPhoto(tmp1, tmp2, tmp3) {
-        var r = document.createElement('div');
-        r.className = "photo_row";
-        bigPhoto(tmp1, r);
-        bigPhoto(tmp2, r);
-        bigPhoto(tmp3, r);
-
-    }
-
-    function bigPhoto(tmp1, photoRow) {
-        var el = document.getElementById('photoContent');
-
-
-        var block1 = document.createElement('div');
-        block1.className = "photo_block";
-        var delPhoto = document.createElement('div');
-        delPhoto.className = 'del_photo';
-        delPhoto.title = "Удалить";
-        var delIMG = document.createElement('img');
-        delIMG.src = "close.png";
-
-        var type = tmp1.type.split('/');
-        var img1 = document.createElement('img');
-        img1.src = "/image-" + tmp1.id + "." + type[1];
-        //  img1.src = tmp1.url;
-        console.log(img1.src); ///
-
-        img1.onclick = function () {
-            console.log('kfk');
-            document.getElementById("bigContent").innerHTML = '<img src = "' + img1.src + '">';
-            document.getElementById("modalPhoto").style.display = "block";
-        };
-        if (sessionStorage.getItem('status') == 'ADMIN') delPhoto.style.display = "block";
-        delPhoto.onclick = function () {
-
-            if (confirm('Вы уверены, что хотите удалить фото?') == true) {
-                console.log(tmp1.id);
-                fetch(`/image.del?id=${tmp1.id}`, {
-                    method: 'POST'
-                })
-                    .then(response => {
-                        console.log(response.status)
-                        el.innerHTML = "";
-                        getPhoto(a);
-                    })
-
-
-            }
-        }
-
-
-        delPhoto.appendChild(delIMG);
-        block1.appendChild(delPhoto);
-        block1.appendChild(img1);
-        photoRow.appendChild(block1);
-        el.appendChild(photoRow);
-    }
-
-    document.getElementById("modalPhoto").onclick = function () {
-        document.getElementById("modalPhoto").style.display = "none";
-
-    }
-
-
-    /*  function loadRev(tmp) {
-         console.log(tmp);
-         var date = new Date(tmp.date);
-        var el = document.getElementById('revList');
-        el.innerHTML += '<div class="rew"> <div class="rew_name">' + tmp.user.firstName + '</div> <div class="rew_text">' + tmp.text + '</div> <div class="rew_date">' + date.toLocaleString() + ' </div></div>';
- 
-      } */
-
-
-
-    ///получение отзывов с сервера
-    /*    function getPhoto(a) {
-           fetch(`image.get?offset=${a}`)
-               .then(response => response.json())
-               .then(json => List = json)
-               .then(List => {
-                   console.log(List);
-                   for (var i = a; i < List.length;) {
-                       console.log(i);
-                       loadPhoto(List[i], List[i + 1], List[i + 2]);
-                       // console.log(i);
-                       i += 3;
-                   }
    
-               })
-       } */
 
 
-    function getPhoto(a) {
-        fetch(`/image.get?offset=${a}`)
+
+    function getVideo(a) {
+        fetch(`/video.get?offset=${a}`)
             .then(response => response.json())
             .then(json => List = json)
             .then(List => {
-                for (var i = a; i < 12;) {
+                for (var i = a; i < List.length;) {
 
                     console.log(i);
-                    loadPhoto(List[i], List[i + 1], List[i + 2]);
+                    loadPhoto(List[i], List[i + 1]);
                     console.log(i);
-                    i += 3;
+                    i += 2;
                 }
             })
     }
+
+
+    document.getElementById('addVideoB').onclick = function addNews() {
+
+        var text = document.getElementById("inptVideo").value;
+        var subject = "sub";
+
+       var tmp = text.split('/');
+        var newText = "https://www.youtube.com/embed/" + tmp[tmp.length-1];
+        console.log(newText);
+
+
+            fetch(`/video.add?subject=${subject}`, {
+                method: 'POST',
+                body: newText,
+                headers: {
+                    "Content-type": "text/plain; charset=UTF-8"
+                }
+            })
+                .then(response => {
+                    console.log(response.status)
+                   /*  document.getElementById('newsContent').innerHTML = "";
+                    getNews(a); */
+                })
+
+        
+
+
+        
+    }
+
+
 
     document.getElementById('next').onclick = function () {
         a++;
