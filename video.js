@@ -22,7 +22,7 @@ window.onload = function () {
             .then(List => {
                 for (var i = a; i < List.length;) {
 
-                    console.log(i);
+                    console.log(List[i]);
                     loadPhoto(List[i], List[i + 1]);
                     console.log(i);
                     i += 2;

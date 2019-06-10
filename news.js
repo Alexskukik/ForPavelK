@@ -171,7 +171,7 @@ window.onload = function () {
         textNews.innerHTML = tmp.text; 
 
         var date = new Date(tmp.date);
-        newsRow.innerHTML = '<div class="date_news">' + date.toLocaleString() + '</div>' + textNews;
+        newsRow.innerHTML = '<div class="date_news">' + date.toLocaleString() + '</div>' + textNews.innerHTML;
         newsRow.appendChild(del);
        
 
