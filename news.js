@@ -183,7 +183,9 @@ window.onload = function () {
                 j += 3;
             }
 
-        } 
+        } else {
+            console.log("без картиночек");
+        }
 
         el.appendChild(newsRow);
 
@@ -196,15 +198,15 @@ window.onload = function () {
     function loadPhoto(tmp1, tmp2, tmp3, newsRow) {
         var r = document.createElement('div');
         r.className = "imgs_news";
-        bigPhoto(tmp1, r, newsRow);
-        bigPhoto(tmp2, r, newsRow);
-        bigPhoto(tmp3, r, newsRow);
+        bigPhoto(tmp1, r);
+        bigPhoto(tmp2, r);
+        bigPhoto(tmp3, r);
+        newsRow.appendChild(r);
 
     }
 
-    function bigPhoto(tmp1, photoRow, newsRow) {
+    function bigPhoto(tmp1, photoRow) {
         if (tmp1) {
-            var el = newsRow;
 
 
             var block1 = document.createElement('div');
@@ -226,7 +228,7 @@ window.onload = function () {
 
             block1.appendChild(img1);
             photoRow.appendChild(block1);
-            el.appendChild(photoRow);
+           // el.appendChild(photoRow);
         }
     }
 
