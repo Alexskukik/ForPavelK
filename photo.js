@@ -97,7 +97,7 @@ window.onload = function () {
                 })
                     .then(response => {
                         console.log(response.status)
-                        el.innerHTML = "";
+                        document.getElementById("photoContent").innerHTML = "";
                         getPhoto(a);
                     })
 
