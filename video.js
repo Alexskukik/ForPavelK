@@ -86,6 +86,10 @@ window.onload = function () {
 
         var block1 = document.createElement('iframe');
         block1.className = "video";
+
+        var block = document.createElement('div');
+        block.className = "video_block";
+
         var delPhoto = document.createElement('div');
         delPhoto.className = 'del_video';
         delPhoto.title = "Удалить";
@@ -115,7 +119,8 @@ window.onload = function () {
 
 
         delPhoto.appendChild(delIMG);
-        block1.appendChild(delPhoto);
+        block.appendChild(delPhoto);
+        block1.appendChild(block1);
         photoRow.appendChild(block1);
         el.appendChild(photoRow);
     }
