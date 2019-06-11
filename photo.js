@@ -42,10 +42,10 @@ window.onload = function () {
 
 
             })
-            .then(json => console.log(json))
+            .then(json => getPhoto(a);)
 
 
-            getPhoto(a);
+            
 
     }
 
