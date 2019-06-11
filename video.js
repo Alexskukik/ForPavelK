@@ -15,20 +15,7 @@ window.onload = function () {
 
 
 
-    function getVideo(a) {
-        fetch(`/video.get?offset=${a}`)
-            .then(response => response.json())
-            .then(json => List = json)
-            .then(List => {
-                for (var i = a; i < List.length;) {
-
-                    console.log(List[i]);
-                    loadPhoto(List[i], List[i + 1]);
-                    console.log(i);
-                    i += 2;
-                }
-            })
-    }
+    
 
 
     document.getElementById('addVideoB').onclick = function addNews() {
@@ -52,6 +39,7 @@ window.onload = function () {
                     console.log(response.status)
                    /*  document.getElementById('newsContent').innerHTML = "";
                     getNews(a); */
+                    getVideo(a);
                 })
 
         
