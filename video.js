@@ -62,7 +62,7 @@ window.onload = function () {
             .then(response => response.json())
             .then(json => List = json)
             .then(List => {
-                for (var i = a; i < List.length;) {
+                for (var i = 0; i < List.length;) {
 
                     console.log(i);
                     loadVideo(List[i], List[i + 1]);
