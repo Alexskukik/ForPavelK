@@ -1073,9 +1073,12 @@ p{
 
 .del_photo{
     /* display: absolute; */
-    display: none; 
+    /* display: none;  */
     width: 15px;
     height: 15px; 
+    
+    border: solid grey 1px;
+    border-radius: 4px;
 }
 
 
