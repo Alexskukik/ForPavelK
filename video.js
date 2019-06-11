@@ -108,7 +108,7 @@ window.onload = function () {
 
         delPhoto.appendChild(delIMG);
         block.appendChild(delPhoto);
-        block1.appendChild(block1);
+        block1.appendChild(block);
         photoRow.appendChild(block1);
         el.appendChild(photoRow);
     }
