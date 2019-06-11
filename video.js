@@ -79,7 +79,7 @@ window.onload = function () {
         block.className = "video_block";
 
         var delPhoto = document.createElement('div');
-        delPhoto.className = 'del_video';
+        delPhoto.className = 'del_photo';
         delPhoto.title = "Удалить";
         var delIMG = document.createElement('img');
         delIMG.src = "close.png";
