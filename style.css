@@ -1013,6 +1013,8 @@ p{
 }
 
 .q{
+ 
+    margin: 10px 0;
     width: 99%;
     display: flex;
     flex-direction: row;

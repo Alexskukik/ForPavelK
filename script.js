@@ -92,19 +92,7 @@ var clearModal = function () {  //// очищаем данные в модалк
 
 }
 
-//Функции отображения элементов
 
-/* var displayNone = function(a){ ////скрыть
-    if(document.getElementById(a))
-    document.getElementById(a).style.display = "none";  
-    
-}
-
-var displayBlock = function(a){  ////показать
-    
-    if(document.getElementById(a))
-    document.getElementById(a).style.display = "block";  
-} */
 
 
 function loadElem() {

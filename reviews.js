@@ -43,7 +43,7 @@ window.onload = function () {
             })
     }
 
-    document.getElementById('addRevB').onclick = function addRev() {
+    document.getElementById('addRevB').onclick = function {
 
         var newText = document.getElementById("inptRev").value;
 

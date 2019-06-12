@@ -19,7 +19,7 @@ window.onload = function(){
        q.className = "q";
        
        var date = new Date(tmp.date);
-       q.innerHTML += '<div class="q"> <div class="rew_name">' + tmp.user.firstName + '</div> <div class="rew_text">' + tmp.question + '</div> <div class="rew_date">' + date.toLocaleString() + ' </div></div>';
+       q.innerHTML += '<div class="rew_name">' + tmp.user.firstName + '</div> <div class="rew_text">' + tmp.question + '</div> <div class="rew_date">' + date.toLocaleString() + ' </div>';
 
        row.appendChild(q);
 
@@ -74,16 +74,7 @@ window.onload = function(){
        }
 
 
-       /* innerHTML += '<div class="q_a"><div class="q"><div class="rew_name">';
-       innerHTML += tmp.name;
-       innerHTML += '</div><div class="rew_text">';
-       innerHTML += tmp.q;
-       innerHTML += '</div><div class="rew_date">';
-       innerHTML += tmp.date;
-       innerHTML += '</div></div><div class="ask">';
-       innerHTML += tmp.id;
-       innerHTML += '</div></div>';
-       el.innerHTML += innerHTML; */
+
 
        el.appendChild(row);
 
@@ -101,7 +92,7 @@ window.onload = function(){
             response.json()
             .then(json => ListAsk = json)
             .then(ListAsk => {
-                for (var i = b; i < ListAsk.length; i++) {
+                for (var i = 0; i < ListAsk.length; i++) {
                     console.log(ListAsk[i]);
                     loadQ(ListAsk[i]);
 
