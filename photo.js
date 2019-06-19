@@ -32,6 +32,7 @@ window.onload = function () {
             .then(response => {
                 if ((response.status) == 200) {
                     alert("Фото было отправлено!:)");
+                    getPhoto(a);
                     return response.json();
 
 
