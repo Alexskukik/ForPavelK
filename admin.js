@@ -6,6 +6,31 @@ window.onload = function(){
     getQ(b);
     var bool = false;
 
+    document.getElementById('sendMail').onclick = function (){
+
+        var newText = document.getElementById("inptMail").value;
+        var subject = "фитнес";
+        console.log(newText);
+
+        fetch(`/mail.html?subject=${subject}`, {
+            method: 'POST',
+            body: newText,
+            headers: {
+                "Content-type": "text/plain; charset=UTF-8"
+            }
+        })
+            .then(response => {
+                if ((response.status) == 200) {
+                    alert("Ваше сообщение было отправлено!:)");
+                    document.getElementById("inptMail").value = "";
+                } else {
+                    alert("Что-то пошло не так!");
+                }
+            })
+
+
+    }
+
 
     function loadQ(tmp) { 
       console.log(tmp);
