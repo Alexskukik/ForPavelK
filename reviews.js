@@ -70,7 +70,7 @@ window.onload = function () {
     }
 
 
-    document.getElementById('addQuesB').onclick = function addQues() {
+    document.getElementById('addQuesB').onclick = function {
 
         var newText = document.getElementById("inptQues").value;
 
