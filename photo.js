@@ -33,7 +33,6 @@ window.onload = function () {
                 if ((response.status) == 200) {
                     alert("Фото было отправлено!:)");
                     getPhoto(a);
-                    return response.json();
 
 
                 } else {
@@ -43,8 +42,7 @@ window.onload = function () {
 
 
             })
-
-            getPhoto(a);   
+  
 
     }
 
