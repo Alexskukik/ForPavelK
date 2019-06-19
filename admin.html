@@ -1,54 +1,60 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-        <meta charset="UTF-8">
-        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
-        <link rel="stylesheet" href="style.css">
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <title>Админ</title>
-    
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 
-        <script src="https://www.google.com/jsapi"></script>
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>Админ</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+    <script src="https://www.google.com/jsapi"></script>
 </head>
+
 <body>
 
     <div class="main">
 
         <div class="admin_anchors">
             <div onclick="location.href='#q';" title="Перейти к вопросам">Вопросы</div>
-            <div onclick="location.href='#u';" title="Перейти к пользователям">Пользователи</div>
+            <!-- <div onclick="location.href='#u';" title="Перейти к пользователям">Пользователи</div> -->
             <div onclick="location.href='#e';" title="Перейти к рассылке">Рассылка</div>
             <div> <a href="index.html" class="admin_out" title="Перейти на главную">Выйти</a> </div>
         </div>
 
         <a href="" name="q"></a>
         <div class="asks">
-        <div class="block_rew">
-            <div class="rev_h">Вопросы от пользователей</div>
-            <div class="ask_list new_ask" id="askList">
+            <div class="block_rew">
+                <div class="rev_h">Вопросы от пользователей</div>
+                <div class="ask_list new_ask" id="askList">
 
-                
-            </div>
 
-            <!-- <div class="btns_news">     
+                </div>
+
+                <!-- <div class="btns_news">     
                 <div class="str" id="str2">1 стр.</div>
                 <button id="prevA" class="btn_news">Предыдущие</button> <button id="nextA" class="btn_news">Следующие</button>
             </div> -->
 
-            
-        </div></div>
 
+            </div>
+        </div>
 
+        <a href="" name="e"></a>
+        <div class="onmail">
+            <div class="rev_h">Рассылка</div>
+            <input type="text" class="inpt_send_text" placeholder="Сообщение..." id="inptMail">
+            <button class="rew_btn" id="sendMail">Отправить всем</button>
 
-        
-    Привет, админ!
-
+        </div>
 
 
     </div>
 
     <script src="admin.js"></script>
 </body>
+
 </html>
