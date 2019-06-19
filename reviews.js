@@ -43,7 +43,7 @@ window.onload = function () {
             })
     }
 
-    document.getElementById('addRevB').onclick = function {
+    document.getElementById('addRevB').onclick = function (){
 
         var newText = document.getElementById("inptRev").value;
 
@@ -70,7 +70,7 @@ window.onload = function () {
     }
 
 
-    document.getElementById('addQuesB').onclick = function {
+    document.getElementById('addQuesB').onclick = function (){
 
         var newText = document.getElementById("inptQues").value;
 

@@ -934,7 +934,7 @@ p{
 }
 #addNews{
     margin: 0px 0 0 0;
-    /* display:none; */
+     display:none; 
     width: 80%;
     height: 100%;
 }
@@ -1075,7 +1075,7 @@ p{
 
 .del_photo{
     /* display: absolute; */
-    /* display: none;  */
+     display: none;  
     width: 15px;
     height: 15px; 
     
@@ -1195,7 +1195,8 @@ p{
     }
 
     .add_photo_news{
-        /* display: none;  */
+       
+        display: none; 
         display: flex;
         flex-direction: column;
         height: 100px;
