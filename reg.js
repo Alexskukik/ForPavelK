@@ -38,16 +38,15 @@ window.onload = function () {
     })
       .then(response => {
         if ((response.status) == 200) {
-          console.log(response.status);
-          return response.json();
+          alert("Вы зарегистрированы!");
+          window.location.href = 'index.html';
+         // return response.json();
         } else {
-          alert("Что-то пошло не так!");
+          alert("Что-то пошло не так! Такой пользователь уже существует!");
           return;
         }
-
-
       })
-      .then(json => {
+     /*  .then(json => {
         console.log(json);
         if (json == "LOGIN_ALREADY_PRESENT") {
           alert("Такой логин уже существует!");
@@ -57,9 +56,9 @@ window.onload = function () {
           alert("Вы зарегистрированы!");
           window.location.href = 'index.html';
         }
-      })
+      }) */
 
-      alert("!");
+      alert("Отправление данных!");
 
   }
 
