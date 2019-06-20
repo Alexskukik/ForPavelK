@@ -48,9 +48,16 @@ window.onload = function () {
       })
       .then(json => {
         alert(json);
+        if(json === "LOGIN_ALREADY_PRESENT"){
+          alert("Такой логин уже существует!");
+        } else if(json === "EMAIL_ALREADY_PRESENT"){
+          alert("Такой e-mail уже используется!");
+        } else if(json === "SUCCESS"){
+          alert("Вы зарегистрированы!");
+        }
       })
 
-    alert("Вы зарегистрированы!");
+    
 
   }
 
