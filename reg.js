@@ -38,6 +38,7 @@ window.onload = function () {
     })
       .then(response => {
         if ((response.status) == 200) {
+          console.log(response.status);
           return response.json();
         } else {
           alert("Что-то пошло не так!");
@@ -47,18 +48,18 @@ window.onload = function () {
 
       })
       .then(json => {
-        alert(json);
-        if (json === "LOGIN_ALREADY_PRESENT") {
+        console.log(json);
+        if (json == "LOGIN_ALREADY_PRESENT") {
           alert("Такой логин уже существует!");
-        } else if (json === "EMAIL_ALREADY_PRESENT") {
+        } else if (json == "EMAIL_ALREADY_PRESENT") {
           alert("Такой e-mail уже используется!");
-        } else if (json === "SUCCESS") {
+        } else if (json == "SUCCESS") {
           alert("Вы зарегистрированы!");
           window.location.href = 'index.html';
         }
       })
 
-
+      alert("!");
 
   }
 
