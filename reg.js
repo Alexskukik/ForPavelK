@@ -1,38 +1,58 @@
 
-/* document.getElementById('btnReg').onsubmit = function(){
+window.onload = function () {
 
- console.log('пись');
+  // regStatus();
 
 
-
-    fetch('register.html', {
-    method: 'POST',
-    body: JSON.stringify({
-     firstName: document.getElementsByName('firstname').values,
-     lastName: document.getElementsByName('lastname').values,
-     email: document.getElementsByName('email').values,
-     city: document.getElementsByName('city').values,
-     login: document.getElementsByName('login').values,
-     password: document.getElementsByName('password').values
-    }),
-    headers: {
-      "Content-type": "application/json; charset=UTF-8"
-    }
-  })
-  .then(response => console.log('регистрация: ' + response.status))
-  //.then(json => console.log(json))
-}  */
-
-window.onload = function(){
-
-regStatus();
+  document.getElementById("regForm").onsubmit = function () {
 
 
 
-    function regStatus() {
-        fetch('register.html')
-            .then(response => console.log('регистрация2: ' + response.status))
+    var firstname = document.getElementById('firstname').value;
+    var lastname = document.getElementById('lastname').value;
+    var email = document.getElementById('email').value;
+    var city = document.getElementById('city').value;
+    var login = document.getElementById('login').value;
+    var password = document.getElementById('password').value;
+
+    var formData = new FormData();
+    formData.append("firstname", firstname);
+    formData.append("lastname", lastname);
+    formData.append("email", email);
+    formData.append("city", city);
+    formData.append("login", login);
+    formData.append("password", password);
+
+    /*  console.log(formData.firstname);
+     for (var pair of formData.entries()) {
+       console.log(pair[0]+ ', ' + pair[1]); 
+   } */
 
 
-    }
+    fetch(`register.html`, {
+      method: 'POST',
+      body: formData,
+      headers: {
+
+      }
+    })
+      .then(response => {
+        if ((response.status) == 200) {
+          return response.json();
+        } else {
+          alert("Что-то пошло не так!");
+          return;
+        }
+
+
+      })
+      .then(json => {
+        alert(json);
+      })
+
+    alert("Вы зарегистрированы!");
+
+  }
+
+
 }
