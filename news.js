@@ -118,7 +118,12 @@ window.onload = function () {
     ///// Загрузка новостей с сервера
     function getNews(a) {
         fetch(`/news.get?offset=${a}`)
-            .then(response => response.json())
+            .then(response =>{
+                if (response.status != 200) {
+                    alert("Что-то пошло не так.. Статьи не были загружены");
+                    return;
+                } 
+                response.json()
             .then(json => List = json)
             .then(List => {
                 for (var i = 0; i < List.length; i++) {
@@ -126,6 +131,7 @@ window.onload = function () {
 
                 }
             })
+        })
 
     }
 
