@@ -17,6 +17,15 @@ window.onload = function () {
             btnLogin.innerText = 'Вoйти';
         }
 
+        if (sessionStorage.getItem('status') === "ADMIN")  //авторизован админ
+        {
+            displayBlock("adminFu");
+
+        } else if (sessionStorage.getItem('status') === "USER")  //авторизоавн юзер
+        {
+            // displayBlock("userRewInpt");
+        }
+
     }
 
     

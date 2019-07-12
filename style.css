@@ -1276,4 +1276,8 @@ p{
     justify-content: flex-start;
     }
 
+    #adminFu{
+        display: none;
+    }
+   
 

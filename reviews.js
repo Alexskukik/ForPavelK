@@ -174,7 +174,7 @@ window.onload = function () {
             displayBlock("userQuesInpt");
         } else if (sessionStorage.getItem('status') === "ADMIN")  //авторизоавн юзер
         {
-
+            displayBlock("adminFu");
         }
     }
 

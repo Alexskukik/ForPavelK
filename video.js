@@ -165,6 +165,7 @@ window.onload = function () {
         if (sessionStorage.getItem('status') === "ADMIN")  //авторизован админ
         {
             displayBlock("addNews");
+            displayBlock("adminFu");
 
         } else if (sessionStorage.getItem('status') === "USER")  //авторизоавн юзер
         {
